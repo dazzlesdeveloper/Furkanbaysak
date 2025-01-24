@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .sube a {
-            font-size: 16px; /* Mobil için daha küçük font */
+            font-size: 16px;
             font-weight: bold;
             color: black;
             text-decoration: none;
@@ -27,40 +27,40 @@
 
         /* Yorum Alanı Stilleri */
         .comment-section {
-            margin-top: 20px; /* Mobil için daha az boşluk */
-            padding: 15px; /* Mobil için daha az iç boşluk */
+            margin-top: 20px;
+            padding: 15px;
             background-color: #f9f9f9;
             border-radius: 8px;
         }
 
         .comment-section h3 {
-            margin-bottom: 10px; /* Mobil için daha az boşluk */
-            font-size: 1.2em; /* Mobil için font boyutu */
+            margin-bottom: 10px;
+            font-size: 1.2em;
         }
 
         .comment-form {
             display: flex;
             flex-direction: column;
-            margin-bottom: 15px; /* Mobil için daha az boşluk */
+            margin-bottom: 15px;
         }
 
         .comment-form input, .comment-form textarea, .comment-form select {
-            margin-bottom: 8px; /* Mobil için daha az boşluk */
-            padding: 8px; /* Mobil için daha az iç boşluk */
+            margin-bottom: 8px;
+            padding: 8px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            font-size: 14px; /* Mobil için font boyutu */
+            font-size: 14px;
         }
 
         .comment-form button {
             background-color: #5cb85c;
             color: white;
             border: none;
-            padding: 8px 12px; /* Mobil için daha az iç boşluk */
+            padding: 8px 12px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 14px; /* Mobil için font boyutu */
+            font-size: 14px;
             margin: 4px 2px;
             cursor: pointer;
             border-radius: 4px;
@@ -77,8 +77,8 @@
         }
 
         .kutu {
-            width: calc(50% - 15px); /* İki kutu yan yana, kenar boşlukları dahil */
-            margin: 7.5px; /* Kutular arası boşluk */
+            width: calc(50% - 15px);
+            margin: 7.5px;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -116,7 +116,7 @@
         /* 768px'den büyük ekranlar için */
         @media (min-width: 768px) {
             .kutular-container {
-                justify-content: center; /* Ürünleri sola yaslamak için */
+                justify-content: center;
             }
 
             .kutu {
@@ -126,6 +126,32 @@
            .sube a {
                font-size: 18px;
            }
+        }
+         /* Footer Sosyal Link Stili */
+        .social-container {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .social-link {
+           display: flex;
+           align-items: center;
+           text-decoration: none;
+           color: #333; /* yazı rengi */
+        }
+        .social-logo{
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+         .social-link span{
+            font-size: 14px; /* Yazı boyutunu küçültme */
+        }
+         @media (min-width: 768px) {
+              .social-link span {
+               font-size: 16px; /* Masaüstü için orjinal font boyutu */
+            }
         }
     </style>
 </head>
@@ -339,7 +365,7 @@ function setCurrentSlide(index) {
 
 function updateSlider() {
     const slider = document.getElementById('slider');
-    const slides = document.querySelectorAll('.slide'); // Slaytları seç
+    const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
 
     // Slaytları kaydırma
@@ -354,13 +380,13 @@ function updateSlider() {
 // Otomatik Kaydırma (İsteğe Bağlı)
 setInterval(() => {
     const slides = document.querySelectorAll('.slide');
-    currentSlide = (currentSlide + 1) % slides.length; // Toplam slayt sayısına göre güncelleme
+    currentSlide = (currentSlide + 1) % slides.length;
     updateSlider();
-}, 5000); // 5 saniyede bir otomatik kaydırma
+}, 5000);
 
     </script>
     <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
 </body>
-                                                                                             </html>
+        </html>
