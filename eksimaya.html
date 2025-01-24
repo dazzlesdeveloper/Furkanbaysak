@@ -37,12 +37,12 @@
         }
 
         header {
-            background-color: #fff;
-            padding: 40px;
-            text-align: center; /* Başlığı ortala */
+             background-color: #fff;
+            padding: 20px 0; /* Üst ve alttan padding */
+            text-align: center;
             border-bottom: 1px solid #eee;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-              position: relative; /* back button için */
+             position: relative; /* back button için */
         }
 
         h1 {
@@ -50,6 +50,7 @@
             margin-bottom: 10px;
             color: #e44d26;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+             display: inline-block; /* H1 içeriğine göre boyutlanır */
         }
 
         p.aciklama {
@@ -117,6 +118,9 @@
         
         /* Mobil ekranlar için düzenleme */
          @media (max-width: 768px) {
+             header {
+               padding: 10px 0;
+             }
             main {
               padding: 20px;
             }
