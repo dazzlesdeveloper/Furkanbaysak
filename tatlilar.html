@@ -7,26 +7,29 @@
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
     <style>
-         /* Genel Stil Ayarları */
-         .back-button {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            font-size: 1.5em;
-            padding: 7px 7px;
-            background-color: #f2f2f2;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+        /* Genel Stil Ayarları */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f8f8;
             color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Sayfa yüksekliği en az 100vh olsun */
+        }
 
         header {
             background-color: #fff;
-            padding: 40px;
+             padding: 20px 0;
             text-align: center;
             border-bottom: 1px solid #eee;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+             position: relative; /* back button için */
+              display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         h1 {
@@ -85,17 +88,17 @@
         }
           /* Geri Butonu Stilleri */
           .back-button {
-            position: absolute; /* Mutlak konumlandırma */
-            top: 10px; /* Üstten 10px boşluk */
-            left: 10px; /* Soldan 10px boşluk */
-            font-size: 1.5em; /* Buton yazısının boyutu */
-            padding: 10px 15px; /* Buton iç dolgusu */
-            background-color: #f2f2f2; /* Buton arka plan rengi */
-            border: 1px solid #ccc; /* Buton çerçevesi */
-            border-radius: 5px; /* Buton kenar yuvarlaklığı */
-            cursor: pointer; /* İmleç el şekli olsun */
-            transition: background-color 0.3s ease; /* Animasyon efekti */
-             color: #333; /* Buton yazı rengi */
+              position: absolute;
+            top: 8px;
+            left: 8px;
+            font-size: 1.5em;
+            padding: 7px 7px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            color: #333;
         }
 
          .back-button:hover {
@@ -104,7 +107,7 @@
 </head>
 <body>
     <header>
-        <button class="back-button" onclick="window.location.href='index.html'">🔙</button>
+      <button class="back-button" onclick="window.location.href='index.html'">🔙</button>
         <h1>Tatlılar</h1>
         <p class="aciklama">Furkan Baysak Pastaneleri'nin enfes tatlı çeşitleri çok yakında sizlerle!</p>
     </header>
