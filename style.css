@@ -1,0 +1,295 @@
+/* Genel Stil */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 2px solid black;
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu-icon .line {
+    width: 25px;
+    height: 4px;
+    background-color: black;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100%;
+    background-color: #004c99;
+    color: white;
+    transition: left 0.3s ease;
+    padding: 20px;
+    z-index: 100;
+}
+
+nav.open {
+    left: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+nav ul li {
+    margin: 15px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+}
+
+nav .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ... (Diğer CSS kurallarınız) ... */
+
+.section-content {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.section-content h2 {
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+    margin-bottom: 20px;
+}
+
+
+/* "Hakkında" bölümüne özel stiller */
+#hakkinda p {
+    font-size: 1.2em; /* Yazı boyutunu büyüttük */
+    line-height: 1.6;  /* Satır aralığını artırdık okunabilirliği artırmak için */
+    text-align: center; /* Yazıyı ortaladık */
+    max-width: 800px;  /* Genişliği sınırladık */
+    margin: 20px auto; /* Kenar boşluklarını otomatik ayarlayarak ortaladık */
+    padding: 15px;  /* İsteğe bağlı padding */
+}
+
+/* ... (Diğer CSS kurallarınız) ... */
+
+.kutular-container,
+.subeler-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.kutu,
+.sube {
+    width: calc(45% - 15px); /* Kutuların genişliği %45 olacak */
+    max-width: 200px; /* En fazla 200px genişlik */
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, opacity 0.3s ease;
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 1;
+    margin-bottom: 15px; /* Alt kısmına mesafe ekledim */
+}
+
+/* Fotoğraf Animasyonu */
+.kutu img,
+.sube img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+    object-fit: cover; /* Fotoğrafların boyutlarını düzgün tutmaya yardımcı olur */
+    max-height: 250px; /* Fotoğrafların yüksekliğini sınırlıyoruz */
+}
+
+.kutu:hover,
+.sube:hover {
+    transform: scale(1.05);
+}
+
+.kutu img,
+.sube img {
+    transform: scale(0.9); /* Fotoğraf animasyonu */
+}
+
+.kutu:hover img,
+.sube:hover img {
+    transform: scale(1);
+}
+
+/* "Ürün" ve "Şube" altındaki çizgiyi ekliyorum */
+.kutu h3,
+.sube h3 {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+    margin-bottom: 10px;
+}
+
+/* Mobil Cihazlar İçin */
+@media (max-width: 768px) {
+    .kutular-container,
+    .subeler-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .kutu,
+    .sube {
+        width: calc(50% - 15px); /* Mobilde her sıraya 2 kutu gelecek şekilde */
+        max-width: calc(50% - 15px);
+        box-sizing: border-box;
+    }
+
+    .kutu img,
+    .sube img {
+        height: auto; /* Fotoğrafların boyutunu ekrana uyacak şekilde ayarlıyoruz */
+    }
+
+    /* Fotoğraf ve kutuların daha estetik görünmesi için */
+    .kutu:hover,
+    .sube:hover {
+        transform: scale(1.05); /* Hover efektini daha belirgin yapıyoruz */
+    }
+}
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    object-fit: cover;
+}
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.dot.active {
+    opacity: 1;
+    background-color: #004c99;
+}
+
+.logo {
+    width: 60px; /* Logonun boyutu */
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 50%; /* Yuvarlak logo görünümü */
+    border: 2px solid #000000; /* Çerçeve */
+}
+
+/* Footer ve Sosyal Medya */
+footer {
+    background-color: #004c99; /* Koyu mavi arka plan */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    position: relative;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #f3c623; /* Hover'da sarı renk */
+}
+
+.social-logo {
+    width: 60px; /* Büyük boyutlu logo */
+    height: 60px;
+    margin-right: 12px;
+    border-radius: 50%; /* Yuvarlak logo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

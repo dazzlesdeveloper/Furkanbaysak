@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekşi Mayalı Ekmekler - Furkan Baysak Pastaneleri</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+    <style>
+        /* Genel Stil Ayarları */
+          /* Geri Butonu Stilleri */
+          .back-button {
+            position: absolute; /* Mutlak konumlandırma */
+            top: 10px; /* Üstten 10px boşluk */
+            left: 10px; /* Soldan 10px boşluk */
+            font-size: 1.5em; /* Buton yazısının boyutu */
+            padding: 10px 15px; /* Buton iç dolgusu */
+            background-color: #f2f2f2; /* Buton arka plan rengi */
+            border: 1px solid #ccc; /* Buton çerçevesi */
+            border-radius: 5px; /* Buton kenar yuvarlaklığı */
+            cursor: pointer; /* İmleç el şekli olsun */
+            transition: background-color 0.3s ease; /* Animasyon efekti */
+             color: #333; /* Buton yazı rengi */
+        }
+
+         .back-button:hover {
+            background-color: #e0e0e0; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #e44d26;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        p.aciklama {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        main {
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            max-width: 1200px;
+        }
+
+        /* Ürün Listesi */
+        .urun-listesi {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* Ürün Kartı */
+        .urun-karti {
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+            text-align: center;
+             display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .urun-karti:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .urun-adi {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+           
+        }
+        
+       .urun-fiyat {
+            font-size: 1.3em;
+            color: #e44d26;
+            font-weight: bold;
+        }
+        
+        /* Ekran Boyutu Ayarları */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            p.aciklama {
+                font-size: 1em;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            .urun-listesi {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .urun-karti {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="window.location.href='index.html'">🔙</button>
+        <h1>Ekşi Mayalı Ekmeklerimiz</h1>
+        <p class="aciklama">Doğal ekşi maya ile hazırlanan, geleneksel lezzetlerimiz.</p>
+    </header>
+    <main>
+        <ul class="urun-listesi">
+            <!-- 1. Ürün -->
+            <li class="urun-karti">
+                    <h2 class="urun-adi">Tam Buğday Ata Ekmeği</h2>
+                     <p class="urun-fiyat">₺45</p>
+            </li>
+
+            <!-- 2. Ürün -->
+            <li class="urun-karti">
+                    <h2 class="urun-adi">Anadolu Tatında Çavdar Ekmeği</h2>
+                    <p class="urun-fiyat">₺35</p>
+            </li>
+
+           <!-- 3. Ürün -->
+           <li class="urun-karti">
+                   <h2 class="urun-adi">Çavdar Ekmeği</h2>
+                    <p class="urun-fiyat">₺60</p>
+           </li>
+
+           <!-- 4. Ürün -->
+            <li class="urun-karti">
+                    <h2 class="urun-adi">Tahıllı Siyez Ekmeği</h2>
+                      <p class="urun-fiyat">₺60</p>
+            </li>
+            
+               <!-- 5. Ürün -->
+           <li class="urun-karti">
+                   <h2 class="urun-adi">Siyez Ekmeği</h2>
+                    <p class="urun-fiyat">₺55</p>
+           </li>
+                <!-- 6. Ürün -->
+           <li class="urun-karti">
+                    <h2 class="urun-adi">Jalapeno Zeytin Kekikli Ekmeği</h2>
+                      <p class="urun-fiyat">₺70</p>
+           </li>
+
+            <!-- 7. Ürün -->
+            <li class="urun-karti">
+                    <h2 class="urun-adi">Üzüm Cevizli Köy Ekmeği</h2>
+                      <p class="urun-fiyat">₺50</p>
+            </li>
+
+           <!-- 8. Ürün -->
+            <li class="urun-karti">
+                    <h2 class="urun-adi">Köy Baget</h2>
+                      <p class="urun-fiyat">₺26</p>
+           </li>
+        </ul>
+    </main>
+</body>
+</html>

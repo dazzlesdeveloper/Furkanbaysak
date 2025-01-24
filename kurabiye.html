@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurabiyeler - Furkan Baysak Pastaneleri</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+    <style>
+        /* Genel Stil Ayarları */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+              position: relative;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #e44d26;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        p.aciklama {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        main {
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            max-width: 1200px;
+        }
+
+        /* Ürün Listesi */
+        .urun-listesi {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* Ürün Kartı */
+        .urun-karti {
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .urun-karti:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .urun-adi {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .urun-fiyat {
+            font-size: 1.3em;
+            color: #e44d26;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+         /* Geri Butonu Stilleri */
+        .back-button {
+            position: absolute; /* Mutlak konumlandırma */
+            top: 10px; /* Üstten 10px boşluk */
+            left: 10px; /* Soldan 10px boşluk */
+            font-size: 1.5em; /* Buton yazısının boyutu */
+            padding: 10px 15px; /* Buton iç dolgusu */
+            background-color: #f2f2f2; /* Buton arka plan rengi */
+            border: 1px solid #ccc; /* Buton çerçevesi */
+            border-radius: 5px; /* Buton kenar yuvarlaklığı */
+            cursor: pointer; /* İmleç el şekli olsun */
+            transition: background-color 0.3s ease; /* Animasyon efekti */
+            color: #333; /* Buton yazı rengi */
+        }
+
+        .back-button:hover {
+            background-color: #e0e0e0; /* Buton üzerine gelince arka plan rengi değişsin */
+        }
+
+        /* Ekran Boyutu Ayarları */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            p.aciklama {
+                font-size: 1em;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            .urun-listesi {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .urun-karti {
+                width: 100%;
+            }
+              .back-button {
+                font-size: 1.2em; /* Mobil görünümde buton yazı boyutu küçült */
+                padding: 8px 12px; /* Mobil görünümde buton iç dolgusu küçült */
+            }
+        }
+    </style>
+</head>
+<body>
+     <button class="back-button" onclick="window.location.href='index.html'">🔙</button>
+    <header>
+        <h1>Kurabiyelerimiz</h1>
+        <p class="aciklama">Furkan Baysak Pastaneleri'nin lezzetli kurabiye çeşitleri.</p>
+    </header>
+    <main>
+        <ul class="urun-listesi">
+            <li class="urun-karti">
+                <h2 class="urun-adi">Amerikan Cookie</h2>
+                <p class="urun-fiyat"></p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Bademli Biscotti</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Beyaz Kandil Simidi</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Beypazarı Kurusu</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Biberli Cookie</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Cevizli Mektup Kadayıf</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Chocolate Cookie</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Coffe Cookie</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Çay Saati</h2>
+                <p class="urun-fiyat"></p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Çikolatalı Biscotti</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+               <li class="urun-karti">
+                <h2 class="urun-adi">Çikolatalı Lokmalık Tart</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Elmas Cookie</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+               <li class="urun-karti">
+                <h2 class="urun-adi">Elmalı Poğaça</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+              <li class="urun-karti">
+                 <h2 class="urun-adi">Fıstıklı Cookie</h2>
+                  <p class="urun-fiyat"></p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Fıstıklı Mektup Kadayıf</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Hindistan Cevizli Coco</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+               <li class="urun-karti">
+                <h2 class="urun-adi">Hindistan Cevizli Lokmalık Kurabiye</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Kapsül Kurabiye</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Limonlu Cookie</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Lokmalık Tart</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+             <li class="urun-karti">
+                 <h2 class="urun-adi">Lotus Bisküvili Cookie</h2>
+                  <p class="urun-fiyat"></p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Mini Cookie Coffe</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Mini Cookie Fıstıklı Kesme</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Mini Cookie Limon</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Mini Cookie Nut</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Peynirli Kekikli Cookie</h2>
+                <p class="urun-fiyat"></p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Susamlı Cookie</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Tahinli Cevizli Cookie</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Tarçınlı Lokmalık Kurabiye</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Yaprak Kurabiye</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Paşa Kek</h2>
+                <p class="urun-fiyat"></p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Brownie Cookie</h2>
+                <p class="urun-fiyat"></p>
+            </li>
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Çilekli Cookie</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Kakaolu Muffin</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+             <li class="urun-karti">
+                 <h2 class="urun-adi">Mantar Kurabiye</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Nut Cookie</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Sade Muffin</h2>
+                <p class="urun-fiyat"></p>
+            </li>
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Çam Ağacı Kurabiye</h2>
+                 <p class="urun-fiyat"></p>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>
