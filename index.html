@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .sube a {
-            font-size: 18px;
+            font-size: 16px; /* Mobil için daha küçük font */
             font-weight: bold;
             color: black;
             text-decoration: none;
@@ -27,39 +27,40 @@
 
         /* Yorum Alanı Stilleri */
         .comment-section {
-            margin-top: 30px;
-            padding: 20px;
+            margin-top: 20px; /* Mobil için daha az boşluk */
+            padding: 15px; /* Mobil için daha az iç boşluk */
             background-color: #f9f9f9;
             border-radius: 8px;
         }
 
         .comment-section h3 {
-            margin-bottom: 15px;
+            margin-bottom: 10px; /* Mobil için daha az boşluk */
+            font-size: 1.2em; /* Mobil için font boyutu */
         }
 
         .comment-form {
             display: flex;
             flex-direction: column;
-            margin-bottom: 20px;
+            margin-bottom: 15px; /* Mobil için daha az boşluk */
         }
 
         .comment-form input, .comment-form textarea, .comment-form select {
-            margin-bottom: 10px;
-            padding: 10px;
+            margin-bottom: 8px; /* Mobil için daha az boşluk */
+            padding: 8px; /* Mobil için daha az iç boşluk */
             border: 1px solid #ddd;
             border-radius: 4px;
-            font-size: 16px;
+            font-size: 14px; /* Mobil için font boyutu */
         }
 
         .comment-form button {
             background-color: #5cb85c;
             color: white;
             border: none;
-            padding: 10px 15px;
+            padding: 8px 12px; /* Mobil için daha az iç boşluk */
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
+            font-size: 14px; /* Mobil için font boyutu */
             margin: 4px 2px;
             cursor: pointer;
             border-radius: 4px;
@@ -70,37 +71,39 @@
 
         /* Ürün Kutuları Stilleri */
         .kutular-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; /* Ürünleri ortalamak için */
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: center;
         }
 
         .kutu {
-            width: calc(40% - 20px); /* İki kutu yan yana */
-            margin: 10px;
-            padding: 15px;
+            width: calc(50% - 15px); /* İki kutu yan yana, kenar boşlukları dahil */
+            margin: 7.5px; /* Kutular arası boşluk */
+            padding: 10px;
             border: 1px solid #ddd;
             border-radius: 8px;
             text-align: center;
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            box-sizing: border-box; /* padding ve border'ın kutu boyutunu etkilememesi için */
+            box-sizing: border-box;
+            transition: transform 0.2s ease-in-out;
+        }
+        .kutu:hover{
+           transform: scale(1.05);
         }
 
         .kutu img {
             max-width: 100%;
             height: auto;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             transition: transform 0.3s ease;
+
         }
 
-        .kutu img:hover {
-            transform: scale(1.1);
-        }
 
         .kutu p {
             font-weight: bold;
-            font-size: 16px;
+            font-size: 14px;
             color: #333;
         }
 
@@ -117,8 +120,12 @@
             }
 
             .kutu {
-                width: 200px;
-            }
+               width: 200px;
+               margin: 10px;
+           }
+           .sube a {
+               font-size: 18px;
+           }
         }
     </style>
 </head>
@@ -169,12 +176,12 @@
         <!-- Ürünler Bölümü -->
         <section id="urunler" class="section-content">
             <h2>Ürünler</h2>
-            <div class="kutular-container">
+           <div class="kutular-container">
                 <div class="kutu">
-                    <a href="eksimaya.html">
-                        <img src="ekşimaya.png" alt="Ekşi Maya">
-                        <p>EKŞİ MAYALILAR</p>
-                    </a>
+                   <a href="eksimaya.html">
+                       <img src="ekşimaya.png" alt="Ekşi Maya">
+                       <p>EKŞİ MAYALILAR</p>
+                   </a>
                 </div>
                 <div class="kutu">
                     <a href="pasta.html">
@@ -186,33 +193,33 @@
                     <a href="kurabiye.html">
                         <img src="kurabiye.png" alt="Kurabiyeler">
                         <p>KURABİYELER</p>
-                    </a>
-                </div>
+                     </a>
+               </div>
+               <div class="kutu">
+                   <a href="şarküteri.html">
+                       <img src="şarküteri.png" alt="Şarküteri">
+                       <p>ŞARKÜTERİ</p>
+                   </a>
+               </div>
                 <div class="kutu">
-                    <a href="şarküteri.html">
-                        <img src="şarküteri.png" alt="Şarküteri">
-                        <p>ŞARKÜTERİ</p>
-                    </a>
-                </div>
-                <div class="kutu">
-                    <a href="tatlilar.html">
-                        <img src="tatlilar.png" alt="Tatlılar">
-                        <p>TATLILAR</p>
-                    </a>
+                   <a href="tatlilar.html">
+                       <img src="tatlilar.png" alt="Tatlılar">
+                       <p>TATLILAR</p>
+                   </a>
                 </div>
                 <div class="kutu">
                     <a href="icecekler.html">
-                        <img src="icecekler.png" alt="İçecekler">
-                        <p>İÇECEKLER</p>
-                    </a>
+                       <img src="icecekler.png" alt="İçecekler">
+                       <p>İÇECEKLER</p>
+                   </a>
                 </div>
                  <div class="kutu">
-                    <a href="dondurmalar.html">
-                        <img src="dondurma.png" alt="Dondurmalar">
-                        <p>DONDURMALAR</p>
+                   <a href="dondurmalar.html">
+                       <img src="dondurma.png" alt="Dondurmalar">
+                       <p>DONDURMALAR</p>
                     </a>
                 </div>
-            </div>
+           </div>
         </section>
 
         <!-- Şubeler Bölümü -->
@@ -356,4 +363,4 @@ setInterval(() => {
         document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
 </body>
-</html>
+                                                                                             </html>
