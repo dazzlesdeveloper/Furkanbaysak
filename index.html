@@ -132,26 +132,32 @@
             display: flex;
             justify-content: center;
             padding: 10px 0;
+             background-color: #333; /* Arka plan rengi eklendi */
         }
 
         .social-link {
            display: flex;
            align-items: center;
            text-decoration: none;
-           color: #333; /* yazı rengi */
+           color: #fff; /* yazı rengi beyaz */
         }
         .social-logo{
-            width: 20px;
-            height: 20px;
+            width: 30px; /* Logo boyutunu büyüt */
+            height: 30px; /* Logo boyutunu büyüt */
             margin-right: 5px;
         }
          .social-link span{
             font-size: 14px; /* Yazı boyutunu küçültme */
         }
-         @media (min-width: 768px) {
+          @media (min-width: 768px) {
               .social-link span {
                font-size: 16px; /* Masaüstü için orjinal font boyutu */
             }
+         .social-logo{
+            width: 35px; /* Logo boyutunu büyüt */
+            height: 35px; /* Logo boyutunu büyüt */
+            margin-right: 5px;
+        }
         }
     </style>
 </head>
@@ -389,4 +395,4 @@ setInterval(() => {
         document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
 </body>
-        </html>
+                          </html>
