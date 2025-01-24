@@ -9,23 +9,24 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
     <style>
         /* Genel Stil Ayarları */
-          /* Geri Butonu Stilleri */
-          .back-button {
-            position: absolute; /* Mutlak konumlandırma */
-            top: 10px; /* Üstten 10px boşluk */
-            left: 10px; /* Soldan 10px boşluk */
-            font-size: 1.5em; /* Buton yazısının boyutu */
-            padding: 10px 15px; /* Buton iç dolgusu */
-            background-color: #f2f2f2; /* Buton arka plan rengi */
-            border: 1px solid #ccc; /* Buton çerçevesi */
-            border-radius: 5px; /* Buton kenar yuvarlaklığı */
-            cursor: pointer; /* İmleç el şekli olsun */
-            transition: background-color 0.3s ease; /* Animasyon efekti */
-             color: #333; /* Buton yazı rengi */
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.5em;
+            padding: 10px 15px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            color: #333;
         }
 
-         .back-button:hover {
-            background-color: #e0e0e0; }
+        .back-button:hover {
+            background-color: #e0e0e0;
+        }
+
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: #f8f8f8;
@@ -37,41 +38,40 @@
 
         header {
             background-color: #fff;
-            padding: 40px;
+            padding: 20px;
             text-align: center;
             border-bottom: 1px solid #eee;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+             position: relative; /* back button için */
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             margin-bottom: 10px;
             color: #e44d26;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
-
-        p.aciklama {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 30px;
-        }
+        
 
         main {
-            padding: 40px;
+            padding: 20px;
             background-color: #fff;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin: 30px auto;
-            max-width: 1200px;
+            margin: 20px auto;
+            max-width: 100%; /* Sayfa genişliğinde kapla */
         }
 
         /* Ürün Listesi */
         .urun-listesi {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-wrap: wrap; /* Taşmayı engeller */
+            justify-content: center; /* İçerikleri ortalar */
+            gap: 15px; /* Kutular arası boşluk */
             padding: 0;
             list-style: none;
+            margin:0 auto; /* Merkezi hizala */
+             max-width: 100%; /* Maksimum genişliği ayarladık */
         }
 
         /* Ürün Kartı */
@@ -81,58 +81,62 @@
             overflow: hidden;
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            padding: 20px;
-             display: flex;
+            padding: 15px;
+              display: flex;
             flex-direction: column;
-              text-align: center; /* İçeriği ortala */
+            align-items: center; /* İçeriği yatayda ortala */
+            text-align: center; /* Yazıları ortala */
+            width: calc(50% - 30px); /* İki sütun için (100% / 2 - aradaki boşluk) */
+               min-width: 150px;
+             
         }
-
+     
         .urun-karti:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
         }
 
-
         .urun-adi {
-            font-size: 1.5em;
+           font-size: 1.2em; /* Yazı boyutunu küçült */
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             color: #333;
-             white-space: nowrap;
+            white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-           
         }
-        
-       .urun-fiyat {
-            font-size: 1.3em;
+
+        .urun-fiyat {
+            font-size: 1em;
             color: #e44d26;
             font-weight: bold;
-           margin-top: auto; /* Fiyatı en alta yasla */
-            
+               margin-top: auto; /* Fiyatı en alta yasla */
         }
-        
-        /* Ekran Boyutu Ayarları */
-        @media (max-width: 768px) {
+         /* Mobil ekranlar için düzenleme */
+       @media (max-width: 768px) {
             h1 {
-                font-size: 2.5em;
-            }
-
-            p.aciklama {
-                font-size: 1em;
+                font-size: 1.8em;
             }
 
             main {
-                padding: 20px;
+                padding: 10px;
+                margin: 10px auto; /* kenarlardan boşluk ayarla */
             }
-
-            .urun-listesi {
-                grid-template-columns: 1fr;
-                gap: 20px;
+                .urun-listesi {
+                gap: 10px;
             }
-
-            .urun-karti {
-                width: 100%;
+            
+              .urun-karti {
+               width: calc(100% - 20px);
+                  min-width: auto;
+            }
+          
+            .urun-adi {
+                 font-size: 1.1em;
+                 margin-bottom: 5px;
+            }
+               .urun-fiyat{
+                 font-size: 0.9em;
             }
         }
     </style>
