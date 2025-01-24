@@ -5,9 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurabiyeler - Furkan Baysak Pastaneleri</title>
     <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
     <style>
         /* Genel Stil Ayarları */
+         .back-button {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            font-size: 1.5em;
+            padding: 7px 7px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            color: #333;
+        }
+
+        .back-button:hover {
+            background-color: #e0e0e0;
+        }
+
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: #f8f8f8;
@@ -15,22 +34,25 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-              position: relative;
         }
 
-        header {
+         header {
             background-color: #fff;
-            padding: 40px;
-            text-align: center;
+            padding: 20px 0;
             border-bottom: 1px solid #eee;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex; /* Flexbox kullan */
+            justify-content: center; /* Yatayda ortala */
+            align-items: center; /* Dikeyde ortala */
+            position: relative; /* back button için */
         }
 
         h1 {
             font-size: 3em;
-            margin-bottom: 10px;
+             margin: 0; /* H1'in kendi marginini sıfırla */
             color: #e44d26;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+          
         }
 
         p.aciklama {
@@ -55,6 +77,7 @@
             gap: 30px;
             padding: 0;
             list-style: none;
+            
         }
 
         /* Ürün Kartı */
@@ -65,16 +88,18 @@
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             padding: 20px;
-            text-align: center;
-            display: flex;
+             display: flex;
             flex-direction: column;
             align-items: center;
+             text-align: center;
+             
         }
 
         .urun-karti:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
         }
+
 
         .urun-adi {
             font-size: 1.5em;
@@ -85,67 +110,59 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
-
-        .urun-fiyat {
+        
+       .urun-fiyat {
             font-size: 1.3em;
             color: #e44d26;
             font-weight: bold;
+           margin-top: auto;
             margin-bottom: 10px;
         }
-
-         /* Geri Butonu Stilleri */
-        .back-button {
-            position: absolute; /* Mutlak konumlandırma */
-            top: 10px; /* Üstten 10px boşluk */
-            left: 10px; /* Soldan 10px boşluk */
-            font-size: 1.5em; /* Buton yazısının boyutu */
-            padding: 10px 15px; /* Buton iç dolgusu */
-            background-color: #f2f2f2; /* Buton arka plan rengi */
-            border: 1px solid #ccc; /* Buton çerçevesi */
-            border-radius: 5px; /* Buton kenar yuvarlaklığı */
-            cursor: pointer; /* İmleç el şekli olsun */
-            transition: background-color 0.3s ease; /* Animasyon efekti */
-            color: #333; /* Buton yazı rengi */
-        }
-
-        .back-button:hover {
-            background-color: #e0e0e0; /* Buton üzerine gelince arka plan rengi değişsin */
-        }
-
-        /* Ekran Boyutu Ayarları */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-
-            p.aciklama {
-                font-size: 1em;
-            }
-
+        
+        /* Mobil ekranlar için düzenleme */
+         @media (max-width: 768px) {
+             header {
+               padding: 10px 0;
+                display: flex; /* Flexbox kullan */
+            justify-content: center; /* Yatayda ortala */
+            align-items: center; /* Dikeyde ortala */
+                }
             main {
-                padding: 20px;
+              padding: 20px;
             }
 
-            .urun-listesi {
-                grid-template-columns: 1fr;
-                gap: 20px;
+           .urun-listesi {
+               display: flex;
+            flex-wrap: wrap;
+             justify-content: center;
+            gap: 15px;
             }
-
-            .urun-karti {
-                width: 100%;
+           .urun-karti{
+               width: calc(100% - 20px);
+                 min-width: auto;
             }
-              .back-button {
+            h1 {
+              font-size: 2.5em;
+                 margin: 0; /* H1'in kendi marginini sıfırla */
+           }
+           .urun-adi {
+               font-size: 1.2em;
+              margin-bottom: 5px;
+           }
+           .urun-fiyat{
+                font-size: 1.1em;
+           }
+               .back-button {
                 font-size: 1.2em; /* Mobil görünümde buton yazı boyutu küçült */
-                padding: 8px 12px; /* Mobil görünümde buton iç dolgusu küçült */
+                padding: 5px 5px; /* Mobil görünümde buton iç dolgusu küçült */
             }
         }
     </style>
 </head>
 <body>
-     <button class="back-button" onclick="window.location.href='index.html'">🔙</button>
-    <header>
+     <header>
+        <button class="back-button" onclick="window.location.href='index.html'">🔙</button>
         <h1>Kurabiyelerimiz</h1>
-        <p class="aciklama">Furkan Baysak Pastaneleri'nin lezzetli kurabiye çeşitleri.</p>
     </header>
     <main>
         <ul class="urun-listesi">
