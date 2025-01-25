@@ -8,69 +8,176 @@
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <style>
-        .sube a {
-            font-size: 16px;
-            font-weight: bold;
-            color: black;
-            text-decoration: none;
-            display: block;
-            padding: 8px;
+        /* Genel Stil Ayarları */
+         .back-button {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            font-size: 1.5em;
+            padding: 7px 7px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            color: #333;
         }
 
-        .sube a:hover {
-            background-color: #f0f0f0;
+        .back-button:hover {
+            background-color: #e0e0e0;
         }
-
-        .location-icon {
-            margin-right: 8px;
+         body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
-
-        /* Yorum Alanı Stilleri */
-        .comment-section {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
+        header {
+           background-color: #fff;
+           padding: 20px 0;
+           border-bottom: 1px solid #eee;
+           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           position: relative;
+       }
+       .logo-container {
+            display: flex;
+            align-items: center;
         }
-
-        .comment-section h3 {
-            margin-bottom: 10px;
-            font-size: 1.2em;
+        .logo {
+            max-width: 50px;
+             margin-right: 10px;
         }
-
-        .comment-form {
+         h1 {
+             font-size: 2em;
+             color: #e44d26;
+              margin: 0;
+             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+          }
+           /* Yandan Menü */
+        .menu-icon {
             display: flex;
             flex-direction: column;
-            margin-bottom: 15px;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+             cursor: pointer;
+            margin-right: 20px;
+        }
+        .menu-icon .line {
+            width: 100%;
+            height: 3px;
+            background-color: #333;
+            transition: all 0.3s ease;
+        }
+         nav#side-menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+             height: 100%;
+             background-color: #fff;
+             z-index: 1000;
+            padding-top: 60px;
+             transition: left 0.3s ease;
+            overflow-y: auto;
+             box-shadow: 2px 0 5px rgba(0,0,0,0.2);
         }
 
-        .comment-form input, .comment-form textarea, .comment-form select {
-            margin-bottom: 8px;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
+         nav#side-menu.open {
+            left: 0;
         }
 
-        .comment-form button {
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-            margin: 4px 2px;
+         nav#side-menu ul {
+            list-style: none;
+             padding: 0;
+           margin: 0;
+        }
+
+        nav#side-menu ul li a {
+            display: block;
+             padding: 15px 20px;
+             text-decoration: none;
+              color: #333;
+            font-weight: bold;
+             transition: background-color 0.3s ease;
+        }
+         nav#side-menu ul li a:hover {
+            background-color: #f0f0f0;
+        }
+         nav#side-menu .close-btn {
+            position: absolute;
+             top: 10px;
+            right: 10px;
+            font-size: 24px;
+             cursor: pointer;
+            background: none;
+             border: none;
+           outline: none;
+         }
+         /* Slider Stilleri */
+        .slider-container {
+             width: 100%;
+             overflow: hidden;
+            position: relative;
+        }
+        .slider {
+             display: flex;
+             transition: transform 0.5s ease;
+        }
+        .slide {
+             width: 100%;
+             flex-shrink: 0;
+        }
+          .slide img {
+            width: 100%;
+           height: auto;
+         }
+
+        .dots {
+           position: absolute;
+            bottom: 10px;
+             left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+          .dot {
+            width: 10px;
+             height: 10px;
+           border-radius: 50%;
+            background-color: #bbb;
+            margin: 0 5px;
             cursor: pointer;
-            border-radius: 4px;
+           transition: background-color 0.3s ease;
         }
-        .comment-form button:hover{
-            background-color: #4cae4c;
+         .dot.active {
+             background-color: #e44d26;
         }
-
-        /* Ürün Kutuları Stilleri */
-        .kutular-container {
+          /* Section Stilleri */
+         main {
+            padding: 20px;
+        }
+          .section-content {
+             padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+           margin-bottom: 20px;
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+         .section-content h2 {
+            margin-bottom: 15px;
+             font-size: 1.8em;
+             color: #e44d26;
+        }
+         .section-content p {
+            line-height: 1.6;
+        }
+        /* Ürünler Stilleri */
+         .kutular-container {
            display: flex;
            flex-wrap: wrap;
            justify-content: center;
@@ -113,19 +220,82 @@
             display: block;
         }
 
-        /* 768px'den büyük ekranlar için */
-        @media (min-width: 768px) {
-            .kutular-container {
-                justify-content: center;
-            }
+       /* Şubeler Stilleri */
+       .subeler-container {
+            display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+           gap: 15px;
+       }
+       .sube {
+            padding: 10px;
+           text-align: center;
+            border-radius: 8px;
+           background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+       .sube a {
+            font-size: 16px;
+            font-weight: bold;
+             color: black;
+           text-decoration: none;
+           display: block;
+             padding: 8px;
+        }
 
-            .kutu {
-               width: 200px;
-               margin: 10px;
-           }
-           .sube a {
-               font-size: 18px;
-           }
+       .sube a:hover {
+           background-color: #f0f0f0;
+       }
+
+        .location-icon {
+            margin-right: 8px;
+        }
+
+      /* Pasta Sipariş Stilleri */
+       .order-form-section {
+            margin-top: 20px;
+            padding: 15px;
+           background-color: #f9f9f9;
+           border-radius: 8px;
+       }
+         .order-form-section h3 {
+             margin-bottom: 10px;
+           font-size: 1.2em;
+       }
+       .order-form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+        .order-form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        .order-form input, .order-form textarea, .order-form select {
+             margin-bottom: 8px;
+           padding: 8px;
+            border: 1px solid #ddd;
+             border-radius: 4px;
+             font-size: 14px;
+        }
+        .order-form button {
+           background-color: #5cb85c;
+           color: white;
+            border: none;
+           padding: 8px 12px;
+            text-align: center;
+             text-decoration: none;
+            display: inline-block;
+           font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+           border-radius: 4px;
+        }
+        .order-form button:hover{
+           background-color: #4cae4c;
+       }
+        .order-form textarea {
+            height: 100px;
         }
          /* Footer Sosyal Link Stili */
         .social-container {
@@ -146,11 +316,12 @@
             height: 55px; /* Logo boyutunu büyüt */
             margin-right: 25px;
         }
-         .social-link span{
+        .social-link span{
             font-size: 14px; /* Yazı boyutunu küçültme */
         }
+        /* 768px ve üzeri ekranlar */
           @media (min-width: 768px) {
-              .social-link span {
+               .social-link span {
                font-size: 16px; /* Masaüstü için orjinal font boyutu */
             }
          .social-logo{
@@ -158,7 +329,34 @@
             height: 55px; /* Logo boyutunu büyüt */
             margin-right: 25px;
         }
-        }
+           header {
+                padding: 20px 20px;
+                 justify-content: space-between;
+           }
+             h1 {
+                font-size: 2.5em;
+            }
+             .menu-icon {
+               margin-right: 0;
+           }
+            main {
+                padding: 20px 30px;
+            }
+              .section-content h2 {
+               font-size: 2em;
+           }
+               .kutu {
+               width: 200px;
+               margin: 10px;
+           }
+             .sube a {
+                font-size: 18px;
+            }
+             .subeler-container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+         }
+
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -169,7 +367,7 @@
             <div class="line"></div>
             <div class="line"></div>
         </div>
-        <div class="logo-container">
+         <div class="logo-container">
             <img src="logo.png" alt="Furkan Baysak Pastaneleri Logo" class="logo">
             <h1>FURKAN BAYSAK</h1>
         </div>
@@ -182,7 +380,7 @@
             <li><a href="#hakkinda">Hakkında</a></li>
             <li><a href="#urunler">Ürünler</a></li>
             <li><a href="#subeler">Şubeler</a></li>
-            <li><a href="#yorumlar">Yorum Yap</a></li>
+            <li><a href="#siparis">Pasta Siparişi Ver</a></li>
         </ul>
     </nav>
 
@@ -287,7 +485,7 @@
         <!-- Şubeler Bölümü -->
         <section id="subeler" class="section-content">
             <h2>Şubeler</h2>
-            <div class="subeler-container">
+           <div class="subeler-container">
                 <div class="sube">
                     <p><span class="location-icon">📍</span><a href="kayseri.html">KAYSERİ</a></p>
                 </div>
@@ -305,29 +503,69 @@
                 </div>
             </div>
         </section>
-          <!-- Yorumlar Bölümü -->
-        <section id="yorumlar" class="section-content">
-             <div class="comment-section">
-                <h3>Yorum Yap</h3>
-                <div class="comment-form">
-                    <select id="comment-branch" required>
-                      <option value="">Şube Seçiniz</option>
-                      <option value="Kayseri">Kayseri</option>
-                      <option value="Aksaray">Aksaray</option>
-                      <option value="Niğde">Niğde</option>
-                      <option value="Nevşehir">Nevşehir</option>
-                      <option value="Sivas">Sivas</option>
-                    </select>
-                   <input type="text" id="comment-name" placeholder="Adınız Soyadınız" required>
-                   <input type="tel" id="comment-phone" placeholder="Telefon Numaranız" required>
-                    <textarea id="comment-text" placeholder="Yorumunuz" rows="4" required></textarea>
-                     <button id="submit-comment">Yorum Gönder</button>
-                </div>
-            </div>
-        </section>
-    </main>
+           <!-- Pasta Siparişi Bölümü -->
+        <section id="siparis" class="section-content">
+             <div class="order-form-section">
+                <h3>Pasta Siparişi Ver</h3>
+                <div class="order-form">
+                     <label for="customer-name">Müşteri Adı Soyadı:</label>
+                    <input type="text" id="customer-name" required>
 
-    <!-- Footer -->
+                    <label for="branch-name">Şube Adı:</label>
+                    <select id="branch-name" required>
+                        <option value="">Şube Seçiniz</option>
+                        <option value="Kayseri">Kayseri</option>
+                        <option value="Aksaray">Aksaray</option>
+                        <option value="Niğde">Niğde</option>
+                        <option value="Nevşehir">Nevşehir</option>
+                        <option value="Sivas">Sivas</option>
+                    </select>
+
+                    <label for="customer-phone">Telefon Numarası:</label>
+                    <input type="tel" id="customer-phone" required>
+
+                     <label for="cake-size">Pasta Boyutu:</label>
+                    <select id="cake-size" required>
+                        <option value="">Boyut Seçiniz</option>
+                        <option value="1">1 Nolu - 4-6 Kişilik</option>
+                        <option value="2">2 Nolu - 8-10 Kişilik</option>
+                        <option value="3">3 Nolu - 10-15 Kişilik</option>
+                    </select>
+
+                     <label for="cake-shape">Pasta Şekli (Yuvarlak, Kare, Kalp, Diş, Araba, Rakam, Harf vb.):</label>
+                    <input type="text" id="cake-shape" placeholder="Lütfen istediğiniz şekli belirtiniz.">
+
+                    <label for="extra-layer">Ekstra Ara Kat (1, 2 veya 3):</label>
+                    <input type="number" id="extra-layer" min="0" max="3" placeholder="İsteğe Bağlı">
+
+                    <label for="cake-flavor">Kek ve Krema Farklılığı:</label>
+                    <textarea id="cake-flavor" placeholder="İstediğiniz kek ve krema türlerini belirtiniz."></textarea>
+
+                    <label for="cake-content">Pasta İçeriği (Kuruyemiş, Çikolata, Meyveli, Full İçerik):</label>
+                    <textarea id="cake-content" placeholder="Pasta içeriğinde olmasını istediklerinizi belirtiniz."></textarea>
+
+                    <label for="cream-and-color">Pasta Kreması ve Rengi (Şanti, Sos, Şeker Hamuru, Renk):</label>
+                    <input type="text" id="cream-and-color" placeholder="Kreması ve rengini belirtiniz.">
+
+                   <label for="cake-base">Pasta Altlığı (Mukavva, Şeker Hamuru, Ahşap):</label>
+                   <select id="cake-base" required>
+                        <option value="">Altlık Seçiniz</option>
+                        <option value="Mukavva">Mukavva</option>
+                        <option value="Şeker Hamuru">Şeker Hamuru</option>
+                        <option value="Ahşap">Ahşap</option>
+                    </select>
+
+                    <label for="cake-details">Pasta Detayları:</label>
+                     <textarea id="cake-details" placeholder="Eklemek istediğiniz detayları ve örnek resim ekleme linkini belirtiniz."></textarea>
+
+                    <label for="order-notes">Not:</label>
+                     <textarea id="order-notes" placeholder="Eklemek istediğiniz notları buraya yazınız."></textarea>
+                     <button id="submit-order">Siparişi Gönder</button>
+                </div>
+           </div>
+       </section>
+    </main>
+       <!-- Footer -->
     <footer>
         <div class="social-container">
             <a href="https://www.instagram.com/furkanbaysakpastaneleri" target="_blank" class="social-link">
@@ -340,7 +578,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
     <script>
-        const firebaseConfig = {
+      const firebaseConfig = {
             apiKey: "AIzaSyCIhKXxTwmQ1l70c7_vnH6ZmM1FxZsqUEI",
             authDomain: "furkan-baysak-b74ef.firebaseapp.com",
             databaseURL: "https://furkan-baysak-b74ef-default-rtdb.firebaseio.com",
@@ -353,76 +591,101 @@
 
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
-        const submitCommentButton = document.getElementById('submit-comment');
+        const submitOrderButton = document.getElementById('submit-order');
 
-        submitCommentButton.addEventListener('click', function(){
-            const branch = document.getElementById('comment-branch').value;
-            const name = document.getElementById('comment-name').value;
-            const phone = document.getElementById('comment-phone').value;
-            const text = document.getElementById('comment-text').value;
+        submitOrderButton.addEventListener('click', function() {
+              const customerName = document.getElementById('customer-name').value;
+             const branchName = document.getElementById('branch-name').value;
+             const customerPhone = document.getElementById('customer-phone').value;
+            const cakeSize = document.getElementById('cake-size').value;
+             const cakeShape = document.getElementById('cake-shape').value;
+            const extraLayer = document.getElementById('extra-layer').value;
+            const cakeFlavor = document.getElementById('cake-flavor').value;
+             const cakeContent = document.getElementById('cake-content').value;
+             const creamAndColor = document.getElementById('cream-and-color').value;
+              const cakeBase = document.getElementById('cake-base').value;
+            const cakeDetails = document.getElementById('cake-details').value;
+            const orderNotes = document.getElementById('order-notes').value;
 
-            if(branch && name && phone && text){
-                const commentRef = database.ref('comments/' + branch + '/' + name);
-                commentRef.set({
-                    phone: phone,
-                    text: text
-                });
+               if(customerName && branchName && customerPhone && cakeSize && cakeShape && cakeFlavor && cakeContent && creamAndColor && cakeBase && cakeDetails && orderNotes){
+                     const orderRef = database.ref('cakeOrders/' + branchName + '/' + customerName);
+                     orderRef.set({
+                        customerPhone : customerPhone,
+                         cakeSize: cakeSize,
+                       cakeShape: cakeShape,
+                        extraLayer: extraLayer,
+                         cakeFlavor: cakeFlavor,
+                       cakeContent: cakeContent,
+                        creamAndColor: creamAndColor,
+                        cakeBase: cakeBase,
+                        cakeDetails: cakeDetails,
+                         orderNotes: orderNotes,
+                         orderStatus: "Hazırlanıyor"
+                   });
 
-                document.getElementById('comment-branch').value = '';
-                document.getElementById('comment-name').value = '';
-                document.getElementById('comment-phone').value = '';
-                document.getElementById('comment-text').value = '';
+                  document.getElementById('customer-name').value = '';
+                  document.getElementById('branch-name').value = '';
+                   document.getElementById('customer-phone').value = '';
+                  document.getElementById('cake-size').value = '';
+                    document.getElementById('cake-shape').value = '';
+                  document.getElementById('extra-layer').value = '';
+                   document.getElementById('cake-flavor').value = '';
+                    document.getElementById('cake-content').value = '';
+                   document.getElementById('cream-and-color').value = '';
+                   document.getElementById('cake-base').value = '';
+                   document.getElementById('cake-details').value = '';
+                    document.getElementById('order-notes').value = '';
 
-                alert('Yorumunuz başarıyla gönderildi!');
-            } else {
-                alert('Lütfen tüm alanları doldurunuz!');
-            }
-        })
 
+                      alert('Siparişiniz başarıyla gönderildi!');
+               } else{
+                    alert('Lütfen tüm alanları doldurunuz!');
+               }
+        });
 
-        // Yandan Menü Kontrolü
-function toggleMenu() {
-    const menu = document.getElementById('side-menu');
-    menu.classList.toggle('open');
-}
+         // Yandan Menü Kontrolü
+        function toggleMenu() {
+            const menu = document.getElementById('side-menu');
+            menu.classList.toggle('open');
+        }
 
-function closeMenu() {
-    const menu = document.getElementById('side-menu');
-    menu.classList.remove('open');
-}
+        function closeMenu() {
+            const menu = document.getElementById('side-menu');
+            menu.classList.remove('open');
+        }
 
-// Fotoğraf Galerisi
-let currentSlide = 0;
+        // Fotoğraf Galerisi
+        let currentSlide = 0;
 
-function setCurrentSlide(index) {
-    currentSlide = index;
-    updateSlider();
-}
+        function setCurrentSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
 
-function updateSlider() {
-    const slider = document.getElementById('slider');
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
+        function updateSlider() {
+            const slider = document.getElementById('slider');
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
 
-    // Slaytları kaydırma
-    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            // Slaytları kaydırma
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-    // Nokta aktifliğini güncelle
-    dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentSlide);
-    });
-}
+            // Nokta aktifliğini güncelle
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
 
-// Otomatik Kaydırma (İsteğe Bağlı)
-setInterval(() => {
-    const slides = document.querySelectorAll('.slide');
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateSlider();
-}, 5000);
+        // Otomatik Kaydırma (İsteğe Bağlı)
+         setInterval(() => {
+             const slides = document.querySelectorAll('.slide');
+             currentSlide = (currentSlide + 1) % slides.length;
+             updateSlider();
+        }, 5000);
 
     </script>
-    <script>
+     <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
 </body>
-                          </html>
+</html>
