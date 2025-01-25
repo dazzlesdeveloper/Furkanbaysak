@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poğaçalar ve Diğer Lezzetler</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+    <style>
+        /* Genel Stil Ayarları */
+       .back-button {
+           position: absolute;
+           top: 8px;
+           left: 8px;
+           font-size: 1.5em;
+           padding: 7px 7px;
+           background-color: #f2f2f2;
+           border: 1px solid #ccc;
+           border-radius: 5px;
+           cursor: pointer;
+           transition: background-color 0.3s ease;
+           color: #333;
+       }
+
+       .back-button:hover {
+           background-color: #e0e0e0;
+       }
+
+       body {
+           font-family: 'Open Sans', sans-serif;
+           background-color: #f8f8f8;
+           color: #333;
+           line-height: 1.6;
+           margin: 0;
+           padding: 0;
+       }
+
+        header {
+           background-color: #fff;
+           padding: 20px 0;
+           border-bottom: 1px solid #eee;
+           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+           display: flex; /* Flexbox kullan */
+           justify-content: center; /* Yatayda ortala */
+           align-items: center; /* Dikeyde ortala */
+           position: relative; /* back button için */
+       }
+
+       h1 {
+           font-size: 3em;
+            margin: 0; /* H1'in kendi marginini sıfırla */
+           color: #e44d26;
+           text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+         
+       }
+
+       p.aciklama {
+           font-size: 1.2em;
+           color: #666;
+           margin-bottom: 30px;
+       }
+
+       main {
+           padding: 40px;
+           background-color: #fff;
+           border-radius: 15px;
+           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+           margin: 30px auto;
+           max-width: 1200px;
+       }
+
+       /* Ürün Listesi */
+       .urun-listesi {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+           gap: 30px;
+           padding: 0;
+           list-style: none;
+           
+       }
+
+       /* Ürün Kartı */
+       .urun-karti {
+           background-color: #fff;
+           border-radius: 15px;
+           overflow: hidden;
+           box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+           transition: transform 0.3s ease, box-shadow 0.3s ease;
+           padding: 20px;
+            display: flex;
+           flex-direction: column;
+           align-items: center;
+            text-align: center;
+            
+       }
+
+       .urun-karti:hover {
+           transform: translateY(-5px);
+           box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+       }
+
+
+       .urun-adi {
+           font-size: 1.5em;
+           font-weight: 600;
+           margin-bottom: 10px;
+           color: #333;
+           white-space: nowrap;
+           overflow: hidden;
+           text-overflow: ellipsis;
+       }
+       
+      .urun-fiyat {
+           font-size: 1.3em;
+           color: #e44d26;
+           font-weight: bold;
+          margin-top: auto;
+       }
+       
+       /* Mobil ekranlar için düzenleme */
+        @media (max-width: 768px) {
+             header {
+              padding: 10px 0;
+               display: flex; /* Flexbox kullan */
+           justify-content: center; /* Yatayda ortala */
+           align-items: center; /* Dikeyde ortala */
+               }
+           main {
+             padding: 20px;
+           }
+
+          .urun-listesi {
+              display: flex;
+           flex-wrap: wrap;
+            justify-content: center;
+           gap: 15px;
+           }
+          .urun-karti{
+              width: calc(100% - 20px);
+                min-width: auto;
+           }
+           h1 {
+             font-size: 2.5em;
+                margin: 0; /* H1'in kendi marginini sıfırla */
+          }
+          .urun-adi {
+              font-size: 1.2em;
+             margin-bottom: 5px;
+          }
+          .urun-fiyat{
+               font-size: 1.1em;
+          }
+       }
+   </style>
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="window.location.href='index.html'">←</button>
+        <h1>Poğaçalar ve Diğer Lezzetler</h1>
+    </header>
+    <main>
+        <ul class="urun-listesi">
+            <li class="urun-karti">
+                <h2 class="urun-adi">Kete</h2>
+                <p class="urun-fiyat">₺30</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Simit</h2>
+                <p class="urun-fiyat">₺18</p>
+            </li>
+               <li class="urun-karti">
+                <h2 class="urun-adi">Kaşarlı Simit</h2>
+                <p class="urun-fiyat">₺30</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Poğaça</h2>
+                <p class="urun-fiyat">₺18</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Peynirli Poğaça</h2>
+                <p class="urun-fiyat">₺18</p>
+            </li>
+           <li class="urun-karti">
+                <h2 class="urun-adi">Kaşarlı Poğaça</h2>
+                <p class="urun-fiyat">₺20</p>
+            </li>
+           <li class="urun-karti">
+                <h2 class="urun-adi">Zeytinli Poğaça</h2>
+                <p class="urun-fiyat">₺18</p>
+            </li>
+           <li class="urun-karti">
+                <h2 class="urun-adi">Patatesli Poğaça</h2>
+                <p class="urun-fiyat">₺18</p>
+            </li>
+           <li class="urun-karti">
+                <h2 class="urun-adi">Dereotlu Poğaça</h2>
+                <p class="urun-fiyat">₺18</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Açma</h2>
+                <p class="urun-fiyat">₺21</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Peynirli Açma</h2>
+                <p class="urun-fiyat">₺26</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Peynirli Malatya</h2>
+                <p class="urun-fiyat">₺26</p>
+            </li>
+               <li class="urun-karti">
+                <h2 class="urun-adi">Patatesli Malatya</h2>
+                <p class="urun-fiyat">₺26</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Patatesli Gubate</h2>
+                <p class="urun-fiyat">₺30</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Pizza</h2>
+                <p class="urun-fiyat">₺36</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Halka</h2>
+                <p class="urun-fiyat">₺20</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Sandiviç Ekmeği</h2>
+                <p class="urun-fiyat">₺13</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Hamburger Ekmeği</h2>
+                <p class="urun-fiyat">₺13</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Haşaşlı Açma</h2>
+                <p class="urun-fiyat">₺26</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Mini Poğaça</h2>
+                <p class="urun-fiyat">₺13</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Tahinli</h2>
+                <p class="urun-fiyat">₺36</p>
+            </li>
+               <li class="urun-karti">
+                <h2 class="urun-adi">Çikolatalı Poğaça</h2>
+                <p class="urun-fiyat">₺18</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Sandiviç Peynirli</h2>
+                <p class="urun-fiyat">₺66</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Sandiviç Kaşarlı</h2>
+                <p class="urun-fiyat">₺72</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Çikolatalı Ekmek</h2>
+                <p class="urun-fiyat">₺24</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Peynirli Gözleme</h2>
+                <p class="urun-fiyat">₺66</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Ev Poğaçası</h2>
+                <p class="urun-fiyat">₺20</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Tereyağlı Simit</h2>
+                <p class="urun-fiyat">₺30</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Haşhaşlı Hamburger</h2>
+                <p class="urun-fiyat">₺13</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Sade Hamburger</h2>
+                <p class="urun-fiyat">₺13</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Yulaflı Hamburger</h2>
+                <p class="urun-fiyat">₺13</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Yulaflı Sandiviç</h2>
+                <p class="urun-fiyat">₺13</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Haşhaşlı Sandiviç</h2>
+                <p class="urun-fiyat">₺13</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Susamlı Sandiviç</h2>
+                <p class="urun-fiyat">₺13</p>
+            </li>
+               <li class="urun-karti">
+                <h2 class="urun-adi">Sade Sandiviç</h2>
+                <p class="urun-fiyat">₺13</p>
+            </li>
+               <li class="urun-karti">
+                <h2 class="urun-adi">Tahinli Simit</h2>
+                <p class="urun-fiyat">₺30</p>
+            </li>
+               <li class="urun-karti">
+                <h2 class="urun-adi">Sivas Katmeri</h2>
+                <p class="urun-fiyat">₺27</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Zeytinli Açma</h2>
+                <p class="urun-fiyat">₺27</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Patatesli Gözleme</h2>
+                <p class="urun-fiyat">₺65</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Ispanaklı Kaşarlı Gözleme</h2>
+                <p class="urun-fiyat">₺65</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Sakallı Poğaça</h2>
+                <p class="urun-fiyat">₺480</p>
+            </li>
+               <li class="urun-karti">
+                <h2 class="urun-adi">Katmer</h2>
+                <p class="urun-fiyat">₺48</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Katmer 10'lu</h2>
+                <p class="urun-fiyat">₺480</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Çıtır Simit</h2>
+                <p class="urun-fiyat">₺13</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Çikolatalı Simit</h2>
+                <p class="urun-fiyat">₺26</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Ispanaklı Üçgen Peynirli Poğaça</h2>
+                <p class="urun-fiyat">₺19</p>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>
