@@ -8,24 +8,249 @@
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <style>
-         .sube a {
-            font-size: 16px;
-            font-weight: bold;
-            color: black;
-            text-decoration: none;
-            display: block;
-            padding: 8px;
+          /* Genel Stil Ayarları */
+        .back-button {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            font-size: 1.5em;
+            padding: 7px 7px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            color: #333;
         }
 
-        .sube a:hover {
+        .back-button:hover {
+            background-color: #e0e0e0;
+        }
+         body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+           background-color: #fff;
+           padding: 20px 0;
+           border-bottom: 1px solid #eee;
+           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           position: relative;
+       }
+       .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            max-width: 50px;
+             margin-right: 10px;
+        }
+         h1 {
+             font-size: 2em;
+             color: #e44d26;
+              margin: 0;
+             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+          }
+           /* Yandan Menü */
+        .menu-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+             cursor: pointer;
+            margin-right: 20px;
+        }
+        .menu-icon .line {
+            width: 100%;
+            height: 3px;
+            background-color: #333;
+            transition: all 0.3s ease;
+        }
+         nav#side-menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+             height: 100%;
+             background-color: #fff;
+             z-index: 1000;
+            padding-top: 60px;
+             transition: left 0.3s ease;
+            overflow-y: auto;
+             box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        }
+
+         nav#side-menu.open {
+            left: 0;
+        }
+
+         nav#side-menu ul {
+            list-style: none;
+             padding: 0;
+           margin: 0;
+        }
+
+        nav#side-menu ul li a {
+            display: block;
+             padding: 15px 20px;
+             text-decoration: none;
+              color: #333;
+            font-weight: bold;
+             transition: background-color 0.3s ease;
+        }
+         nav#side-menu ul li a:hover {
             background-color: #f0f0f0;
         }
+         nav#side-menu .close-btn {
+            position: absolute;
+             top: 10px;
+            right: 10px;
+            font-size: 24px;
+             cursor: pointer;
+            background: none;
+             border: none;
+           outline: none;
+         }
+         /* Slider Stilleri */
+        .slider-container {
+             width: 100%;
+             overflow: hidden;
+            position: relative;
+        }
+        .slider {
+             display: flex;
+             transition: transform 0.5s ease;
+        }
+        .slide {
+             width: 100%;
+             flex-shrink: 0;
+        }
+          .slide img {
+            width: 100%;
+           height: auto;
+         }
+
+        .dots {
+           position: absolute;
+            bottom: 10px;
+             left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+          .dot {
+            width: 10px;
+             height: 10px;
+           border-radius: 50%;
+            background-color: #bbb;
+            margin: 0 5px;
+            cursor: pointer;
+           transition: background-color 0.3s ease;
+        }
+         .dot.active {
+             background-color: #e44d26;
+        }
+          /* Section Stilleri */
+         main {
+            padding: 20px;
+        }
+          .section-content {
+             padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+           margin-bottom: 20px;
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+         .section-content h2 {
+            margin-bottom: 15px;
+             font-size: 1.8em;
+             color: #e44d26;
+        }
+         .section-content p {
+            line-height: 1.6;
+        }
+        /* Ürünler Stilleri */
+        .kutular-container {
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: center;
+        }
+
+        .kutu {
+            width: calc(50% - 15px);
+            margin: 7.5px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            transition: transform 0.2s ease-in-out;
+        }
+        .kutu:hover{
+           transform: scale(1.05);
+        }
+
+        .kutu img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 8px;
+            transition: transform 0.3s ease;
+
+        }
+
+
+        .kutu p {
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .kutu a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+       /* Şubeler Stilleri */
+       .subeler-container {
+            display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+           gap: 15px;
+       }
+       .sube {
+            padding: 10px;
+           text-align: center;
+            border-radius: 8px;
+           background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+       .sube a {
+            font-size: 16px;
+            font-weight: bold;
+             color: black;
+           text-decoration: none;
+           display: block;
+             padding: 8px;
+        }
+
+       .sube a:hover {
+           background-color: #f0f0f0;
+       }
 
         .location-icon {
             margin-right: 8px;
         }
 
-         /* Pasta Sipariş Stilleri */
+      /* Pasta Sipariş Stilleri */
        .order-form-section {
             margin-top: 20px;
             padding: 15px;
@@ -72,64 +297,6 @@
         .order-form textarea {
             height: 100px;
         }
-        /* Ürün Kutuları Stilleri */
-        .kutular-container {
-           display: flex;
-           flex-wrap: wrap;
-           justify-content: center;
-        }
-
-        .kutu {
-            width: calc(50% - 15px);
-            margin: 7.5px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            text-align: center;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            box-sizing: border-box;
-            transition: transform 0.2s ease-in-out;
-        }
-        .kutu:hover{
-           transform: scale(1.05);
-        }
-
-        .kutu img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 8px;
-            transition: transform 0.3s ease;
-
-        }
-
-
-        .kutu p {
-            font-weight: bold;
-            font-size: 14px;
-            color: #333;
-        }
-
-        .kutu a {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        /* 768px'den büyük ekranlar için */
-        @media (min-width: 768px) {
-            .kutular-container {
-                justify-content: center;
-            }
-
-            .kutu {
-               width: 200px;
-               margin: 10px;
-           }
-           .sube a {
-               font-size: 18px;
-           }
-        }
          /* Footer Sosyal Link Stili */
         .social-container {
             display: flex;
@@ -149,11 +316,12 @@
             height: 55px; /* Logo boyutunu büyüt */
             margin-right: 25px;
         }
-         .social-link span{
+        .social-link span{
             font-size: 14px; /* Yazı boyutunu küçültme */
         }
+        /* 768px ve üzeri ekranlar */
           @media (min-width: 768px) {
-              .social-link span {
+               .social-link span {
                font-size: 16px; /* Masaüstü için orjinal font boyutu */
             }
          .social-logo{
@@ -161,7 +329,34 @@
             height: 55px; /* Logo boyutunu büyüt */
             margin-right: 25px;
         }
-        }
+           header {
+                padding: 20px 20px;
+                 justify-content: space-between;
+           }
+             h1 {
+                font-size: 2.5em;
+            }
+             .menu-icon {
+               margin-right: 0;
+           }
+            main {
+                padding: 20px 30px;
+            }
+              .section-content h2 {
+               font-size: 2em;
+           }
+               .kutu {
+               width: 200px;
+               margin: 10px;
+           }
+             .sube a {
+                font-size: 18px;
+            }
+             .subeler-container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+         }
+
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -177,8 +372,7 @@
             <h1>FURKAN BAYSAK</h1>
         </div>
     </header>
-
-    <!-- Yandan Açılır Menü -->
+ <!-- Yandan Açılır Menü -->
     <nav id="side-menu" class="hidden">
         <button class="close-btn" onclick="closeMenu()">X</button>
         <ul>
@@ -290,7 +484,7 @@
         <!-- Şubeler Bölümü -->
         <section id="subeler" class="section-content">
             <h2>Şubeler</h2>
-            <div class="subeler-container">
+           <div class="subeler-container">
                 <div class="sube">
                     <p><span class="location-icon">📍</span><a href="kayseri.html">KAYSERİ</a></p>
                 </div>
@@ -310,7 +504,7 @@
         </section>
         <!-- Pasta Siparişi Bölümü -->
         <section id="siparis" class="section-content">
-            <div class="order-form-section">
+             <div class="order-form-section">
                 <h3>Pasta Siparişi Ver</h3>
                 <div class="order-form">
                     <label for="customer-name">Müşteri Adı Soyadı:</label>
@@ -337,34 +531,35 @@
                         <option value="3">3 Nolu - 10-15 Kişilik</option>
                     </select>
 
-                    <label for="cake-shape">Pasta Şekli (Yuvarlak, Kare, Kalp, Diş, Araba, Rakam, Harf vb.):</label>
-                    <input type="text" id="cake-shape" placeholder="Lütfen istediğiniz şekli belirtiniz.">
+                   <label for="cake-shape">Pasta Şekli (Yuvarlak, Kare, Kalp, Diş, Araba, Rakam, Harf vb.):</label>
+                    <input type="text" id="cake-shape" placeholder="Lütfen istediğiniz şekli belirtiniz." required>
 
                     <label for="extra-layer">Ekstra Ara Kat (1, 2 veya 3):</label>
-                    <input type="number" id="extra-layer" min="0" max="3" placeholder="İsteğe Bağlı">
+                     <input type="number" id="extra-layer" min="0" max="3" placeholder="İsteğe Bağlı">
 
-                    <label for="cake-flavor">Kek ve Krema Farklılığı:</label>
+                   <label for="cake-flavor">Kek ve Krema Farklılığı:</label>
                     <textarea id="cake-flavor" placeholder="İstediğiniz kek ve krema türlerini belirtiniz."></textarea>
 
                     <label for="cake-content">Pasta İçeriği (Kuruyemiş, Çikolata, Meyveli, Full İçerik):</label>
-                    <textarea id="cake-content" placeholder="Pasta içeriğinde olmasını istediklerinizi belirtiniz."></textarea>
+                   <textarea id="cake-content" placeholder="Pasta içeriğinde olmasını istediklerinizi belirtiniz."></textarea>
 
                     <label for="cream-and-color">Pasta Kreması ve Rengi (Şanti, Sos, Şeker Hamuru, Renk):</label>
-                    <input type="text" id="cream-and-color" placeholder="Kreması ve rengini belirtiniz.">
+                    <input type="text" id="cream-and-color" placeholder="Kreması ve rengini belirtiniz." required>
 
                    <label for="cake-base">Pasta Altlığı (Mukavva, Şeker Hamuru, Ahşap):</label>
-                   <select id="cake-base" required>
+                    <select id="cake-base" required>
                         <option value="">Altlık Seçiniz</option>
                         <option value="Mukavva">Mukavva</option>
                         <option value="Şeker Hamuru">Şeker Hamuru</option>
                         <option value="Ahşap">Ahşap</option>
                     </select>
 
-                    <label for="cake-details">Pasta Detayları:</label>
-                     <textarea id="cake-details" placeholder="Eklemek istediğiniz detayları ve örnek resim ekleme linkini belirtiniz."></textarea>
-
+                     <label for="cake-details">Pasta Detayları ve Fotoğraf Ekle:</label>
+                    <textarea id="cake-details" placeholder="Eklemek istediğiniz detayları ve örnek resim ekleme linkini belirtiniz."></textarea>
+                        <input type="file" id="cake-photo" accept="image/*">
                     <label for="order-notes">Not:</label>
-                     <textarea id="order-notes" placeholder="Eklemek istediğiniz notları buraya yazınız."></textarea>
+                    <textarea id="order-notes" placeholder="Eklemek istediğiniz notları buraya yazınız."></textarea>
+
                     <button id="submit-order">Siparişi Gönder</button>
                 </div>
             </div>
@@ -411,9 +606,10 @@
             const creamAndColor = document.getElementById('cream-and-color').value;
             const cakeBase = document.getElementById('cake-base').value;
             const cakeDetails = document.getElementById('cake-details').value;
+             const cakePhoto = document.getElementById('cake-photo').value;
             const orderNotes = document.getElementById('order-notes').value;
 
-            if(customerName && branchName && customerPhone && cakeSize && cakeShape && cakeFlavor && cakeContent && creamAndColor && cakeBase && cakeDetails && orderNotes){
+            if(customerName && branchName && customerPhone && cakeSize && cakeShape && creamAndColor && cakeBase){
                 const orderRef = database.ref('cakeOrders/' + branchName + '/' + customerName);
                 orderRef.set({
                     customerPhone : customerPhone,
@@ -425,6 +621,7 @@
                     creamAndColor: creamAndColor,
                     cakeBase: cakeBase,
                     cakeDetails: cakeDetails,
+                      cakePhoto: cakePhoto,
                     orderNotes: orderNotes,
                     orderStatus: "Hazırlanıyor"
                 });
@@ -440,11 +637,12 @@
                 document.getElementById('cream-and-color').value = '';
                 document.getElementById('cake-base').value = '';
                 document.getElementById('cake-details').value = '';
+                 document.getElementById('cake-photo').value = '';
                 document.getElementById('order-notes').value = '';
 
                 alert('Siparişiniz başarıyla gönderildi!');
             } else{
-                alert('Lütfen tüm alanları doldurunuz!');
+                alert('Lütfen zorunlu alanları doldurunuz!');
             }
         });
 
@@ -454,10 +652,8 @@
                 this.value = this.value.slice(0,10);
             }
          });
-
-
         // Yandan Menü Kontrolü
-       function toggleMenu() {
+        function toggleMenu() {
             const menu = document.getElementById('side-menu');
             menu.classList.toggle('open');
         }
@@ -496,7 +692,7 @@
             updateSlider();
         }, 5000);
     </script>
-     <script>
+      <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
 </body>
