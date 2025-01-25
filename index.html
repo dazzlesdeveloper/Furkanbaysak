@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FURKAN </title>
+    <title>FURKAN BAYSAK PASTANELERİ</title>
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <style>
         /* Genel Stil Ayarları */
-         .back-button {
+        .back-button {
             position: absolute;
             top: 8px;
             left: 8px;
@@ -26,7 +26,7 @@
         .back-button:hover {
             background-color: #e0e0e0;
         }
-         body {
+        body {
             font-family: 'Open Sans', sans-serif;
             background-color: #f8f8f8;
             color: #333;
@@ -35,37 +35,37 @@
             padding: 0;
         }
         header {
-           background-color: #fff;
-           padding: 20px 0;
-           border-bottom: 1px solid #eee;
-           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           position: relative;
-       }
-       .logo-container {
+            background-color: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .logo-container {
             display: flex;
             align-items: center;
         }
         .logo {
             max-width: 50px;
-             margin-right: 10px;
+            margin-right: 10px;
         }
-         h1 {
-             font-size: 2em;
-             color: #e44d26;
-              margin: 0;
-             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-          }
-           /* Yandan Menü */
+        h1 {
+            font-size: 2em;
+            color: #e44d26;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        /* Yandan Menü */
         .menu-icon {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             width: 30px;
             height: 25px;
-             cursor: pointer;
+            cursor: pointer;
             margin-right: 20px;
         }
         .menu-icon .line {
@@ -74,113 +74,113 @@
             background-color: #333;
             transition: all 0.3s ease;
         }
-         nav#side-menu {
+        nav#side-menu {
             position: fixed;
             top: 0;
             left: -250px;
             width: 250px;
-             height: 100%;
-             background-color: #fff;
-             z-index: 1000;
+            height: 100%;
+            background-color: #fff;
+            z-index: 1000;
             padding-top: 60px;
-             transition: left 0.3s ease;
+            transition: left 0.3s ease;
             overflow-y: auto;
-             box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+            box-shadow: 2px 0 5px rgba(0,0,0,0.2);
         }
 
-         nav#side-menu.open {
+        nav#side-menu.open {
             left: 0;
         }
 
-         nav#side-menu ul {
+        nav#side-menu ul {
             list-style: none;
-             padding: 0;
-           margin: 0;
+            padding: 0;
+            margin: 0;
         }
 
         nav#side-menu ul li a {
             display: block;
-             padding: 15px 20px;
-             text-decoration: none;
-              color: #333;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #333;
             font-weight: bold;
-             transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease;
         }
-         nav#side-menu ul li a:hover {
+        nav#side-menu ul li a:hover {
             background-color: #f0f0f0;
         }
-         nav#side-menu .close-btn {
+        nav#side-menu .close-btn {
             position: absolute;
-             top: 10px;
+            top: 10px;
             right: 10px;
             font-size: 24px;
-             cursor: pointer;
+            cursor: pointer;
             background: none;
-             border: none;
-           outline: none;
-         }
-         /* Slider Stilleri */
+            border: none;
+            outline: none;
+        }
+        /* Slider Stilleri */
         .slider-container {
-             width: 100%;
-             overflow: hidden;
+            width: 100%;
+            overflow: hidden;
             position: relative;
         }
         .slider {
-             display: flex;
-             transition: transform 0.5s ease;
+            display: flex;
+            transition: transform 0.5s ease;
         }
         .slide {
-             width: 100%;
-             flex-shrink: 0;
-        }
-          .slide img {
             width: 100%;
-           height: auto;
-         }
+            flex-shrink: 0;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
 
         .dots {
-           position: absolute;
+            position: absolute;
             bottom: 10px;
-             left: 50%;
+            left: 50%;
             transform: translateX(-50%);
             display: flex;
         }
-          .dot {
+        .dot {
             width: 10px;
-             height: 10px;
-           border-radius: 50%;
+            height: 10px;
+            border-radius: 50%;
             background-color: #bbb;
             margin: 0 5px;
             cursor: pointer;
-           transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease;
         }
-         .dot.active {
-             background-color: #e44d26;
+        .dot.active {
+            background-color: #e44d26;
         }
-          /* Section Stilleri */
-         main {
+        /* Section Stilleri */
+        main {
             padding: 20px;
         }
-          .section-content {
-             padding: 15px;
+        .section-content {
+            padding: 15px;
             background-color: #fff;
             border-radius: 8px;
-           margin-bottom: 20px;
-           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-         .section-content h2 {
+        .section-content h2 {
             margin-bottom: 15px;
-             font-size: 1.8em;
-             color: #e44d26;
+            font-size: 1.8em;
+            color: #e44d26;
         }
-         .section-content p {
+        .section-content p {
             line-height: 1.6;
         }
         /* Ürünler Stilleri */
-         .kutular-container {
-           display: flex;
-           flex-wrap: wrap;
-           justify-content: center;
+        .kutular-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .kutu {
@@ -196,7 +196,7 @@
             transition: transform 0.2s ease-in-out;
         }
         .kutu:hover{
-           transform: scale(1.05);
+            transform: scale(1.05);
         }
 
         .kutu img {
@@ -220,48 +220,48 @@
             display: block;
         }
 
-       /* Şubeler Stilleri */
-       .subeler-container {
+        /* Şubeler Stilleri */
+        .subeler-container {
             display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-           gap: 15px;
-       }
-       .sube {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        .sube {
             padding: 10px;
-           text-align: center;
+            text-align: center;
             border-radius: 8px;
-           background-color: #f9f9f9;
+            background-color: #f9f9f9;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-       .sube a {
+        .sube a {
             font-size: 16px;
             font-weight: bold;
-             color: black;
-           text-decoration: none;
-           display: block;
-             padding: 8px;
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
         }
 
-       .sube a:hover {
-           background-color: #f0f0f0;
-       }
+        .sube a:hover {
+            background-color: #f0f0f0;
+        }
 
         .location-icon {
             margin-right: 8px;
         }
 
-      /* Pasta Sipariş Stilleri */
-       .order-form-section {
+        /* Pasta Sipariş Stilleri */
+        .order-form-section {
             margin-top: 20px;
             padding: 15px;
-           background-color: #f9f9f9;
-           border-radius: 8px;
-       }
-         .order-form-section h3 {
-             margin-bottom: 10px;
-           font-size: 1.2em;
-       }
-       .order-form {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        .order-form-section h3 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .order-form {
             display: flex;
             flex-direction: column;
             margin-bottom: 15px;
@@ -272,44 +272,44 @@
             color: #555;
         }
         .order-form input, .order-form textarea, .order-form select {
-             margin-bottom: 8px;
-           padding: 8px;
+            margin-bottom: 8px;
+            padding: 8px;
             border: 1px solid #ddd;
-             border-radius: 4px;
-             font-size: 14px;
+            border-radius: 4px;
+            font-size: 14px;
         }
         .order-form button {
-           background-color: #5cb85c;
-           color: white;
+            background-color: #5cb85c;
+            color: white;
             border: none;
-           padding: 8px 12px;
+            padding: 8px 12px;
             text-align: center;
-             text-decoration: none;
+            text-decoration: none;
             display: inline-block;
-           font-size: 14px;
+            font-size: 14px;
             margin: 4px 2px;
             cursor: pointer;
-           border-radius: 4px;
+            border-radius: 4px;
         }
         .order-form button:hover{
-           background-color: #4cae4c;
-       }
+            background-color: #4cae4c;
+        }
         .order-form textarea {
             height: 100px;
         }
-         /* Footer Sosyal Link Stili */
+        /* Footer Sosyal Link Stili */
         .social-container {
             display: flex;
             justify-content: center;
             padding: 10px 0;
-             background-color: #333; /* Arka plan rengi eklendi */
+            background-color: #333; /* Arka plan rengi eklendi */
         }
 
         .social-link {
-           display: flex;
-           align-items: center;
-           text-decoration: none;
-           color: #fff; /* yazı rengi beyaz */
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff; /* yazı rengi beyaz */
         }
         .social-logo{
             width: 55px; /* Logo boyutunu büyüt */
@@ -320,42 +320,42 @@
             font-size: 14px; /* Yazı boyutunu küçültme */
         }
         /* 768px ve üzeri ekranlar */
-          @media (min-width: 768px) {
-               .social-link span {
-               font-size: 16px; /* Masaüstü için orjinal font boyutu */
+        @media (min-width: 768px) {
+            .social-link span {
+                font-size: 16px; /* Masaüstü için orjinal font boyutu */
             }
-         .social-logo{
-            width: 55px; /* Logo boyutunu büyüt */
-            height: 55px; /* Logo boyutunu büyüt */
-            margin-right: 25px;
-        }
-           header {
+            .social-logo{
+                width: 55px; /* Logo boyutunu büyüt */
+                height: 55px; /* Logo boyutunu büyüt */
+                margin-right: 25px;
+            }
+            header {
                 padding: 20px 20px;
-                 justify-content: space-between;
-           }
-             h1 {
+                justify-content: space-between;
+            }
+            h1 {
                 font-size: 2.5em;
             }
-             .menu-icon {
-               margin-right: 0;
-           }
+            .menu-icon {
+                margin-right: 0;
+            }
             main {
                 padding: 20px 30px;
             }
-              .section-content h2 {
-               font-size: 2em;
-           }
-               .kutu {
-               width: 200px;
-               margin: 10px;
-           }
-             .sube a {
+            .section-content h2 {
+                font-size: 2em;
+            }
+            .kutu {
+                width: 200px;
+                margin: 10px;
+            }
+            .sube a {
                 font-size: 18px;
             }
-             .subeler-container {
+            .subeler-container {
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             }
-         }
+        }
 
     </style>
 </head>
@@ -367,7 +367,7 @@
             <div class="line"></div>
             <div class="line"></div>
         </div>
-         <div class="logo-container">
+        <div class="logo-container">
             <img src="logo.png" alt="Furkan Baysak Pastaneleri Logo" class="logo">
             <h1>FURKAN BAYSAK</h1>
         </div>
@@ -395,7 +395,7 @@
             <div class="dots">
                 <span class="dot" onclick="setCurrentSlide(0)"></span>
                 <span class="dot" onclick="setCurrentSlide(1)"></span>
-                </div>
+            </div>
         </div>
 
         <section id="hakkinda" class="section-content">
@@ -406,7 +406,7 @@
         <!-- Ürünler Bölümü -->
         <section id="urunler" class="section-content">
             <h2>Ürünler</h2>
-           <div class="kutular-container">
+            <div class="kutular-container">
                 <div class="kutu">
                    <a href="eksimaya.html">
                        <img src="ekşimaya.png" alt="Ekşi Maya">
@@ -424,29 +424,29 @@
                         <img src="kurabiye.png" alt="Kurabiyeler">
                         <p>KURABİYELER</p>
                      </a>
-               </div>
-               <div class="kutu">
-                   <a href="şarküteri.html">
-                       <img src="şarküteri.png" alt="Şarküteri">
-                       <p>ŞARKÜTERİ</p>
-                   </a>
-               </div>
+                </div>
                 <div class="kutu">
-                   <a href="tatlilar.html">
-                       <img src="tatlilar.png" alt="Tatlılar">
-                       <p>TATLILAR</p>
-                   </a>
+                    <a href="şarküteri.html">
+                        <img src="şarküteri.png" alt="Şarküteri">
+                        <p>ŞARKÜTERİ</p>
+                    </a>
+                </div>
+                <div class="kutu">
+                    <a href="tatlilar.html">
+                        <img src="tatlilar.png" alt="Tatlılar">
+                        <p>TATLILAR</p>
+                    </a>
                 </div>
                 <div class="kutu">
                     <a href="icecekler.html">
-                       <img src="icecekler.png" alt="İçecekler">
-                       <p>İÇECEKLER</p>
-                   </a>
+                        <img src="icecekler.png" alt="İçecekler">
+                        <p>İÇECEKLER</p>
+                    </a>
                 </div>
-                 <div class="kutu">
-                   <a href="dondurmalar.html">
-                       <img src="dondurma.png" alt="Dondurmalar">
-                       <p>DONDURMALAR</p>
+                <div class="kutu">
+                    <a href="dondurmalar.html">
+                        <img src="dondurma.png" alt="Dondurmalar">
+                        <p>DONDURMALAR</p>
                     </a>
                 </div>
                 <div class="kutu">
@@ -479,7 +479,7 @@
                         <p>TARTLAR</p>
                     </a>
                 </div>
-           </div>
+            </div>
         </section>
 
         <!-- Şubeler Bölümü -->
@@ -503,12 +503,12 @@
                 </div>
             </div>
         </section>
-           <!-- Pasta Siparişi Bölümü -->
+        <!-- Pasta Siparişi Bölümü -->
         <section id="siparis" class="section-content">
-             <div class="order-form-section">
+            <div class="order-form-section">
                 <h3>Pasta Siparişi Ver</h3>
                 <div class="order-form">
-                     <label for="customer-name">Müşteri Adı Soyadı:</label>
+                    <label for="customer-name">Müşteri Adı Soyadı:</label>
                     <input type="text" id="customer-name" required>
 
                     <label for="branch-name">Şube Adı:</label>
@@ -524,7 +524,7 @@
                     <label for="customer-phone">Telefon Numarası:</label>
                     <input type="tel" id="customer-phone"  maxlength="10" required>
 
-                     <label for="cake-size">Pasta Boyutu:</label>
+                    <label for="cake-size">Pasta Boyutu:</label>
                     <select id="cake-size" required>
                         <option value="">Boyut Seçiniz</option>
                         <option value="1">1 Nolu - 4-6 Kişilik</option>
@@ -532,7 +532,7 @@
                         <option value="3">3 Nolu - 10-15 Kişilik</option>
                     </select>
 
-                     <label for="cake-shape">Pasta Şekli (Yuvarlak, Kare, Kalp, Diş, Araba, Rakam, Harf vb.):</label>
+                    <label for="cake-shape">Pasta Şekli (Yuvarlak, Kare, Kalp, Diş, Araba, Rakam, Harf vb.):</label>
                     <input type="text" id="cake-shape" placeholder="Lütfen istediğiniz şekli belirtiniz.">
 
                     <label for="extra-layer">Ekstra Ara Kat (1, 2 veya 3):</label>
@@ -547,8 +547,8 @@
                     <label for="cream-and-color">Pasta Kreması ve Rengi (Şanti, Sos, Şeker Hamuru, Renk):</label>
                     <input type="text" id="cream-and-color" placeholder="Kreması ve rengini belirtiniz.">
 
-                   <label for="cake-base">Pasta Altlığı (Mukavva, Şeker Hamuru, Ahşap):</label>
-                   <select id="cake-base" required>
+                    <label for="cake-base">Pasta Altlığı (Mukavva, Şeker Hamuru, Ahşap):</label>
+                    <select id="cake-base" required>
                         <option value="">Altlık Seçiniz</option>
                         <option value="Mukavva">Mukavva</option>
                         <option value="Şeker Hamuru">Şeker Hamuru</option>
@@ -556,16 +556,16 @@
                     </select>
 
                     <label for="cake-details">Pasta Detayları:</label>
-                     <textarea id="cake-details" placeholder="Eklemek istediğiniz detayları ve örnek resim ekleme linkini belirtiniz."></textarea>
+                    <textarea id="cake-details" placeholder="Eklemek istediğiniz detayları ve örnek resim ekleme linkini belirtiniz."></textarea>
 
                     <label for="order-notes">Not:</label>
-                     <textarea id="order-notes" placeholder="Eklemek istediğiniz notları buraya yazınız."></textarea>
-                     <button id="submit-order">Siparişi Gönder</button>
+                    <textarea id="order-notes" placeholder="Eklemek istediğiniz notları buraya yazınız."></textarea>
+                    <button id="submit-order">Siparişi Gönder</button>
                 </div>
-           </div>
-       </section>
+            </div>
+        </section>
     </main>
-       <!-- Footer -->
+    <!-- Footer -->
     <footer>
         <div class="social-container">
             <a href="https://www.instagram.com/furkanbaysakpastaneleri" target="_blank" class="social-link">
@@ -578,7 +578,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
     <script>
-      const firebaseConfig = {
+        const firebaseConfig = {
             apiKey: "AIzaSyCIhKXxTwmQ1l70c7_vnH6ZmM1FxZsqUEI",
             authDomain: "furkan-baysak-b74ef.firebaseapp.com",
             databaseURL: "https://furkan-baysak-b74ef-default-rtdb.firebaseio.com",
@@ -594,61 +594,62 @@
         const submitOrderButton = document.getElementById('submit-order');
 
         submitOrderButton.addEventListener('click', function() {
-              const customerName = document.getElementById('customer-name').value;
-             const branchName = document.getElementById('branch-name').value;
-             const customerPhone = document.getElementById('customer-phone').value;
+            const customerName = document.getElementById('customer-name').value;
+            const branchName = document.getElementById('branch-name').value;
+            const customerPhone = document.getElementById('customer-phone').value;
             const cakeSize = document.getElementById('cake-size').value;
-             const cakeShape = document.getElementById('cake-shape').value;
+            const cakeShape = document.getElementById('cake-shape').value;
             const extraLayer = document.getElementById('extra-layer').value;
             const cakeFlavor = document.getElementById('cake-flavor').value;
-             const cakeContent = document.getElementById('cake-content').value;
-             const creamAndColor = document.getElementById('cream-and-color').value;
-              const cakeBase = document.getElementById('cake-base').value;
+            const cakeContent = document.getElementById('cake-content').value;
+            const creamAndColor = document.getElementById('cream-and-color').value;
+            const cakeBase = document.getElementById('cake-base').value;
             const cakeDetails = document.getElementById('cake-details').value;
             const orderNotes = document.getElementById('order-notes').value;
 
-               if(customerName && branchName && customerPhone && cakeSize && cakeShape && cakeFlavor && cakeContent && creamAndColor && cakeBase && cakeDetails && orderNotes){
-                     const orderRef = database.ref('cakeOrders/' + branchName + '/' + customerName);
-                     orderRef.set({
-                        customerPhone : customerPhone,
-                         cakeSize: cakeSize,
-                       cakeShape: cakeShape,
-                        extraLayer: extraLayer,
-                         cakeFlavor: cakeFlavor,
-                       cakeContent: cakeContent,
-                        creamAndColor: creamAndColor,
-                        cakeBase: cakeBase,
-                        cakeDetails: cakeDetails,
-                         orderNotes: orderNotes,
-                         orderStatus: "Hazırlanıyor"
-                   });
+            if(customerName && branchName && customerPhone && cakeSize && cakeShape && cakeFlavor && cakeContent && creamAndColor && cakeBase && cakeDetails && orderNotes){
+                const orderRef = database.ref('cakeOrders/' + branchName + '/' + customerName);
+                orderRef.set({
+                    customerPhone : customerPhone,
+                    cakeSize: cakeSize,
+                    cakeShape: cakeShape,
+                    extraLayer: extraLayer,
+                    cakeFlavor: cakeFlavor,
+                    cakeContent: cakeContent,
+                    creamAndColor: creamAndColor,
+                    cakeBase: cakeBase,
+                    cakeDetails: cakeDetails,
+                    orderNotes: orderNotes,
+                    orderStatus: "Hazırlanıyor"
+                });
 
-                  document.getElementById('customer-name').value = '';
-                  document.getElementById('branch-name').value = '';
-                   document.getElementById('customer-phone').value = '';
-                  document.getElementById('cake-size').value = '';
-                    document.getElementById('cake-shape').value = '';
-                  document.getElementById('extra-layer').value = '';
-                   document.getElementById('cake-flavor').value = '';
-                    document.getElementById('cake-content').value = '';
-                   document.getElementById('cream-and-color').value = '';
-                   document.getElementById('cake-base').value = '';
-                   document.getElementById('cake-details').value = '';
-                    document.getElementById('order-notes').value = '';
+                document.getElementById('customer-name').value = '';
+                document.getElementById('branch-name').value = '';
+                document.getElementById('customer-phone').value = '';
+                document.getElementById('cake-size').value = '';
+                document.getElementById('cake-shape').value = '';
+                document.getElementById('extra-layer').value = '';
+                document.getElementById('cake-flavor').value = '';
+                document.getElementById('cake-content').value = '';
+                document.getElementById('cream-and-color').value = '';
+                document.getElementById('cake-base').value = '';
+                document.getElementById('cake-details').value = '';
+                document.getElementById('order-notes').value = '';
 
-
-                      alert('Siparişiniz başarıyla gönderildi!');
-               } else{
-                    alert('Lütfen tüm alanları doldurunuz!');
-               }
+                alert('Siparişiniz başarıyla gönderildi!');
+            } else{
+                alert('Lütfen tüm alanları doldurunuz!');
+            }
         });
-           document.getElementById('customer-phone').addEventListener('input', function (e) {
-               this.value = this.value.replace(/[^0-9]/g, '');
-               if(this.value.length > 10){
-                   this.value = this.value.slice(0,10);
-               }
-            });
-         // Yandan Menü Kontrolü
+
+        document.getElementById('customer-phone').addEventListener('input', function (e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+            if(this.value.length > 10){
+                this.value = this.value.slice(0,10);
+            }
+        });
+
+        // Yandan Menü Kontrolü
         function toggleMenu() {
             const menu = document.getElementById('side-menu');
             menu.classList.toggle('open');
@@ -682,12 +683,11 @@
         }
 
         // Otomatik Kaydırma (İsteğe Bağlı)
-         setInterval(() => {
-             const slides = document.querySelectorAll('.slide');
-             currentSlide = (currentSlide + 1) % slides.length;
-             updateSlider();
+        setInterval(() => {
+            const slides = document.querySelectorAll('.slide');
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
         }, 5000);
-
     </script>
      <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
