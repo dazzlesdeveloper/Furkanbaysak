@@ -8,8 +8,8 @@
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <style>
-          /* Genel Stil Ayarları */
-        .back-button {
+        /* Genel Stil Ayarları */
+         .back-button {
             position: absolute;
             top: 8px;
             left: 8px;
@@ -356,7 +356,27 @@
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             }
          }
-
+         /* İlerleme Çubuğu Stilleri */
+       .progress-bar {
+            width: 100%;
+            background-color: #f0f0f0;
+            height: 8px;
+           border-radius: 5px;
+          margin-bottom: 15px;
+       }
+        .progress {
+            height: 100%;
+           background-color: #5cb85c;
+           border-radius: 5px;
+           width: 0; /* ilerlemeye göre genişliği ayarlanacak */
+           transition: width 0.3s ease;
+       }
+       .order-form .form-step {
+            display: none;
+       }
+      .order-form .form-step.active {
+          display: block;
+       }
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -372,7 +392,8 @@
             <h1>FURKAN BAYSAK</h1>
         </div>
     </header>
- <!-- Yandan Açılır Menü -->
+
+    <!-- Yandan Açılır Menü -->
     <nav id="side-menu" class="hidden">
         <button class="close-btn" onclick="closeMenu()">X</button>
         <ul>
@@ -394,7 +415,7 @@
             <div class="dots">
                 <span class="dot" onclick="setCurrentSlide(0)"></span>
                 <span class="dot" onclick="setCurrentSlide(1)"></span>
-                </div>
+            </div>
         </div>
 
         <section id="hakkinda" class="section-content">
@@ -503,66 +524,83 @@
             </div>
         </section>
         <!-- Pasta Siparişi Bölümü -->
-        <section id="siparis" class="section-content">
-             <div class="order-form-section">
+          <section id="siparis" class="section-content">
+            <div class="order-form-section">
                 <h3>Pasta Siparişi Ver</h3>
-                <div class="order-form">
-                    <label for="customer-name">Müşteri Adı Soyadı:</label>
-                    <input type="text" id="customer-name" required>
-
-                    <label for="branch-name">Şube Adı:</label>
-                    <select id="branch-name" required>
-                        <option value="">Şube Seçiniz</option>
-                        <option value="Kayseri">Kayseri</option>
-                        <option value="Aksaray">Aksaray</option>
-                        <option value="Niğde">Niğde</option>
-                        <option value="Nevşehir">Nevşehir</option>
-                        <option value="Sivas">Sivas</option>
-                    </select>
-
-                    <label for="customer-phone">Telefon Numarası:</label>
-                    <input type="tel" id="customer-phone"  maxlength="10" required>
-
-                    <label for="cake-size">Pasta Boyutu:</label>
-                    <select id="cake-size" required>
-                        <option value="">Boyut Seçiniz</option>
-                        <option value="1">1 Nolu - 4-6 Kişilik</option>
-                        <option value="2">2 Nolu - 8-10 Kişilik</option>
-                        <option value="3">3 Nolu - 10-15 Kişilik</option>
-                    </select>
-
-                   <label for="cake-shape">Pasta Şekli (Yuvarlak, Kare, Kalp, Diş, Araba, Rakam, Harf vb.):</label>
-                    <input type="text" id="cake-shape" placeholder="Lütfen istediğiniz şekli belirtiniz." required>
-
-                    <label for="extra-layer">Ekstra Ara Kat (1, 2 veya 3):</label>
-                     <input type="number" id="extra-layer" min="0" max="3" placeholder="İsteğe Bağlı">
-
-                   <label for="cake-flavor">Kek ve Krema Farklılığı:</label>
-                    <textarea id="cake-flavor" placeholder="İstediğiniz kek ve krema türlerini belirtiniz."></textarea>
-
-                    <label for="cake-content">Pasta İçeriği (Kuruyemiş, Çikolata, Meyveli, Full İçerik):</label>
-                   <textarea id="cake-content" placeholder="Pasta içeriğinde olmasını istediklerinizi belirtiniz."></textarea>
-
-                    <label for="cream-and-color">Pasta Kreması ve Rengi (Şanti, Sos, Şeker Hamuru, Renk):</label>
-                    <input type="text" id="cream-and-color" placeholder="Kreması ve rengini belirtiniz." required>
-
-                   <label for="cake-base">Pasta Altlığı (Mukavva, Şeker Hamuru, Ahşap):</label>
-                    <select id="cake-base" required>
-                        <option value="">Altlık Seçiniz</option>
-                        <option value="Mukavva">Mukavva</option>
-                        <option value="Şeker Hamuru">Şeker Hamuru</option>
-                        <option value="Ahşap">Ahşap</option>
-                    </select>
-
-                     <label for="cake-details">Pasta Detayları ve Fotoğraf Ekle:</label>
-                    <textarea id="cake-details" placeholder="Eklemek istediğiniz detayları ve örnek resim ekleme linkini belirtiniz."></textarea>
-                        <input type="file" id="cake-photo" accept="image/*">
-                    <label for="order-notes">Not:</label>
-                    <textarea id="order-notes" placeholder="Eklemek istediğiniz notları buraya yazınız."></textarea>
-
-                    <button id="submit-order">Siparişi Gönder</button>
+                  <div class="progress-bar">
+                      <div class="progress" id="progress"></div>
                 </div>
-            </div>
+                    <form class="order-form" id="order-form">
+                    <!-- Adım 1: Müşteri Bilgileri -->
+                    <div class="form-step active" data-step="1">
+                          <label for="customer-name">Müşteri Adı Soyadı:</label>
+                        <input type="text" id="customer-name" required>
+
+                        <label for="branch-name">Şube Adı:</label>
+                        <select id="branch-name" required>
+                            <option value="">Şube Seçiniz</option>
+                            <option value="Kayseri">Kayseri</option>
+                            <option value="Aksaray">Aksaray</option>
+                            <option value="Niğde">Niğde</option>
+                            <option value="Nevşehir">Nevşehir</option>
+                            <option value="Sivas">Sivas</option>
+                        </select>
+
+                        <label for="customer-phone">Telefon Numarası:</label>
+                        <input type="tel" id="customer-phone"  maxlength="10" required>
+                         <button type="button" class="next-step">Sonraki Adım</button>
+                  </div>
+                   <!-- Adım 2: Pasta Boyutu ve Şekli -->
+                  <div class="form-step" data-step="2">
+                        <label for="cake-size">Pasta Boyutu:</label>
+                        <select id="cake-size" required>
+                            <option value="">Boyut Seçiniz</option>
+                            <option value="1">1 Nolu - 4-6 Kişilik</option>
+                            <option value="2">2 Nolu - 8-10 Kişilik</option>
+                            <option value="3">3 Nolu - 10-15 Kişilik</option>
+                        </select>
+
+                        <label for="cake-shape">Pasta Şekli (Yuvarlak, Kare, Kalp, Diş, Araba, Rakam, Harf vb.):</label>
+                        <input type="text" id="cake-shape" placeholder="Lütfen istediğiniz şekli belirtiniz." required>
+                           <button type="button" class="prev-step">Önceki Adım</button>
+                           <button type="button" class="next-step">Sonraki Adım</button>
+                  </div>
+                     <!-- Adım 3: Pasta Detayları-->
+                     <div class="form-step" data-step="3">
+                          <label for="extra-layer">Ekstra Ara Kat (1, 2 veya 3):</label>
+                         <input type="number" id="extra-layer" min="0" max="3" placeholder="İsteğe Bağlı">
+
+                        <label for="cake-flavor">Kek ve Krema Farklılığı:</label>
+                         <textarea id="cake-flavor" placeholder="İstediğiniz kek ve krema türlerini belirtiniz."></textarea>
+
+                        <label for="cake-content">Pasta İçeriği (Kuruyemiş, Çikolata, Meyveli, Full İçerik):</label>
+                         <textarea id="cake-content" placeholder="Pasta içeriğinde olmasını istediklerinizi belirtiniz." required></textarea>
+
+                        <label for="cream-and-color">Pasta Kreması ve Rengi (Şanti, Sos, Şeker Hamuru, Renk):</label>
+                        <input type="text" id="cream-and-color" placeholder="Kreması ve rengini belirtiniz." required>
+
+                        <label for="cake-base">Pasta Altlığı (Mukavva, Şeker Hamuru, Ahşap):</label>
+                         <select id="cake-base" required>
+                            <option value="">Altlık Seçiniz</option>
+                            <option value="Mukavva">Mukavva</option>
+                            <option value="Şeker Hamuru">Şeker Hamuru</option>
+                            <option value="Ahşap">Ahşap</option>
+                        </select>
+                          <button type="button" class="prev-step">Önceki Adım</button>
+                          <button type="button" class="next-step">Sonraki Adım</button>
+                     </div>
+                       <!-- Adım 4: Ek Bilgiler ve Notlar -->
+                     <div class="form-step" data-step="4">
+                       <label for="cake-details">Pasta Detayları ve Fotoğraf Ekle:</label>
+                       <textarea id="cake-details" placeholder="Eklemek istediğiniz detayları ve örnek resim ekleme linkini belirtiniz."></textarea>
+                       <input type="file" id="cake-photo" accept="image/*">
+                         <label for="order-notes">Not:</label>
+                         <textarea id="order-notes" placeholder="Eklemek istediğiniz notları buraya yazınız."></textarea>
+                          <button type="button" class="prev-step">Önceki Adım</button>
+                           <button type="button" id="submit-order">Siparişi Gönder</button>
+                   </div>
+                    </form>
+           </div>
         </section>
     </main>
 
@@ -579,7 +617,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
     <script>
-        const firebaseConfig = {
+         const firebaseConfig = {
             apiKey: "AIzaSyCIhKXxTwmQ1l70c7_vnH6ZmM1FxZsqUEI",
             authDomain: "furkan-baysak-b74ef.firebaseapp.com",
             databaseURL: "https://furkan-baysak-b74ef-default-rtdb.firebaseio.com",
@@ -593,6 +631,35 @@
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
         const submitOrderButton = document.getElementById('submit-order');
+        const formSteps = document.querySelectorAll(".form-step");
+        const progressBar = document.getElementById("progress");
+        let currentStep = 1;
+        const form = document.getElementById('order-form');
+
+         function updateProgress(){
+                const progressWidth = ((currentStep -1) / (formSteps.length -1 )) * 100;
+                progressBar.style.width = `${progressWidth}%`;
+         }
+       form.addEventListener('click', (event)=>{
+            if(event.target.classList.contains('next-step')){
+                currentStep++;
+                 if(currentStep > formSteps.length){
+                     currentStep = formSteps.length;
+                 }
+                  formSteps.forEach((step) => step.classList.remove('active'));
+                 formSteps[currentStep-1].classList.add('active');
+                 updateProgress();
+             }
+             if(event.target.classList.contains('prev-step')){
+                 currentStep--;
+                 if(currentStep < 1){
+                      currentStep = 1;
+                }
+                formSteps.forEach((step) => step.classList.remove('active'));
+                 formSteps[currentStep-1].classList.add('active');
+                 updateProgress();
+             }
+        });
 
         submitOrderButton.addEventListener('click', function() {
             const customerName = document.getElementById('customer-name').value;
@@ -606,8 +673,9 @@
             const creamAndColor = document.getElementById('cream-and-color').value;
             const cakeBase = document.getElementById('cake-base').value;
             const cakeDetails = document.getElementById('cake-details').value;
-             const cakePhoto = document.getElementById('cake-photo').value;
+            const cakePhoto = document.getElementById('cake-photo').value;
             const orderNotes = document.getElementById('order-notes').value;
+
 
             if(customerName && branchName && customerPhone && cakeSize && cakeShape && creamAndColor && cakeBase){
                 const orderRef = database.ref('cakeOrders/' + branchName + '/' + customerName);
@@ -637,7 +705,7 @@
                 document.getElementById('cream-and-color').value = '';
                 document.getElementById('cake-base').value = '';
                 document.getElementById('cake-details').value = '';
-                 document.getElementById('cake-photo').value = '';
+                  document.getElementById('cake-photo').value = '';
                 document.getElementById('order-notes').value = '';
 
                 alert('Siparişiniz başarıyla gönderildi!');
@@ -652,7 +720,7 @@
                 this.value = this.value.slice(0,10);
             }
          });
-        // Yandan Menü Kontrolü
+         // Yandan Menü Kontrolü
         function toggleMenu() {
             const menu = document.getElementById('side-menu');
             menu.classList.toggle('open');
@@ -686,13 +754,13 @@
         }
 
         // Otomatik Kaydırma (İsteğe Bağlı)
-        setInterval(() => {
-            const slides = document.querySelectorAll('.slide');
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateSlider();
+         setInterval(() => {
+             const slides = document.querySelectorAll('.slide');
+             currentSlide = (currentSlide + 1) % slides.length;
+             updateSlider();
         }, 5000);
     </script>
-      <script>
+     <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
 </body>
