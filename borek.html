@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Börekler</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+    <style>
+        /* Genel Stil Ayarları */
+        .back-button {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            font-size: 1.5em;
+            padding: 7px 7px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            color: #333;
+        }
+
+        .back-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex; /* Flexbox kullan */
+            justify-content: center; /* Yatayda ortala */
+            align-items: center; /* Dikeyde ortala */
+            position: relative; /* back button için */
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0; /* H1'in kendi marginini sıfırla */
+            color: #e44d26;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        p.aciklama {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        main {
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            max-width: 1200px;
+        }
+
+        /* Ürün Listesi */
+        .urun-listesi {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* Ürün Kartı */
+        .urun-karti {
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .urun-karti:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .urun-adi {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .urun-fiyat {
+            font-size: 1.3em;
+            color: #e44d26;
+            font-weight: bold;
+            margin-top: auto;
+        }
+
+        /* Mobil ekranlar için düzenleme */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 0;
+                display: flex; /* Flexbox kullan */
+                justify-content: center; /* Yatayda ortala */
+                align-items: center; /* Dikeyde ortala */
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            .urun-listesi {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .urun-karti {
+                width: calc(100% - 20px);
+                min-width: auto;
+            }
+
+            h1 {
+                font-size: 2.5em;
+                margin: 0; /* H1'in kendi marginini sıfırla */
+            }
+
+            .urun-adi {
+                font-size: 1.2em;
+                margin-bottom: 5px;
+            }
+
+            .urun-fiyat {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="window.location.href='index.html'">←</button>
+        <h1>Börekler</h1>
+    </header>
+    <main>
+        <ul class="urun-listesi">
+            <!-- 1. Ürün -->
+            <li class="urun-karti">
+                <h2 class="urun-adi">Tandır Kıymalı</h2>
+                <p class="urun-fiyat">₺485</p>
+            </li>
+            <!-- 2. Ürün -->
+            <li class="urun-karti">
+                <h2 class="urun-adi">Su Böreği Peynirli</h2>
+                <p class="urun-fiyat">₺635</p>
+            </li>
+            <!-- 3. Ürün -->
+            <li class="urun-karti">
+                <h2 class="urun-adi">Su Böreği Kıymalı</h2>
+                <p class="urun-fiyat">₺745</p>
+            </li>
+            <!-- 4. Ürün -->
+            <li class="urun-karti">
+                <h2 class="urun-adi">Su Böreği Peynirli</h2>
+                 <p class="urun-fiyat">₺330</p>
+            </li>
+            <!-- 5. Ürün -->
+            <li class="urun-karti">
+                <h2 class="urun-adi">Rulo Börek Sosis</h2>
+                 <p class="urun-fiyat">₺42.5</p>
+            </li>
+           <!-- 6. Ürün -->
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Rulo Börek Peynir</h2>
+                 <p class="urun-fiyat">₺42.5</p>
+            </li>
+             <!-- 7. Ürün -->
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Rulo Börek Ispanak</h2>
+                <p class="urun-fiyat">₺42.5</p>
+            </li>
+             <!-- 8. Ürün -->
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Rulo Börek Patates</h2>
+                 <p class="urun-fiyat">₺42.5</p>
+           </li>
+            <!-- 9. Ürün -->
+           <li class="urun-karti">
+                <h2 class="urun-adi">Su Böreği Kıymalı</h2>
+                 <p class="urun-fiyat">₺460</p>
+            </li>
+            <!-- 10. Ürün -->
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Kol Böreği Peynir</h2>
+                 <p class="urun-fiyat">₺245</p>
+           </li>
+             <!-- 11. Ürün -->
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Kol Böreği Patates</h2>
+                 <p class="urun-fiyat">₺245</p>
+           </li>
+            <!-- 12. Ürün -->
+             <li class="urun-karti">
+                 <h2 class="urun-adi">Çeçil Böreği</h2>
+                 <p class="urun-fiyat">₺450</p>
+            </li>
+             <!-- 13. Ürün -->
+             <li class="urun-karti">
+                 <h2 class="urun-adi">Talaş Böreği</h2>
+                  <p class="urun-fiyat">₺55</p>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>
