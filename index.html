@@ -7,7 +7,7 @@
     <title>FURKAN BAYSAK PASTANELERİ</title>
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
-    <style>
+     <style>
         /* Genel Stil Ayarları */
          .back-button {
             position: absolute;
@@ -26,7 +26,7 @@
         .back-button:hover {
             background-color: #e0e0e0;
         }
-         body {
+        body {
             font-family: 'Open Sans', sans-serif;
             background-color: #f8f8f8;
             color: #333;
@@ -37,39 +37,42 @@
             flex-direction: column;
             min-height: 100vh; /* Dikeyde ortalamak için */
         }
+
         header {
-           background-color: #fff;
-           padding: 20px 0;
-           border-bottom: 1px solid #eee;
-           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           position: relative;
-       }
-       .logo-container {
+            background-color: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex; /* Flexbox kullan */
+            justify-content: space-between; /* Sola ve sağa yasla */
+            align-items: center; /* Dikeyde ortala */
+             position: relative;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #e44d26;
+             margin: 0; /* H1'in kendi marginini sıfırla */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
             display: flex;
             align-items: center;
         }
+
         .logo {
             max-width: 50px;
-             margin-right: 10px;
+            margin-right: 10px;
         }
-         h1 {
-             font-size: 2em;
-             color: #e44d26;
-              margin: 0;
-             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-          }
-           /* Yandan Menü */
-        .menu-icon {
+        /* Yandan Menü */
+         .menu-icon {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             width: 30px;
             height: 25px;
-             cursor: pointer;
-            margin-right: 20px;
+            cursor: pointer;
         }
         .menu-icon .line {
             width: 100%;
@@ -77,64 +80,61 @@
             background-color: #333;
             transition: all 0.3s ease;
         }
-         nav#side-menu {
+        nav#side-menu {
             position: fixed;
             top: 0;
             left: -250px;
             width: 250px;
-             height: 100%;
-             background-color: #fff;
-             z-index: 1000;
+            height: 100%;
+            background-color: #fff;
+            z-index: 1000;
             padding-top: 60px;
-             transition: left 0.3s ease;
+            transition: left 0.3s ease;
             overflow-y: auto;
-             box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+            box-shadow: 2px 0 5px rgba(0,0,0,0.2);
         }
-
          nav#side-menu.open {
             left: 0;
         }
-
          nav#side-menu ul {
             list-style: none;
-             padding: 0;
-           margin: 0;
+            padding: 0;
+            margin: 0;
         }
-
         nav#side-menu ul li a {
             display: block;
-             padding: 15px 20px;
-             text-decoration: none;
-              color: #333;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #333;
             font-weight: bold;
-             transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease;
         }
          nav#side-menu ul li a:hover {
             background-color: #f0f0f0;
         }
-         nav#side-menu .close-btn {
+        nav#side-menu .close-btn {
             position: absolute;
-             top: 10px;
+            top: 10px;
             right: 10px;
             font-size: 24px;
              cursor: pointer;
             background: none;
-             border: none;
+            border: none;
            outline: none;
          }
          /* Slider Stilleri */
         .slider-container {
-             width: 100%;
-             overflow: hidden;
+            width: 100%;
+            overflow: hidden;
             position: relative;
         }
         .slider {
-             display: flex;
-             transition: transform 0.5s ease;
+            display: flex;
+            transition: transform 0.5s ease;
         }
         .slide {
-             width: 100%;
-             flex-shrink: 0;
+            width: 100%;
+            flex-shrink: 0;
         }
           .slide img {
             width: 100%;
@@ -142,7 +142,7 @@
          }
 
         .dots {
-           position: absolute;
+            position: absolute;
             bottom: 10px;
              left: 50%;
             transform: translateX(-50%);
@@ -181,7 +181,7 @@
             line-height: 1.6;
         }
         /* Ürünler Stilleri */
-         .kutular-container {
+        .kutular-container {
            display: flex;
            flex-wrap: wrap;
            justify-content: center;
@@ -364,7 +364,7 @@
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             }
          }
-    /* İlerleme Çubuğu Stilleri */
+          /* İlerleme Çubuğu Stilleri */
         .progress-bar {
             width: 100%;
             background-color: #f0f0f0;
@@ -390,7 +390,7 @@
 <body oncontextmenu="return false;">
     <!-- Üst Menü -->
     <header>
-        <div class="menu-icon" onclick="toggleMenu()">
+         <div class="menu-icon" onclick="toggleMenu()">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
@@ -625,7 +625,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
     <script>
-        const firebaseConfig = {
+         const firebaseConfig = {
             apiKey: "AIzaSyCIhKXxTwmQ1l70c7_vnH6ZmM1FxZsqUEI",
             authDomain: "furkan-baysak-b74ef.firebaseapp.com",
             databaseURL: "https://furkan-baysak-b74ef-default-rtdb.firebaseio.com",
@@ -639,11 +639,12 @@
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
         const submitOrderButton = document.getElementById('submit-order');
-         const formSteps = document.querySelectorAll(".form-step");
+        const formSteps = document.querySelectorAll(".form-step");
         const progressBar = document.getElementById("progress");
         let currentStep = 1;
         const form = document.getElementById('order-form');
-           function updateProgress(){
+
+        function updateProgress(){
                 const progressWidth = ((currentStep -1) / (formSteps.length -1 )) * 100;
                 progressBar.style.width = `${progressWidth}%`;
          }
@@ -741,8 +742,6 @@
                 this.value = this.value.slice(0,10);
             }
          });
-
-
         // Yandan Menü Kontrolü
         function toggleMenu() {
             const menu = document.getElementById('side-menu');
