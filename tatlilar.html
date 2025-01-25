@@ -5,90 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tatlılar</title>
     <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
     <style>
-        /* Genel Stil Ayarları */
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Sayfa yüksekliği en az 100vh olsun */
-        }
-
-        header {
-            background-color: #fff;
-             padding: 20px 0;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-             position: relative; /* back button için */
-              display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            color: #e44d26;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        p.aciklama {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-         main {
-            padding: 40px;
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin: 30px auto;
-            max-width: 800px; /* Genişlik ayarlandı */
-            text-align: center; /* İçeriği ortala */
-            flex: 1; /* Main içeriği esnek olacak ve kalan alana yayılacak */
-             display: flex;
-            flex-direction: column;
-            justify-content: center; /* Dikeyde ortala */
-            align-items: center; /* Yatayda ortala */
-        }
-         .yakinda-eklenecek {
-            font-size: 2em;
-            font-weight: bold;
-            color: #e44d26;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .sabir-metin {
-             font-size: 1.2em;
-            color: #666;
-            text-align: center;
-        }
-        /* Ekran Boyutu Ayarları */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-
-            p.aciklama {
-                font-size: 1em;
-            }
-
-             main {
-                padding: 20px;
-            }
-        }
-          /* Geri Butonu Stilleri */
-          .back-button {
-              position: absolute;
+         /* Genel Stil Ayarları */
+        .back-button {
+            position: absolute;
             top: 8px;
             left: 8px;
             font-size: 1.5em;
@@ -101,18 +23,413 @@
             color: #333;
         }
 
-         .back-button:hover {
-            background-color: #e0e0e0; }
+        .back-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+         header {
+            background-color: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex; /* Flexbox kullan */
+            justify-content: center; /* Yatayda ortala */
+            align-items: center; /* Dikeyde ortala */
+            position: relative; /* back button için */
+        }
+
+        h1 {
+            font-size: 3em;
+             margin: 0; /* H1'in kendi marginini sıfırla */
+            color: #e44d26;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+          
+        }
+
+        p.aciklama {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        main {
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            max-width: 1200px;
+        }
+
+        /* Ürün Listesi */
+        .urun-listesi {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0;
+            list-style: none;
+            
+        }
+
+        /* Ürün Kartı */
+        .urun-karti {
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+             display: flex;
+            flex-direction: column;
+            align-items: center;
+             text-align: center;
+             
+        }
+
+        .urun-karti:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .urun-adi {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+       .urun-fiyat {
+            font-size: 1.3em;
+            color: #e44d26;
+            font-weight: bold;
+           margin-top: auto;
+        }
+        
+        /* Mobil ekranlar için düzenleme */
+         @media (max-width: 768px) {
+              header {
+               padding: 10px 0;
+                display: flex; /* Flexbox kullan */
+            justify-content: center; /* Yatayda ortala */
+            align-items: center; /* Dikeyde ortala */
+                }
+            main {
+              padding: 20px;
+            }
+
+           .urun-listesi {
+               display: flex;
+            flex-wrap: wrap;
+             justify-content: center;
+            gap: 15px;
+            }
+           .urun-karti{
+               width: calc(100% - 20px);
+                 min-width: auto;
+            }
+            h1 {
+              font-size: 2.5em;
+                 margin: 0; /* H1'in kendi marginini sıfırla */
+           }
+           .urun-adi {
+               font-size: 1.2em;
+              margin-bottom: 5px;
+           }
+           .urun-fiyat{
+                font-size: 1.1em;
+           }
+        }
     </style>
 </head>
 <body>
     <header>
-      <button class="back-button" onclick="window.location.href='index.html'">←</button>
+        <button class="back-button" onclick="window.location.href='index.html'">←</button>
         <h1>Tatlılar</h1>
     </header>
     <main>
-        <h2 class="yakinda-eklenecek">Çok Yakında Eklenecek!</h2>
-        <p class="sabir-metin">Lezzetli tatlı seçeneklerimiz için lütfen takipte kalın. Enfes tatlarımızla buluşmanız için sabırsızlanıyoruz!</p>
+        <ul class="urun-listesi">
+            <li class="urun-karti">
+                <h2 class="urun-adi">Şekerpare</h2>
+                <p class="urun-fiyat">₺355</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">İstanbul Şekerpare</h2>
+                <p class="urun-fiyat">₺355</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Kadayıf</h2>
+                <p class="urun-fiyat">₺355</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Bülbül Yuvası</h2>
+                <p class="urun-fiyat">₺440</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Soğuk Baklava</h2>
+                <p class="urun-fiyat">₺825</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Cevizli Baklava</h2>
+                <p class="urun-fiyat">₺530</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Cevizli Mendil</h2>
+                <p class="urun-fiyat">₺580</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Cevizli Dürüm</h2>
+                <p class="urun-fiyat">₺605</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Özel</h2>
+                <p class="urun-fiyat">₺880</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Şöbiyet</h2>
+                <p class="urun-fiyat">₺760</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Şöbiyet Çikolatalı</h2>
+                <p class="urun-fiyat">₺695</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Midye</h2>
+                <p class="urun-fiyat">₺880</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Fıstık Sarma</h2>
+                <p class="urun-fiyat">₺1210</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Osmanlı</h2>
+                <p class="urun-fiyat">₺1760</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Hindistan Cevizli Kokonat</h2>
+                <p class="urun-fiyat">₺545</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Havuç Dilimi Baklava</h2>
+                <p class="urun-fiyat">₺800</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Saray Sarması</h2>
+                <p class="urun-fiyat">₺860</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Fındıklı Misket</h2>
+                <p class="urun-fiyat">₺545</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Fıstıklı Baklava</h2>
+                <p class="urun-fiyat">₺760</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Fıstıklı Dürüm</h2>
+                <p class="urun-fiyat">₺910</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Cevizli Kıvrım</h2>
+                <p class="urun-fiyat">₺605</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Fıstıklı Kadayıf</h2>
+                <p class="urun-fiyat">₺605</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Kadayıf Sultaniye</h2>
+                <p class="urun-fiyat">₺910</p>
+            </li>
+               <li class="urun-karti">
+                <h2 class="urun-adi">Fıstıklı Kuş Gözü</h2>
+                <p class="urun-fiyat">₺860</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Yüzük Baklava</h2>
+                <p class="urun-fiyat">₺945</p>
+            </li>
+               <li class="urun-karti">
+                <h2 class="urun-adi">Açık Şöbiyet</h2>
+                <p class="urun-fiyat">₺970</p>
+            </li>
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Osmanlı Havuç</h2>
+                <p class="urun-fiyat">₺1030</p>
+            </li>
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Duble Fıstıklı Misket</h2>
+                 <p class="urun-fiyat">₺1000</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Cevizli Çikolatalı Baklava</h2>
+                <p class="urun-fiyat">₺485</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Midye Duble Fıstıklı</h2>
+                <p class="urun-fiyat">₺1030</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Soğuk Baklava Siyah</h2>
+                <p class="urun-fiyat">₺825</p>
+            </li>
+               <li class="urun-karti">
+                <h2 class="urun-adi">Soğuk Baklava Beyaz</h2>
+                <p class="urun-fiyat">₺825</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Soğuk Kadayıf Beyaz</h2>
+                <p class="urun-fiyat">₺605</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Soğuk Kadayıf Siyah</h2>
+                <p class="urun-fiyat">₺605</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Cevizli Saray Sarması</h2>
+                <p class="urun-fiyat">₺585</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Cevizli Gül Baklava</h2>
+                <p class="urun-fiyat">₺570</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Fıstıklı Dilber Dudağı</h2>
+                <p class="urun-fiyat">₺870</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Fıstıklı Kıvrım</h2>
+                <p class="urun-fiyat">₺935</p>
+            </li>
+               <li class="urun-karti">
+                <h2 class="urun-adi">Kalbur Tatlısı</h2>
+                 <p class="urun-fiyat">₺425</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Cevizli Kadayıf</h2>
+                 <p class="urun-fiyat">₺425</p>
+            </li>
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Kuru Baklava</h2>
+                <p class="urun-fiyat">₺900</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Fıstıklı Muska</h2>
+                 <p class="urun-fiyat">₺850</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Fıstıklı Balık Sırtı</h2>
+                <p class="urun-fiyat">₺1210</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Fıstıklı Balık Sırtı Mekik</h2>
+                <p class="urun-fiyat">₺1210</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Cevizli Sultan Sarması</h2>
+                <p class="urun-fiyat">₺570</p>
+            </li>
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Soğuk Baklava Frambuaz</h2>
+                  <p class="urun-fiyat">₺825</p>
+            </li>
+             <li class="urun-karti">
+                 <h2 class="urun-adi">Fıstıklı Sultan Sarma</h2>
+                  <p class="urun-fiyat">₺880</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Gülzade Baklava</h2>
+                <p class="urun-fiyat">₺825</p>
+            </li>
+             <li class="urun-karti">
+                 <h2 class="urun-adi">Dökme Misket</h2>
+                <p class="urun-fiyat">₺1060</p>
+            </li>
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Special Baklava</h2>
+                <p class="urun-fiyat">₺850</p>
+            </li>
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Sarı Burma</h2>
+                 <p class="urun-fiyat">₺585</p>
+            </li>
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Cevizli Şöbiyet</h2>
+                 <p class="urun-fiyat">₺485</p>
+            </li>
+               <li class="urun-karti">
+                 <h2 class="urun-adi">Cevizli Yaprak</h2>
+                 <p class="urun-fiyat">₺470</p>
+            </li>
+              <li class="urun-karti">
+                 <h2 class="urun-adi">Cevizli Midye</h2>
+                 <p class="urun-fiyat">₺545</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Hindistan Cevizli Sarma</h2>
+                 <p class="urun-fiyat">₺485</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Billuriye</h2>
+                 <p class="urun-fiyat">₺1000</p>
+            </li>
+             <li class="urun-karti">
+                 <h2 class="urun-adi">Burma Kadayıf Fıstıklı</h2>
+                 <p class="urun-fiyat">₺970</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Burma Kadayıf Cevizli</h2>
+                 <p class="urun-fiyat">₺450</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Yuvarlak Burma Kadayıf</h2>
+                 <p class="urun-fiyat">₺980</p>
+            </li>
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Cevizli Misket</h2>
+                <p class="urun-fiyat">₺580</p>
+            </li>
+             <li class="urun-karti">
+                 <h2 class="urun-adi">Cevizli Vezir</h2>
+                <p class="urun-fiyat">₺515</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Fındıklı Atom Baklava</h2>
+                <p class="urun-fiyat">₺560</p>
+            </li>
+             <li class="urun-karti">
+                 <h2 class="urun-adi">Fındıklı Saray Sarması</h2>
+                <p class="urun-fiyat">₺545</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Sultanı Derya</h2>
+                <p class="urun-fiyat">₺1210</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Sarma Special</h2>
+                 <p class="urun-fiyat">₺830</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Fıstıklı Bilezik</h2>
+                 <p class="urun-fiyat">₺955</p>
+            </li>
+             <li class="urun-karti">
+                 <h2 class="urun-adi">Fıstıklı Kadayıf Midye</h2>
+                 <p class="urun-fiyat">₺1000</p>
+            </li>
+        </ul>
     </main>
 </body>
 </html>
