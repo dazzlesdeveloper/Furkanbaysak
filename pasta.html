@@ -5,85 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pastalar</title>
     <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
     <style>
          /* Genel Stil Ayarları */
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            background-color: #fff;
-            padding: 40px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-
-        h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            color: #e44d26;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        p.aciklama {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-         main {
-            padding: 40px;
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin: 30px auto;
-            max-width: 800px; /* Genişlik ayarlandı */
-            text-align: center; /* İçeriği ortala */
-            flex: 1; /* Main içeriği esnek olacak ve kalan alana yayılacak */
-             display: flex;
-            flex-direction: column;
-            justify-content: center; /* Dikeyde ortala */
-            align-items: center; /* Yatayda ortala */
-        }
-         .yakinda-eklenecek {
-            font-size: 2em;
-            font-weight: bold;
-            color: #e44d26;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .sabir-metin {
-             font-size: 1.2em;
-            color: #666;
-            text-align: center;
-        }
-        /* Ekran Boyutu Ayarları */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-
-            p.aciklama {
-                font-size: 1em;
-            }
-
-             main {
-                padding: 20px;
-            }
-        }
-         /* Genel Stil Ayarları */
-         .back-button {
+        .back-button {
             position: absolute;
             top: 8px;
             left: 8px;
@@ -95,9 +21,137 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
             color: #333;
+        }
 
-         .back-button:hover {
-            background-color: #e0e0e0; }
+        .back-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+         header {
+            background-color: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex; /* Flexbox kullan */
+            justify-content: center; /* Yatayda ortala */
+            align-items: center; /* Dikeyde ortala */
+            position: relative; /* back button için */
+        }
+
+        h1 {
+            font-size: 3em;
+             margin: 0; /* H1'in kendi marginini sıfırla */
+            color: #e44d26;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+          
+        }
+
+        p.aciklama {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        main {
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            max-width: 1200px;
+        }
+
+        /* Ürün Listesi */
+        .urun-listesi {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0;
+            list-style: none;
+            
+        }
+
+        /* Ürün Kartı */
+        .urun-karti {
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+             display: flex;
+            flex-direction: column;
+            align-items: center;
+             text-align: center;
+             
+        }
+
+        .urun-karti:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .urun-adi {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+       .urun-fiyat {
+            font-size: 1.3em;
+            color: #e44d26;
+            font-weight: bold;
+           margin-top: auto;
+        }
+        
+        /* Mobil ekranlar için düzenleme */
+         @media (max-width: 768px) {
+              header {
+               padding: 10px 0;
+                display: flex; /* Flexbox kullan */
+            justify-content: center; /* Yatayda ortala */
+            align-items: center; /* Dikeyde ortala */
+                }
+            main {
+              padding: 20px;
+            }
+
+           .urun-listesi {
+               display: flex;
+            flex-wrap: wrap;
+             justify-content: center;
+            gap: 15px;
+            }
+           .urun-karti{
+               width: calc(100% - 20px);
+                 min-width: auto;
+            }
+            h1 {
+              font-size: 2.5em;
+                 margin: 0; /* H1'in kendi marginini sıfırla */
+           }
+           .urun-adi {
+               font-size: 1.2em;
+              margin-bottom: 5px;
+           }
+           .urun-fiyat{
+                font-size: 1.1em;
+           }
+        }
     </style>
 </head>
 <body>
@@ -106,8 +160,120 @@
         <h1>Pastalar</h1>
     </header>
     <main>
-        <h2 class="yakinda-eklenecek">Çok Yakında Eklenecek!</h2>
-        <p class="sabir-metin">Lezzetli pasta seçeneklerimiz için lütfen takipte kalın. Enfes tatlarımızla buluşmanız için sabırsızlanıyoruz!</p>
+        <ul class="urun-listesi">
+            <li class="urun-karti">
+                <h2 class="urun-adi">1 No Çikolatalı Turta</h2>
+                <p class="urun-fiyat">₺720</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">1 No Meyveli Turta</h2>
+                <p class="urun-fiyat">₺720</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">2 No Çikolatalı Turta</h2>
+                <p class="urun-fiyat">₺820</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">2 No Meyveli Turta</h2>
+                <p class="urun-fiyat">₺820</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">3 No Çikolatalı Turta</h2>
+                <p class="urun-fiyat">₺950</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">3 No Meyveli Turta</h2>
+                <p class="urun-fiyat">₺950</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Profiterol Şelalesi Küçük</h2>
+                <p class="urun-fiyat">₺250</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Profiterol Şelalesi Büyük</h2>
+                <p class="urun-fiyat">₺355</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Magnolya</h2>
+                <p class="urun-fiyat">₺200</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Prenses Pasta</h2>
+                <p class="urun-fiyat">₺200</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Triliçe Karamelli</h2>
+                <p class="urun-fiyat">₺95</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Triliçe Frambuazlı</h2>
+                <p class="urun-fiyat">₺95</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Nişan Rulosu</h2>
+                <p class="urun-fiyat">₺75</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Supangle</h2>
+                <p class="urun-fiyat">₺130</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Malaga</h2>
+                <p class="urun-fiyat">₺225</p>
+            </li>
+            <li class="urun-karti">
+                 <h2 class="urun-adi">Profiterol</h2>
+                 <p class="urun-fiyat">₺120</p>
+             </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Kase Profiterol</h2>
+                <p class="urun-fiyat">₺130</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Hasbahçe</h2>
+                <p class="urun-fiyat">₺160</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Baton Pasta</h2>
+                <p class="urun-fiyat">₺720</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">2 Kişilik Y.Pasta Çikolatalı</h2>
+                <p class="urun-fiyat">₺455</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">2 Kişilik Y.Pasta Meyveli</h2>
+                <p class="urun-fiyat">₺455</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">Prenses Çilek</h2>
+                <p class="urun-fiyat">₺200</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Magnolya Lotus</h2>
+                <p class="urun-fiyat">₺200</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Yeşil Welwet 2 No Meyveli</h2>
+                <p class="urun-fiyat">₺820</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Burger Pasta 2 No</h2>
+                <p class="urun-fiyat">₺820</p>
+            </li>
+            <li class="urun-karti">
+                <h2 class="urun-adi">2 Kişilik Burger Pasta</h2>
+                <p class="urun-fiyat">₺465</p>
+            </li>
+             <li class="urun-karti">
+                <h2 class="urun-adi">Burger Pasta 1 No</h2>
+                 <p class="urun-fiyat">₺730</p>
+            </li>
+              <li class="urun-karti">
+                <h2 class="urun-adi">Bolo No Poto</h2>
+                <p class="urun-fiyat">₺240</p>
+            </li>
+        </ul>
     </main>
 </body>
 </html>
