@@ -8,25 +8,20 @@
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <style>
-       body {
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fff; /* Beyaz arka plan */
+            background-color: #fff;
             color: #333;
         }
 
         header {
-            background-color: #fff; /* Beyaz header */
-            color: #000; /* Siyah yazı */
+            background-color: #fff;
+            color: #000;
             padding: 20px 0;
             text-align: center;
-            border-bottom: 1px solid #ddd; /* Ayırıcı çizgi */
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
+            border-bottom: 1px solid #ddd;
         }
 
         .logo {
@@ -40,36 +35,15 @@
             font-size: 2.2em;
         }
 
-        .menu-icon {
-            display: none; /* Hamburger menü ikonu başlangıçta gizli */
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .line {
-            width: 25px;
-            height: 3px;
-            background-color: #333; /* Siyah çizgiler */
-            margin: 5px auto;
-        }
-
         nav#side-menu {
-            background-color: #fff; /* Beyaz yan menü */
+            background-color: #fff;
         }
 
         nav#side-menu ul li a {
-            color: #000; /* Siyah menü linkleri */
+            color: #000;
         }
 
-        main {
-            background-color: #fff; /* Beyaz ana içerik */
-        }
-
-        .section-content h2 {
-            color: #c0a378; /* Kahverengi başlıklar (isteğe bağlı, değiştirilebilir) */
-        }
-
-        /* Pasta Sipariş Alanı Stilleri (Yorum Alanı Stilleri Gibi - BEYAZ ve SADE TASARIM) */
+         /* Pasta Sipariş Alanı Stilleri (Beyaz ve Sade Tasarım) */
         .pasta-siparis-section {
             margin-top: 20px;
             padding: 15px;
@@ -78,7 +52,7 @@
         }
 
         .pasta-siparis-section h2 {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             font-size: 1.5em;
             text-align: center;
         }
@@ -86,7 +60,8 @@
         .siparis-form {
             display: flex;
             flex-direction: column;
-            margin-bottom: 15px;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .step {
@@ -98,21 +73,23 @@
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #444;
         }
 
         .form-group input, .form-group textarea, .form-group select {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
+            padding: 12px;
+            border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
+            font-family: inherit;
             box-sizing: border-box;
         }
 
@@ -120,7 +97,7 @@
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
-            background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg fill="grey" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
             background-repeat: no-repeat;
             background-position-x: calc(100% - 10px);
             background-position-y: 50%;
@@ -134,14 +111,14 @@
         .form-actions {
             display: flex;
             justify-content: space-between;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .form-actions button {
-            background-color: #5cb85c; /* Yeşil butonlar */
+            background-color: #5cb85c;
             color: white;
             border: none;
-            padding: 12px 15px;
+            padding: 12px 25px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -149,21 +126,29 @@
             margin: 4px 2px;
             cursor: pointer;
             border-radius: 4px;
+            transition: background-color 0.3s ease;
         }
-        .form-actions button:hover{
+
+        .form-actions button:hover {
             background-color: #4cae4c;
+        }
+
+        .form-actions button:disabled {
+            background-color: #ddd;
+            color: #777;
+            cursor: not-allowed;
         }
 
         .progress-bar-container {
             width: 100%;
-            background-color: #f0f0f0;
+            background-color: #e0e0e0;
             border-radius: 4px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             overflow: hidden;
         }
 
         .progress-bar {
-            background-color: #5cb85c;
+            background-color: #c0a378; /* Kahverengi ilerleme çubuğu */
             height: 10px;
             width: 0%;
             border-radius: 4px;
@@ -230,11 +215,11 @@
         }
 
         .social-link {
-           display: flex;
-           align-items: center;
-           text-decoration: none;
-           color: white;
-           margin: 0 20px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            margin: 0 20px;
         }
 
         .social-logo {
@@ -406,11 +391,11 @@
         <div class="kutular-container">
             <div class="kutu">
                 <a href="eksimaya.html">
-                    <img src="eksimaya.png" alt="Ekşi Maya">
+                    <img src="ekşimaya.png" alt="Ekşi Maya">
                     <p>EKŞİ MAYALILAR</p>
                 </a>
             </div>
-             <div class="kutu">
+            <div class="kutu">
                 <a href="pasta.html">
                     <img src="pasta.png" alt="Pastalar">
                     <p>PASTALAR</p>
@@ -522,11 +507,11 @@
                 <div class="step" data-step="2">
                     <div class="form-group">
                         <label for="musteri-telefon">2. Müşteri Telefonu <span style="color: red;">*</span></label>
-                        <input type="tel" id="musteri-telefon" name="musteri-telefon" required placeholder="Telefon Numaranız" maxlength="11">
+                        <input type="tel" class="form-input" id="musteri-telefon" name="musteri-telefon" required placeholder="Telefon Numaranız" maxlength="11">
                     </div>
                      <div class="form-actions">
-                        <button type="button" class="form-button geri" id="previous-step" onclick="updateFormStep(1)">Geri</button>
-                        <button type="button" class="form-button ileri" id="next-step">İleri</button>
+                        <button type="button" class="form-button geri-button" id="previous-step" onclick="updateFormStep(1)">Geri</button>
+                        <button type="button" class="form-button ileri-button" id="next-step">İleri</button>
                     </div>
                 </div>
 
@@ -536,15 +521,15 @@
                         <input type="text" id="sube-adi" name="sube-adi" required placeholder="Sipariş vermek istediğiniz şube">
                     </div>
                      <div class="form-actions">
-                        <button type="button" class="form-button geri" id="previous-step" onclick="updateFormStep(2)">Geri</button>
-                        <button type="button" class="form-button ileri" id="next-step">İleri</button>
+                        <button type="button" class="form-button geri-button" id="previous-step" onclick="updateFormStep(2)">Geri</button>
+                        <button type="button" class="form-button ileri-button" id="next-step">İleri</button>
                     </div>
                 </div>
 
                 <div class="step" data-step="4">
                     <div class="form-group">
                         <label for="pasta-boyutu">4. Pasta Boyutu <span class="location-icon">🎂</span><span style="color: red;">*</span></label>
-                        <select id="pasta-boyutu" name="pasta-boyutu" required>
+                        <select id="pasta-boyutu" name="pasta-boyutu" required class="form-select">
                             <option value="">Seçiniz</option>
                             <option value="1-nolu">1 Nolu (4-6 Kişilik)</option>
                             <option value="2-nolu">2 Nolu (8-10 Kişilik)</option>
@@ -552,8 +537,8 @@
                         </select>
                     </div>
                      <div class="form-actions">
-                        <button type="button" class="form-button geri" id="previous-step" onclick="updateFormStep(3)">Geri</button>
-                        <button type="button" class="form-button ileri" id="next-step">İleri</button>
+                        <button type="button" class="form-button geri-button" id="previous-step" onclick="updateFormStep(3)">Geri</button>
+                        <button type="button" class="form-button ileri-button" id="next-step">İleri</button>
                     </div>
                 </div>
 
@@ -563,15 +548,15 @@
                         <input type="text" id="pasta-sekli" name="pasta-sekli" required placeholder="İstediğiniz pasta şeklini belirtin (yuvarlak, kare, kalp vb.)">
                     </div>
                      <div class="form-actions">
-                        <button type="button" class="form-button geri" id="previous-step" onclick="updateFormStep(4)">Geri</button>
-                        <button type="button" class="form-button ileri" id="next-step">İleri</button>
+                        <button type="button" class="form-button geri-button" id="previous-step" onclick="updateFormStep(4)">Geri</button>
+                        <button type="button" class="form-button ileri-button" id="next-step">İleri</button>
                     </div>
                 </div>
 
                 <div class="step" data-step="6">
                     <div class="form-group">
                         <label for="ekstra-ara-kat">6. Ekstra Ara Kat <span style="color: red;">*</span></label>
-                        <select id="ekstra-ara-kat" name="ekstra-ara-kat" required>
+                        <select id="ekstra-ara-kat" name="ekstra-ara-kat" required class="form-select">
                             <option value="istemiyorum">İstemiyorum</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -581,8 +566,8 @@
                         </select>
                     </div>
                      <div class="form-actions">
-                        <button type="button" class="form-button geri" id="previous-step" onclick="updateFormStep(5)">Geri</button>
-                        <button type="button" class="form-button ileri" id="next-step">İleri</button>
+                        <button type="button" class="form-button geri-button" id="previous-step" onclick="updateFormStep(5)">Geri</button>
+                        <button type="button" class="form-button ileri-button" id="next-step">İleri</button>
                     </div>
                 </div>
 
@@ -592,8 +577,8 @@
                         <input type="text" id="kek-krema-farkliligi" name="kek-krema-farkliligi" required placeholder="Kek veya krema için özel isteğiniz varsa belirtin">
                     </div>
                      <div class="form-actions">
-                        <button type="button" class="form-button geri" id="previous-step" onclick="updateFormStep(6)">Geri</button>
-                        <button type="button" class="form-button ileri" id="next-step">İleri</button>
+                        <button type="button" class="form-button geri-button" id="previous-step" onclick="updateFormStep(6)">Geri</button>
+                        <button type="button" class="form-button ileri-button" id="next-step">İleri</button>
                     </div>
                 </div>
 
@@ -603,8 +588,8 @@
                         <input type="text" id="pasta-icerigi" name="pasta-icerigi" required placeholder="Pasta içeriği tercihinizi belirtin (kuruyemiş, çikolata, meyveli, full içerikli vb.)">
                     </div>
                      <div class="form-actions">
-                        <button type="button" class="form-button geri" id="previous-step" onclick="updateFormStep(7)">Geri</button>
-                        <button type="button" class="form-button ileri" id="next-step">İleri</button>
+                        <button type="button" class="form-button geri-button" id="previous-step" onclick="updateFormStep(7)">Geri</button>
+                        <button type="button" class="form-button ileri-button" id="next-step">İleri</button>
                     </div>
                 </div>
 
@@ -614,8 +599,8 @@
                         <input type="text" id="pasta-kremasi" name="pasta-kremasi" required placeholder="Pasta kreması tercihinizi belirtin (şanti, sos, şeker hamuru)">
                     </div>
                      <div class="form-actions">
-                        <button type="button" class="form-button geri" id="previous-step" onclick="updateFormStep(8)">Geri</button>
-                        <button type="button" class="form-button ileri" id="next-step">İleri</button>
+                        <button type="button" class="form-button geri-button" id="previous-step" onclick="updateFormStep(8)">Geri</button>
+                        <button type="button" class="form-button ileri-button" id="next-step">İleri</button>
                     </div>
                 </div>
 
@@ -625,8 +610,8 @@
                         <input type="text" id="pasta-rengi" name="pasta-rengi" required placeholder="Pasta rengi tercihinizi belirtin">
                     </div>
                      <div class="form-actions">
-                        <button type="button" class="form-button geri" id="previous-step" onclick="updateFormStep(9)">Geri</button>
-                        <button type="button" class="form-button ileri" id="next-step">İleri</button>
+                        <button type="button" class="form-button geri-button" id="previous-step" onclick="updateFormStep(9)">Geri</button>
+                        <button type="button" class="form-button ileri-button" id="next-step">İleri</button>
                     </div>
                 </div>
 
@@ -636,8 +621,8 @@
                         <input type="text" id="pasta-altligi" name="pasta-altligi" required placeholder="Pasta altlığı tercihinizi belirtin (mukavva, şeker hamuru, ahşap)">
                     </div>
                      <div class="form-actions">
-                        <button type="button" class="form-button geri" id="previous-step" onclick="updateFormStep(10)">Geri</button>
-                        <button type="button" class="form-button ileri" id="next-step">İleri</button>
+                        <button type="button" class="form-button geri-button" id="previous-step" onclick="updateFormStep(10)">Geri</button>
+                        <button type="button" class="form-button ileri-button" id="next-step">İleri</button>
                     </div>
                 </div>
 
@@ -647,8 +632,8 @@
                         <textarea id="pasta-detaylari" name="pasta-detaylari" rows="8" placeholder="Pasta ile ilgili eklemek istediğiniz detaylar, özel notlar" maxlength="800" required></textarea>
                     </div>
                      <div class="form-actions">
-                        <button type="button" class="form-button geri" id="previous-step" onclick="updateFormStep(11)">Geri</button>
-                        <button type="button" class="form-button ileri" id="next-step">İleri</button>
+                        <button type="button" class="form-button geri-button" id="previous-step" onclick="updateFormStep(11)">Geri</button>
+                        <button type="button" class="form-button ileri-button" id="next-step">İleri</button>
                     </div>
                 </div>
 
@@ -658,14 +643,14 @@
                         <textarea id="notlar" name="notlar" rows="8" placeholder="Eklemek istediğiniz notlar" maxlength="800" required></textarea>
                     </div>
                      <div class="form-actions">
-                        <button type="button" class="form-button geri" id="previous-step" onclick="updateFormStep(12)">Geri</button>
-                        <button type="submit" class="form-button gonder" id="submit-order">Siparişi Gönder</button>
+                        <button type="button" class="form-button geri-button" id="previous-step" onclick="updateFormStep(12)">Geri</button>
+                        <button type="submit" class="form-button gonder-button" id="submit-order">Siparişi Gönder</button>
                     </div>
                 </div>
                  <div class="form-actions">
-                    <button type="button" class="form-button geri" id="previous-step" >Geri</button>
-                    <button type="button" class="form-button ileri" id="next-step">İleri</button>
-                    <button type="submit" class="form-button gonder" id="submit-order" style="display: none;">Siparişi Gönder</button>
+                    <button type="button" class="form-button geri-button" id="previous-step" >Geri</button>
+                    <button type="button" class="form-button ileri-button" id="next-step">İleri</button>
+                    <button type="submit" class="form-button gonder-button" id="submit-order" style="display: none;">Siparişi Gönder</button>
                 </div>
             </form>
         </section>
@@ -723,7 +708,7 @@
             if (stepIndex === 1) {
                 prevButton.style.display = 'none';
             } else {
-                prevButton.style.display: inline-block;
+                prevButton.style.display = 'inline-block';
             }
         }
 
