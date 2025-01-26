@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FURKAN BAYSAK PASTANELERİ</title>
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
@@ -199,83 +199,42 @@
             color: #e44d26; /* Kırmızı ikon */
         }
 
-        /* Pasta Sipariş Alanı Stilleri (ESKİ TASARIM - Sade Stil) */
+         /* Pasta Sipariş Alanı Stilleri (Yorum Alanı Stilleri Gibi) */
         .pasta-siparis-section {
             margin-top: 20px;
-            padding: 20px;
+            padding: 15px;
             background-color: #f9f9f9;
             border-radius: 8px;
         }
 
         .pasta-siparis-section h2 {
-            margin-bottom: 20px;
-            font-size: 1.5em;
-            text-align: center;
+            margin-bottom: 10px;
+            font-size: 1.2em;
         }
 
         .siparis-form {
             display: flex;
             flex-direction: column;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .step { /* Adımları gizlemek/göstermek için */
-            display: none;
-        }
-
-        .step.active {
-            display: block;
-        }
-
-        .form-group {
             margin-bottom: 15px;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
         .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 10px;
+            margin-bottom: 8px;
+            padding: 8px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            font-size: 16px;
-            box-sizing: border-box; /* Padding'in genişliğe dahil olmasını sağlar */
-        }
-
-        .form-group select {
-            appearance: none; /* Varsayılan ok işaretini kaldırır (isteğe bağlı) */
-            -webkit-appearance: none; /* Safari ve Chrome için */
-            -moz-appearance: none; /* Firefox için */
-            background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
-            background-repeat: no-repeat;
-            background-position-x: calc(100% - 10px);
-            background-position-y: 50%;
-        }
-
-        .form-group textarea {
-            resize: vertical; /* Sadece dikeyde boyutlandırma */
-        }
-
-        .form-actions { /* Butonları hizalamak için */
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
+            font-size: 14px;
         }
 
         .form-actions button {
             background-color: #5cb85c;
             color: white;
             border: none;
-            padding: 12px 15px;
+            padding: 8px 12px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
+            font-size: 14px;
             margin: 4px 2px;
             cursor: pointer;
             border-radius: 4px;
@@ -284,7 +243,7 @@
             background-color: #4cae4c;
         }
 
-        /* İlerleme Çubuğu Stilleri (ESKİ TASARIM - Sade Stil) */
+        /* İlerleme Çubuğu Stilleri (Yorum Alanı Stilleri Gibi - Sade Stil Kalsın) */
         .progress-bar-container {
             width: 100%;
             background-color: #f0f0f0;
@@ -300,7 +259,6 @@
             border-radius: 4px;
             transition: width 0.3s ease-in-out; /* Animasyon */
         }
-
 
         /* Ürün Kutuları Stilleri (Aynı Profesyonel Stil Kalsın) */
         .kutular-container {
@@ -731,7 +689,7 @@
                 <div class="step" data-step="12"> <!-- Adım 12 -->
                     <div class="form-group">
                         <label for="pasta-detaylari">12. Pasta Detayları (Eklemek istediğiniz özel notlar)</label>
-                        <textarea id="pasta-detaylari" name="pasta-detaylari" rows="3" placeholder="Pasta ile ilgili eklemek istediğiniz detaylar, özel notlar" maxlength="800"></textarea>
+                        <textarea id="pasta-detaylari" name="pasta-detaylari" rows="4" placeholder="Pasta ile ilgili eklemek istediğiniz detaylar, özel notlar" maxlength="800"></textarea>
                     </div>
                 </div>
 
@@ -746,7 +704,7 @@
                 <div class="step" data-step="14"> <!-- Adım 14 -->
                     <div class="form-group">
                         <label for="notlar">14. Not (Eklemek istediğiniz notlar)</label>
-                        <textarea id="notlar" name="notlar" rows="3" placeholder="Eklemek istediğiniz notlar" maxlength="800"></textarea>
+                        <textarea id="notlar" name="notlar" rows="4" placeholder="Eklemek istediğiniz notlar" maxlength="800"></textarea>
                     </div>
                 </div>
 
@@ -772,16 +730,15 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
     <script>
-        // Firebase Konfigürasyonu - **BURAYI KENDİ BİLGİLERİNİZLE GÜNCELLEYİN!**
         const firebaseConfig = {
-          apiKey: "AIzaSyCIhKXxTwmQ1l70c7_vnH6ZmM1FxZsqUEI",
-          authDomain: "furkan-baysak-b74ef.firebaseapp.com",
-          databaseURL: "https://furkan-baysak-b74ef-default-rtdb.firebaseio.com",
-          projectId: "furkan-baysak-b74ef",
-          storageBucket: "furkan-baysak-b74ef.firebasestorage.app",
-          messagingSenderId: "332668884342",
-          appId: "1:332668884342:web:975a46d869cf37bbc85657",
-          measurementId: "G-1TQKFHW50T"
+            apiKey: "AIzaSyCIhKXxTwmQ1l70c7_vnH6ZmM1FxZsqUEI",
+            authDomain: "furkan-baysak-b74ef.firebaseapp.com",
+            databaseURL: "https://furkan-baysak-b74ef-default-rtdb.firebaseio.com",
+            projectId: "furkan-baysak-b74ef",
+            storageBucket: "furkan-baysak-b74ef.firebasestorage.app",
+            messagingSenderId: "332668884342",
+            appId: "1:332668884342:web:975a46d869cf37bbc85657",
+            measurementId: "G-1TQKFHW50T"
         };
 
         firebase.initializeApp(firebaseConfig);
