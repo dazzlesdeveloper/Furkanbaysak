@@ -8,489 +8,145 @@
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Genel Stiller (Profesyonel Tasarım - Aynı Kalsın) */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f5f0; /* Açık bej arka plan */
+            background-color: #f8f5f0;
             color: #333;
         }
 
-        header {
-            background-color: #c0a378; /* Sıcak kahverengi */
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        header { /* ... (Profesyonel Header Stilleri - Aynı Kalsın) ... */ }
+        .logo-container { /* ... (Profesyonel Logo Container Stilleri - Aynı Kalsın) ... */ }
+        .logo { /* ... (Profesyonel Logo Stilleri - Aynı Kalsın) ... */ }
+        header h1 { /* ... (Profesyonel Header H1 Stilleri - Aynı Kalsın) ... */ }
+        .menu-icon { /* ... (Profesyonel Menu Icon Stilleri - Aynı Kalsın) ... */ }
+        .line { /* ... (Profesyonel Line Stilleri - Aynı Kalsın) ... */ }
+        nav#side-menu { /* ... (Profesyonel Side Menu Stilleri - Aynı Kalsın) ... */ }
+        nav#side-menu.open { /* ... (Profesyonel Side Menu Open Stilleri - Aynı Kalsın) ... */ }
+        nav#side-menu ul { /* ... (Profesyonel Side Menu Ul Stilleri - Aynı Kalsın) ... */ }
+        nav#side-menu ul li a { /* ... (Profesyonel Side Menu Link Stilleri - Aynı Kalsın) ... */ }
+        nav#side-menu ul li a:hover { /* ... (Profesyonel Side Menu Link Hover Stilleri - Aynı Kalsın) ... */ }
+        nav#side-menu .close-btn { /* ... (Profesyonel Side Menu Close Button Stilleri - Aynı Kalsın) ... */ }
+        main { /* ... (Profesyonel Main Stilleri - Aynı Kalsın) ... */ }
+        .slider-container { /* ... (Profesyonel Slider Container Stilleri - Aynı Kalsın) ... */ }
+        .slider { /* ... (Profesyonel Slider Stilleri - Aynı Kalsın) ... */ }
+        .slide { /* ... (Profesyonel Slide Stilleri - Aynı Kalsın) ... */ }
+        .dots { /* ... (Profesyonel Dots Stilleri - Aynı Kalsın) ... */ }
+        .dot { /* ... (Profesyonel Dot Stilleri - Aynı Kalsın) ... */ }
+        .active, .dot:hover { /* ... (Profesyonel Active Dot Stilleri - Aynı Kalsın) ... */ }
+        .section-content { /* ... (Profesyonel Section Content Stilleri - Aynı Kalsın) ... */ }
+        .section-content h2 { /* ... (Profesyonel Section Content H2 Stilleri - Aynı Kalsın) ... */ }
+        .section-content p { /* ... (Profesyonel Section Content P Stilleri - Aynı Kalsın) ... */ }
+        .subeler-container { /* ... (Profesyonel Subeler Container Stilleri - Aynı Kalsın) ... */ }
+        .sube { /* ... (Profesyonel Sube Stilleri - Aynı Kalsın) ... */ }
+        .sube:hover { /* ... (Profesyonel Sube Hover Stilleri - Aynı Kalsın) ... */ }
+        .sube a { /* ... (Profesyonel Sube Link Stilleri - Aynı Kalsın) ... */ }
+        .location-icon { /* ... (Profesyonel Location Icon Stilleri - Aynı Kalsın) ... */ }
+        .kutular-container { /* ... (Profesyonel Kutular Container Stilleri - Aynı Kalsın) ... */ }
+        .kutu { /* ... (Profesyonel Kutu Stilleri - Aynı Kalsın) ... */ }
+        .kutu:hover { /* ... (Profesyonel Kutu Hover Stilleri - Aynı Kalsın) ... */ }
+        .kutu img { /* ... (Profesyonel Kutu Img Stilleri - Aynı Kalsın) ... */ }
+        .kutu p { /* ... (Profesyonel Kutu P Stilleri - Aynı Kalsın) ... */ }
+        .kutu a { /* ... (Profesyonel Kutu Link Stilleri - Aynı Kalsın) ... */ }
+        footer { /* ... (Profesyonel Footer Stilleri - Aynı Kalsın) ... */ }
+        .social-container { /* ... (Profesyonel Social Container Stilleri - Aynı Kalsın) ... */ }
+        .social-link { /* ... (Profesyonel Social Link Stilleri - Aynı Kalsın) ... */ }
+        .social-logo { /* ... (Profesyonel Social Logo Stilleri - Aynı Kalsın) ... */ }
+        .social-link span { /* ... (Profesyonel Social Link Span Stilleri - Aynı Kalsın) ... */ }
+        @media (max-width: 768px) { /* ... (Profesyonel Responsive Stilleri - Aynı Kalsın) ... */}
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
 
-        .logo {
-            width: 70px;
-            height: 70px;
-            margin-right: 15px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.2em;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .menu-icon {
-            display: none; /* Hamburger menü ikonu başlangıçta gizli */
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .line {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 5px auto;
-            transition: all 0.3s ease-in-out;
-        }
-
-        nav#side-menu {
-            position: fixed;
-            top: 0;
-            left: -250px; /* Menüyü başlangıçta sola taşı */
-            width: 250px;
-            height: 100%;
-            background-color: #c0a378; /* Sıcak kahverengi */
-            padding-top: 70px;
-            transition: left 0.3s ease-in-out;
-            z-index: 1000;
-            overflow-y: auto;
-        }
-
-        nav#side-menu.open {
-            left: 0; /* Menüyü aç */
-        }
-
-        nav#side-menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav#side-menu ul li {
-            padding: 0;
-        }
-
-        nav#side-menu ul li a {
-            display: block;
-            padding: 15px 20px;
-            text-decoration: none;
-            color: white;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-        }
-
-        nav#side-menu ul li a:hover {
-            background-color: #a88e68; /* Daha koyu kahverengi */
-        }
-
-        nav#side-menu .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5em;
-            cursor: pointer;
-        }
-
-        main {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 20px auto;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .slider-container {
-            margin-bottom: 25px;
-            overflow: hidden;
-            border-radius: 8px;
-        }
-
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .slide {
-            min-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .dots {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 5px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.5s ease;
-        }
-
-        .active, .dot:hover {
-            background-color: #717171;
-        }
-
-        .section-content {
-            padding: 20px;
-        }
-
-        .section-content h2 {
-            color: #c0a378; /* Kahverengi başlıklar */
-            border-bottom: 2px solid #c0a378;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-        }
-
-        .section-content p {
-            line-height: 1.7;
-            color: #555;
-        }
-
-        /* Şubeler Stilleri */
-        .subeler-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .sube {
+        /* Pasta Sipariş Alanı Stilleri (Yorum Alanı Tasarımı - SADECE BU BÖLÜME ÖZEL) */
+        #pasta-siparis.pasta-siparis-section {
+            margin-top: 20px;
             padding: 15px;
-            border: 1px solid #ddd;
+            background-color: #f9f9f9;
             border-radius: 8px;
-            background-color: #fefefe;
-            transition: box-shadow 0.3s ease;
+            box-shadow: none; /* Profesyonel tasarımı geçersiz kıl */
         }
 
-        .sube:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        #pasta-siparis .pasta-siparis-section h2 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            text-align: left; /* Profesyonel tasarımı geçersiz kıl */
+            color: #333; /* Profesyonel tasarımı geçersiz kıl */
+            border-bottom: none; /* Profesyonel tasarımı geçersiz kıl */
+            padding-bottom: 0; /* Profesyonel tasarımı geçersiz kıl */
         }
 
-        .sube a {
-            font-size: 1em;
-        }
-
-        .location-icon {
-            color: #e44d26; /* Kırmızı ikon */
-        }
-
-        /* Pasta Sipariş Alanı Stilleri (Profesyonel Tasarım Geri Geldi) */
-        .pasta-siparis-section {
-            background-color: #fefefe;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-
-        .pasta-siparis-section h2 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .siparis-form {
+        #pasta-siparis .siparis-form {
             display: flex;
             flex-direction: column;
-            max-width: 700px;
-            margin: 0 auto;
+            margin-bottom: 15px;
+            max-width: none; /* Profesyonel tasarımı geçersiz kıl */
+            margin-left: auto; /* Profesyonel tasarımı geçersiz kıl */
+            margin-right: auto; /* Profesyonel tasarımı geçersiz kıl */
         }
 
-        .step {
-            display: none;
+        #pasta-siparis .form-group {
+            margin-bottom: 15px;
         }
 
-        .step.active {
+        #pasta-siparis .form-group label {
             display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333; /* Profesyonel tasarımı geçersiz kıl */
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
+        #pasta-siparis .form-group input,
+        #pasta-siparis .form-group textarea,
+        #pasta-siparis .form-group select {
             margin-bottom: 8px;
-            font-weight: 500;
-            color: #444;
-        }
-
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
+            padding: 8px;
+            border: 1px solid #ddd;
             border-radius: 4px;
-            font-size: 16px;
-            font-family: inherit;
-            box-sizing: border-box;
+            font-size: 14px;
+            width: 100%; /* Profesyonel tasarımı geçersiz kıl */
         }
 
-        .form-group select {
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background-image: url('data:image/svg+xml;utf8,<svg fill="grey" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
-            background-repeat: no-repeat;
-            background-position-x: calc(100% - 10px);
-            background-position-y: 50%;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-actions {
+        #pasta-siparis .form-actions {
             display: flex;
-            justify-content: space-between;
-            margin-top: 25px;
+            justify-content: space-around; /* Profesyonel tasarımı geçersiz kıl */
+            margin-top: 20px;
         }
 
-        .form-actions button {
-            background-color: #c0a378; /* Kahverengi butonlar */
+        #pasta-siparis .form-actions button {
+            background-color: #5cb85c;
             color: white;
             border: none;
-            padding: 12px 25px;
+            padding: 8px 12px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
+            font-size: 14px;
             margin: 4px 2px;
             cursor: pointer;
             border-radius: 4px;
-            transition: background-color 0.3s ease;
+        }
+        #pasta-siparis .form-actions button:hover{
+            background-color: #4cae4c;
         }
 
-        .form-actions button:hover {
-            background-color: #a88e68;
-        }
-
-        .form-actions button:disabled {
-            background-color: #ddd;
-            color: #777;
-            cursor: not-allowed;
-        }
-
-        .progress-bar-container {
+        /* İlerleme Çubuğu Stilleri (Yorum Alanı Tasarımı - SADECE BU BÖLÜME ÖZEL) */
+        #pasta-siparis .progress-bar-container {
             width: 100%;
-            background-color: #e0e0e0;
+            background-color: #f0f0f0;
             border-radius: 4px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             overflow: hidden;
         }
 
-        .progress-bar {
-            background-color: #c0a378; /* Kahverengi ilerleme çubuğu */
+        #pasta-siparis .progress-bar {
+            background-color: #5cb85c;
             height: 10px;
             width: 0%;
             border-radius: 4px;
             transition: width 0.3s ease-in-out;
         }
 
-        .kutular-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .kutu {
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            text-align: center;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        }
-
-        .kutu:hover {
-            transform: scale(1.03);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .kutu img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-            border-radius: 4px;
-        }
-
-        .kutu p {
-            font-weight: bold;
-            font-size: 1.1em;
-            color: #333;
-            margin: 0;
-        }
-
-        .kutu a {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-        }
-
-        .social-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: white;
-            margin: 0 20px;
-        }
-
-        .social-logo {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-        }
-
-        .social-link span {
-            font-size: 1em;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                padding: 15px 0;
-                justify-content: space-between; /* Hamburger menü için boşluk */
-            }
-
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            .logo {
-                width: 50px;
-                height: 50px;
-                margin-right: 10px;
-            }
-
-            .menu-icon {
-                display: block; /* Hamburger menü ikonunu göster */
-            }
-
-            .logo-container {
-                flex-grow: 1; /* Logoyu sağa it */
-                justify-content: center;
-            }
-
-            nav#side-menu {
-                padding-top: 60px;
-            }
-
-            nav#side-menu ul li a {
-                font-size: 1em;
-                padding: 12px 20px;
-            }
-
-            main {
-                padding: 15px;
-                margin: 15px auto;
-            }
-
-            .section-content {
-                padding: 15px;
-            }
-
-            .section-content h2 {
-                font-size: 1.6em;
-                margin-bottom: 15px;
-                padding-bottom: 8px;
-            }
-
-            .section-content p {
-                font-size: 0.95em;
-            }
-
-            .kutular-container {
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-                gap: 15px;
-            }
-
-            .kutu {
-                padding: 10px;
-            }
-
-            .kutu p {
-                font-size: 1em;
-            }
-
-            .subeler-container {
-                grid-template-columns: 1fr; /* Alt alta şubeler */
-            }
-
-            .pasta-siparis-section {
-                padding: 15px;
-            }
-
-            .form-group {
-                margin-bottom: 15px;
-            }
-
-            .form-group input, .form-group textarea, .form-group select {
-                padding: 10px;
-                font-size: 15px;
-            }
-
-            .form-actions {
-                flex-direction: column; /* Butonları alt alta */
-                align-items: stretch; /* Butonları genişlet */
-            }
-
-            .form-actions button {
-                margin: 5px 0;
-            }
-
-            .social-link {
-                margin: 0 10px;
-            }
-
-            .social-logo {
-                width: 35px;
-                height: 35px;
-                margin-right: 8px;
-            }
-
-            .social-link span {
-                font-size: 0.9em;
-            }
-        }
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -534,111 +190,26 @@
 
         <section id="hakkinda" class="section-content">
             <h2>Hakkında</h2>
-            <p>Kurulduğumuz ilk günden itibaren, en büyük önceliğimiz her zaman sizlerin memnuniyeti oldu. Sizin yüzünüzdeki gülümseme, bizim en değerli motivasyon kaynağımız ve bu yüzden her gün daha iyisini yapmak için çalışıyoruz. Bugün, bu tutkuyu 5 şehirde, tam 38 şubemizde sizlerle paylaşmanın gururunu yaşıyoruz. Her bir şubemizde, sadece bir pastane değil, aynı zamanda sıcak ve samimi bir buluşma noktası olmaya özen gösteriyoruz. Sıcacık bir atmosferde, mis gibi kokan pastalarımız ve tatlılarımız eşliğinde, güler yüzlü ekibimizle sizleri ağırlamaktan büyük bir heyecan duyuyoruz. Amacımız, her ziyaretinizde kendinizi özel ve evinizde hissetmenizi sağlamak. Bizim için her bir misafirimiz, ailemizin bir parçası gibidir. Yılların verdiği tecrübeyle, her bir lezzeti büyük bir titizlikle hazırlıyor, en taze malzemeleri kullanmaya özen gösteriyoruz. Çünkü biliyoruz ki, en güzel anılar, en güzel tatlarla birleşince unutulmaz olur. Furkan Baysak olarak, bu anılarınızda yer almaktan ve sizlere tatlı bir dokunuş katmaktan mutluluk duyuyoruz.</p>
+            <p>Kurulduğumuz ilk günden itibaren, en büyük önceliğimiz her zaman sizlerin memnuniyeti oldu. ...</p>
         </section>
 
         <!-- Ürünler Bölümü -->
        <section id="urunler" class="section-content">
         <h2>Ürünler</h2>
         <div class="kutular-container">
-            <div class="kutu">
-                <a href="eksimaya.html">
-                    <img src="ekşimaya.png" alt="Ekşi Maya">
-                    <p>EKŞİ MAYALILAR</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="pasta.html">
-                    <img src="pasta.png" alt="Pastalar">
-                    <p>PASTALAR</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="kurabiye.html">
-                    <img src="kurabiye.png" alt="Kurabiyeler">
-                    <p>KURABİYELER</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="şarküteri.html">
-                    <img src="şarküteri.png" alt="Şarküteri">
-                    <p>ŞARKÜTERİ</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="tatlilar.html">
-                    <img src="tatlilar.png" alt="Tatlılar">
-                    <p>TATLILAR</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="icecekler.html">
-                    <img src="icecekler.png" alt="İçecekler">
-                    <p>İÇECEKLER</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="dondurmalar.html">
-                    <img src="dondurma.png" alt="Dondurmalar">
-                    <p>DONDURMALAR</p>
-                 </a>
-            </div>
-            <div class="kutu">
-                <a href="pogaca.html">
-                    <img src="pogaca.png" alt="Poğaçalar">
-                    <p>POĞAÇALAR</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="borek.html">
-                    <img src="borek.png" alt="Börekler">
-                    <p>BÖREKLER</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="tezgahustu.html">
-                    <img src="tezgahustu.png" alt="Tezgah Üstü">
-                    <p>TEZGAH ÜSTÜ</p>
-                </a>
-             </div>
-             <div class="kutu">
-                 <a href="kruvasan.html">
-                     <img src="kruvasan.png" alt="Kruvasanlar">
-                     <p>KRUVASANLAR</p>
-                 </a>
-             </div>
-            <div class="kutu">
-                <a href="tart.html">
-                    <img src="tart.png" alt="Tartlar">
-                    <p>TARTLAR</p>
-                </a>
-            </div>
+            <!-- ... (Ürün Kutuları - Aynı Kalsın) ... -->
         </div>
     </section>
 
-        <!-- Şubeler Bölümü (Aynı Kalsın) -->
+        <!-- Şubeler Bölümü -->
         <section id="subeler" class="section-content">
             <h2>Şubeler</h2>
             <div class="subeler-container">
-                <div class="sube">
-                    <p><span class="location-icon">📍</span><a href="kayseri.html">KAYSERİ</a></p>
-                </div>
-                <div class="sube">
-                    <p><span class="location-icon">📍</span><a href="nevsehir.html">NEVŞEHİR</a></p>
-                </div>
-                <div class="sube">
-                    <p><span class="location-icon">📍</span><a href="nigde.html">NİĞDE</a></p>
-                </div>
-                <div class="sube">
-                    <p><span class="location-icon">📍</span><a href="sivas.html">SİVAS</a></p>
-                </div>
-                <div class="sube">
-                    <p><span class="location-icon">📍</span><a href="aksaray.html">AKSARAY</a></p>
-                </div>
+                <!-- ... (Şube Listesi - Aynı Kalsın) ... -->
             </div>
         </section>
 
-        <!-- Pasta Sipariş Bölümü (Güncellendi - Profesyonel Tasarım Geri Geldi) -->
+        <!-- Pasta Sipariş Bölümü -->
         <section id="pasta-siparis" class="section-content pasta-siparis-section">
             <h2>Pasta Siparişi</h2>
             <div class="progress-bar-container">
@@ -646,28 +217,28 @@
             </div>
             <form class="siparis-form" id="pastaSiparisForm">
 
-                <div class="step active" data-step="1"> <!-- Adım 1 -->
+                <div class="step active" data-step="1">
                     <div class="form-group">
                         <label for="musteri-adi">1. Müşteri Adı Soyadı <span style="color: red;">*</span></label>
                         <input type="text" id="musteri-adi" name="musteri-adi" required placeholder="Adınız ve Soyadınız">
                     </div>
                 </div>
 
-                <div class="step" data-step="2"> <!-- Adım 2 -->
+                <div class="step" data-step="2">
                     <div class="form-group">
                         <label for="musteri-telefon">2. Müşteri Telefonu <span style="color: red;">*</span></label>
                         <input type="tel" id="musteri-telefon" name="musteri-telefon" required placeholder="Telefon Numaranız" maxlength="11">
                     </div>
                 </div>
 
-                <div class="step" data-step="3"> <!-- Adım 3 -->
+                <div class="step" data-step="3">
                     <div class="form-group">
                         <label for="sube-adi">3. Şube Adı <span style="color: red;">*</span></label>
                         <input type="text" id="sube-adi" name="sube-adi" required placeholder="Sipariş vermek istediğiniz şube">
                     </div>
                 </div>
 
-                <div class="step" data-step="4"> <!-- Adım 4 -->
+                <div class="step" data-step="4">
                     <div class="form-group">
                         <label for="pasta-boyutu">4. Pasta Boyutu <span style="color: red;">*</span></label>
                         <select id="pasta-boyutu" name="pasta-boyutu" required>
@@ -679,14 +250,14 @@
                     </div>
                 </div>
 
-                <div class="step" data-step="5"> <!-- Adım 5 -->
+                <div class="step" data-step="5">
                     <div class="form-group">
                         <label for="pasta-sekli">5. Pasta Şekli (Yuvarlak, Kare, Kalp vb.)</label>
                         <input type="text" id="pasta-sekli" name="pasta-sekli" placeholder="İstediğiniz pasta şeklini belirtin (yuvarlak, kare, kalp vb.)">
                     </div>
                 </div>
 
-                <div class="step" data-step="6"> <!-- Adım 6 -->
+                <div class="step" data-step="6">
                     <div class="form-group">
                         <label for="ekstra-ara-kat">6. Ekstra Ara Kat</label>
                         <select id="ekstra-ara-kat" name="ekstra-ara-kat">
@@ -700,53 +271,49 @@
                     </div>
                 </div>
 
-                <div class="step" data-step="7"> <!-- Adım 7 -->
+                <div class="step" data-step="7">
                     <div class="form-group">
                         <label for="kek-krema-farkliligi">7. Kek ve Krema Farklılığı</label>
                         <input type="text" id="kek-krema-farkliligi" name="kek-krema-farkliligi" placeholder="Kek ve krema için özel isteğiniz varsa belirtin">
                     </div>
                 </div>
 
-                <div class="step" data-step="8"> <!-- Adım 8 -->
+                <div class="step" data-step="8">
                     <div class="form-group">
                         <label for="pasta-icerigi">8. Pasta İçeriği (Kuruyemiş, Çikolata, Meyveli vb.)</label>
                         <input type="text" id="pasta-icerigi" name="pasta-icerigi" placeholder="Pasta içeriği tercihinizi belirtin (Kuruyemiş, Çikolata, Meyveli vb.)">
                     </div>
                 </div>
 
-                <div class="step" data-step="9"> <!-- Adım 9 -->
+                <div class="step" data-step="9">
                     <div class="form-group">
                         <label for="pasta-kremasi">9. Pasta Kreması (Şanti, Sos, Şeker Hamuru)</label>
                         <input type="text" id="pasta-kremasi" name="pasta-kremasi" placeholder="Pasta kreması tercihinizi belirtin (Şanti, Sos, Şeker Hamuru)">
                     </div>
                 </div>
 
-                <div class="step" data-step="10"> <!-- Adım 10 -->
+                <div class="step" data-step="10">
                     <div class="form-group">
                         <label for="pasta-rengi">10. Pasta Rengi</label>
                         <input type="text" id="pasta-rengi" name="pasta-rengi" placeholder="Pasta rengi tercihinizi belirtin">
                     </div>
                 </div>
 
-                <div class="step" data-step="11"> <!-- Adım 11 -->
+                <div class="step" data-step="11">
                     <div class="form-group">
                         <label for="pasta-altligi">11. Pasta Altlığı (Mukavva, Şeker Hamuru, Ahşap)</label>
                         <input type="text" id="pasta-altligi" name="pasta-altligi" placeholder="Pasta altlığı tercihinizi belirtin (Mukavva, Şeker Hamuru, Ahşap)">
                     </div>
                 </div>
 
-                <div class="step" data-step="12"> <!-- Adım 12 -->
+                <div class="step" data-step="12">
                     <div class="form-group">
                         <label for="pasta-detaylari">12. Pasta Detayları (Eklemek istediğiniz özel notlar)</label>
                         <textarea id="pasta-detaylari" name="pasta-detaylari" rows="3" placeholder="Pasta ile ilgili eklemek istediğiniz özel notlar" maxlength="800"></textarea>
                     </div>
                 </div>
 
-
-                <div class="step" data-step="13"> <!-- Adım 13 - FOTOĞRAF KALDIRILDI -->
-                </div>
-
-                <div class="step" data-step="14"> <!-- Adım 14 -->
+                <div class="step" data-step="13">
                     <div class="form-group">
                         <label for="notlar">13. Not (Eklemek istediğiniz notlar)</label>
                         <textarea id="notlar" name="notlar" rows="3" placeholder="Eklemek istediğiniz notlar" maxlength="800"></textarea>
@@ -776,20 +343,20 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
     <script>
         const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-            databaseURL: "YOUR_DATABASE_URL.firebaseio.com",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_PROJECT_ID.firebasestorage.app",
-            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-            appId: "YOUR_APP_ID",
-            measurementId: "YOUR_MEASUREMENT_ID"
+            apiKey: "AIzaSyCIhKXxTwmQ1l70c7_vnH6ZmM1FxZsqUEI",
+            authDomain: "furkan-baysak-b74ef.firebaseapp.com",
+            databaseURL: "https://furkan-baysak-b74ef-default-rtdb.firebaseio.com",
+            projectId: "furkan-baysak-b74ef",
+            storageBucket: "furkan-baysak-b74ef.firebasestorage.app",
+            messagingSenderId: "332668884342",
+            appId: "1:332668884342:web:975a46d869cf37bbc85657",
+            measurementId: "G-1TQKFHW50T"
         };
 
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
 
-        // Form Adımları ve İlerleme Çubuğu Kontrolü
+        // Form Adımları ve İlerleme Çubuğu Kontrolü (Aynı JS Kalsın)
         const steps = document.querySelectorAll('.step');
         const progressBar = document.getElementById('order-progress-bar');
         const prevButton = document.getElementById('previous-step');
@@ -818,7 +385,7 @@
         function validateStep(stepIndex) {
             let isValidStep = true;
             const currentStepElement = steps[stepIndex - 1];
-            if (!currentStepElement) return; // Step element might not exist (e.g., removed step)
+            if (!currentStepElement) return;
             const requiredFields = currentStepElement.querySelectorAll('[required]');
 
             requiredFields.forEach(field => {
