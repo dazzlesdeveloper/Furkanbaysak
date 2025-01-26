@@ -3,33 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" ie=edge">
     <title>FURKAN BAYSAK PASTANELERİ</title>
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <style>
-        .sube a {
-            font-size: 16px;
-            font-weight: bold;
-            color: black;
-            text-decoration: none;
-            display: block;
-            padding: 8px;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f5f0;
+            color: #333;
         }
 
-        .sube a:hover {
-            background-color: #f0f0f0;
+        header {
+            background-color: #c0a378;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            margin-right: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .line {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+        }
+
+        nav#side-menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #c0a378;
+            padding-top: 70px;
+            transition: left 0.3s ease-in-out;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        nav#side-menu.open {
+            left: 0;
+        }
+
+        nav#side-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav#side-menu ul li {
+            padding: 0;
+        }
+
+        nav#side-menu ul li a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        nav#side-menu ul li a:hover {
+            background-color: #a88e68;
+        }
+
+        nav#side-menu .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-container {
+            margin-bottom: 25px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.5s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        .section-content {
+            padding: 20px;
+        }
+
+        .section-content h2 {
+            color: #c0a378;
+            border-bottom: 2px solid #c0a378;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .section-content p {
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Şubeler Stilleri */
+        .subeler-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .sube {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fefefe;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .sube:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .sube a {
+            font-size: 1em;
         }
 
         .location-icon {
-            margin-right: 8px;
+            color: #e44d26; /* Kırmızı ikon */
         }
 
-        /* Pasta Sipariş Alanı Stilleri (Beyaz ve Sade Tasarım) */
+        /* Pasta Sipariş Alanı Stilleri (Güncellendi) */
         .pasta-siparis-section {
             margin-top: 20px;
             padding: 20px;
-            background-color: #f9f9f9; /* Açık gri arka plan */
+            background-color: #f9f9f9;
             border-radius: 8px;
         }
 
@@ -46,7 +220,7 @@
             margin: 0 auto;
         }
 
-        .step {
+        .step { /* Adımları gizlemek/göstermek için */
             display: none;
         }
 
@@ -84,17 +258,17 @@
         }
 
         .form-group textarea {
-            resize: vertical;
+            resize: none; /* Dikeyde boyutlandırmayı kapat */
         }
 
-        .form-actions {
+        .form-actions { /* Butonları hizalamak için */
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
         }
 
         .form-actions button {
-            background-color: #5cb85c; /* Yeşil butonlar */
+            background-color: #5cb85c;
             color: white;
             border: none;
             padding: 12px 15px;
@@ -126,7 +300,7 @@
             transition: width 0.3s ease-in-out;
         }
 
-        /* Ürün Kutuları Stilleri (Beyaz ve Sade Tasarım) */
+        /* Ürün Kutuları Stilleri (Aynı Kalsın) */
         .kutular-container {
            display: flex;
            flex-wrap: wrap;
@@ -170,7 +344,7 @@
             display: block;
         }
 
-        /* 768px'den büyük ekranlar için */
+        /* 768px'den büyük ekranlar için (Aynı Kalsın) */
         @media (min-width: 768px) {
             .kutular-container {
                 justify-content: center;
@@ -184,7 +358,7 @@
                font-size: 18px;
            }
         }
-         /* Footer Sosyal Link Stili */
+         /* Footer Sosyal Link Stili (Aynı Kalsın) */
         .social-container {
             display: flex;
             justify-content: center;
@@ -362,178 +536,29 @@
                 </div>
             </div>
         </section>
-
-        <!-- Pasta Sipariş Bölümü -->
-        <section id="pasta-siparis" class="section-content pasta-siparis-section">
-            <h2>Pasta Siparişi</h2>
-            <div class="progress-bar-container">
-                <div class="progress-bar" id="order-progress-bar"></div>
+          <!-- Yorumlar Bölümü -->
+        <section id="yorumlar" class="section-content">
+             <div class="comment-section">
+                <h3>Yorum Yap</h3>
+                <div class="comment-form">
+                    <select id="comment-branch" required>
+                      <option value="">Şube Seçiniz</option>
+                      <option value="Kayseri">Kayseri</option>
+                      <option value="Aksaray">Aksaray</option>
+                      <option value="Niğde">Niğde</option>
+                      <option value="Nevşehir">Nevşehir</option>
+                      <option value="Sivas">Sivas</option>
+                    </select>
+                   <input type="text" id="comment-name" placeholder="Adınız Soyadınız" required>
+                   <input type="tel" id="comment-phone" placeholder="Telefon Numaranız" required>
+                    <textarea id="comment-text" placeholder="Yorumunuz" rows="4" required></textarea>
+                     <button id="submit-comment">Yorum Gönder</button>
+                </div>
             </div>
-            <form class="siparis-form" id="pastaSiparisForm">
-
-                <div class="step active" data-step="1">
-                    <div class="form-group">
-                        <label for="musteri-adi">1. Müşteri Adı Soyadı <span style="color: red;">*</span></label>
-                        <input type="text" id="musteri-adi" name="musteri-adi" required placeholder="Adınız ve Soyadınız">
-                    </div>
-                     <div class="form-actions">
-                        <button type="button" id="next-step">İleri</button>
-                    </div>
-                </div>
-
-                <div class="step" data-step="2">
-                    <div class="form-group">
-                        <label for="musteri-telefon">2. Müşteri Telefonu <span style="color: red;">*</span></label>
-                        <input type="tel" id="musteri-telefon" name="musteri-telefon" required placeholder="Telefon Numaranız" maxlength="11">
-                    </div>
-                     <div class="form-actions">
-                        <button type="button" id="previous-step" onclick="updateFormStep(1)">Geri</button>
-                        <button type="button" id="next-step">İleri</button>
-                    </div>
-                </div>
-
-                <div class="step" data-step="3">
-                    <div class="form-group">
-                        <label for="sube-adi">3. Şube Adı <span style="color: red;">*</span></label>
-                        <input type="text" id="sube-adi" name="sube-adi" required placeholder="Sipariş vermek istediğiniz şube">
-                    </div>
-                     <div class="form-actions">
-                        <button type="button" id="previous-step" onclick="updateFormStep(2)">Geri</button>
-                        <button type="button" id="next-step">İleri</button>
-                    </div>
-                </div>
-
-                <div class="step" data-step="4">
-                    <div class="form-group">
-                        <label for="pasta-boyutu">4. Pasta Boyutu <span class="location-icon">🎂</span><span style="color: red;">*</span></label>
-                        <select id="pasta-boyutu" name="pasta-boyutu" required>
-                            <option value="">Seçiniz</option>
-                            <option value="1-nolu">1 Nolu (4-6 Kişilik)</option>
-                            <option value="2-nolu">2 Nolu (8-10 Kişilik)</option>
-                            <option value="3-nolu">3 Nolu (10-15 Kişilik)</option>
-                        </select>
-                    </div>
-                     <div class="form-actions">
-                        <button type="button" id="previous-step" onclick="updateFormStep(3)">Geri</button>
-                        <button type="button" id="next-step">İleri</button>
-                    </div>
-                </div>
-
-                <div class="step" data-step="5">
-                    <div class="form-group">
-                        <label for="pasta-sekli">5. Pasta Şekli (Yuvarlak, Kare, Kalp vb.)</label>
-                        <input type="text" id="pasta-sekli" name="pasta-sekli" placeholder="İstediğiniz pasta şeklini belirtin (yuvarlak, kare, kalp vb.)">
-                    </div>
-                     <div class="form-actions">
-                        <button type="button" id="previous-step" onclick="updateFormStep(4)">Geri</button>
-                        <button type="button" id="next-step">İleri</button>
-                    </div>
-                </div>
-
-                <div class="step" data-step="6">
-                    <div class="form-group">
-                        <label for="ekstra-ara-kat">6. Ekstra Ara Kat</label>
-                        <select id="ekstra-ara-kat" name="ekstra-ara-kat">
-                            <option value="istemiyorum">İstemiyorum</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                     <div class="form-actions">
-                        <button type="button" id="previous-step" onclick="updateFormStep(5)">Geri</button>
-                        <button type="button" id="next-step">İleri</button>
-                    </div>
-                </div>
-
-                <div class="step" data-step="7">
-                    <div class="form-group">
-                        <label for="kek-krema-farkliligi">7. Kek ve Krema Farklılığı</label>
-                        <input type="text" id="kek-krema-farkliligi" name="kek-krema-farkliligi" placeholder="Kek veya krema için özel isteğiniz varsa belirtin">
-                    </div>
-                     <div class="form-actions">
-                        <button type="button" id="previous-step" onclick="updateFormStep(6)">Geri</button>
-                        <button type="button" id="next-step">İleri</button>
-                    </div>
-                </div>
-
-                <div class="step" data-step="8">
-                    <div class="form-group">
-                        <label for="pasta-icerigi">8. Pasta İçeriği (Kuruyemiş, Çikolata, Meyveli vb.)</label>
-                        <input type="text" id="pasta-icerigi" name="pasta-icerigi" placeholder="Pasta içeriği tercihinizi belirtin (kuruyemiş, çikolata, meyveli, full içerikli vb.)">
-                    </div>
-                     <div class="form-actions">
-                        <button type="button" id="previous-step" onclick="updateFormStep(7)">Geri</button>
-                        <button type="button" id="next-step">İleri</button>
-                    </div>
-                </div>
-
-                <div class="step" data-step="9">
-                    <div class="form-group">
-                        <label for="pasta-kremasi">9. Pasta Kreması (Şanti, Sos, Şeker Hamuru)</label>
-                        <input type="text" id="pasta-kremasi" name="pasta-kremasi" placeholder="Pasta kreması tercihinizi belirtin (şanti, sos, şeker hamuru)">
-                    </div>
-                     <div class="form-actions">
-                        <button type="button" id="previous-step" onclick="updateFormStep(8)">Geri</button>
-                        <button type="button" id="next-step">İleri</button>
-                    </div>
-                </div>
-
-                <div class="step" data-step="10">
-                    <div class="form-group">
-                        <label for="pasta-rengi">10. Pasta Rengi</label>
-                        <input type="text" id="pasta-rengi" name="pasta-rengi" placeholder="Pasta rengi tercihinizi belirtin">
-                    </div>
-                     <div class="form-actions">
-                        <button type="button" id="previous-step" onclick="updateFormStep(9)">Geri</button>
-                        <button type="button" id="next-step">İleri</button>
-                    </div>
-                </div>
-
-                <div class="step" data-step="11">
-                    <div class="form-group">
-                        <label for="pasta-altligi">11. Pasta Altlığı (Mukavva, Şeker Hamuru, Ahşap)</label>
-                        <input type="text" id="pasta-altligi" name="pasta-altligi" placeholder="Pasta altlığı tercihinizi belirtin (mukavva, şeker hamuru, ahşap)">
-                    </div>
-                     <div class="form-actions">
-                        <button type="button" id="previous-step" onclick="updateFormStep(10)">Geri</button>
-                        <button type="button" id="next-step">İleri</button>
-                    </div>
-                </div>
-
-                <div class="step" data-step="12">
-                    <div class="form-group">
-                        <label for="pasta-detaylari">12. Pasta Detayları (Eklemek istediğiniz özel notlar)<span style="color: red;">*</span></label>
-                        <textarea id="pasta-detaylari" name="pasta-detaylari" rows="8" placeholder="Pasta ile ilgili eklemek istediğiniz detaylar, özel notlar" maxlength="800" required></textarea>
-                    </div>
-                     <div class="form-actions">
-                        <button type="button" id="previous-step" onclick="updateFormStep(11)">Geri</button>
-                        <button type="button" id="next-step">İleri</button>
-                    </div>
-                </div>
-
-                <div class="step" data-step="13">
-                    <div class="form-group">
-                        <label for="notlar">13. Not (Eklemek istediğiniz notlar)<span style="color: red;">*</span></label>
-                        <textarea id="notlar" name="notlar" rows="8" placeholder="Eklemek istediğiniz notlar" maxlength="800" required></textarea>
-                    </div>
-                     <div class="form-actions">
-                        <button type="button" id="previous-step" onclick="updateFormStep(12)">Geri</button>
-                        <button type="submit" id="submit-order">Siparişi Gönder</button>
-                    </div>
-                </div>
-                 <div class="form-actions">
-                    <button type="button" id="previous-step" >Geri</button>
-                    <button type="button" id="next-step">İleri</button>
-                    <button type="submit" id="submit-order" style="display: none;">Siparişi Gönder</button>
-                </div>
-            </form>
         </section>
     </main>
 
-    <!-- Footer (Aynı Kalsın) -->
+    <!-- Footer -->
     <footer>
         <div class="social-container">
             <a href="https://www.instagram.com/furkanbaysakpastaneleri" target="_blank" class="social-link">
@@ -546,7 +571,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
     <script>
-       const firebaseConfig = {
+        const firebaseConfig = {
             apiKey: "YOUR_API_KEY",
             authDomain: "furkan-baysak-b74ef.firebaseapp.com",
             databaseURL: "https://furkan-baysak-b74ef-default-rtdb.firebaseio.com",
@@ -559,195 +584,76 @@
 
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
+        const submitCommentButton = document.getElementById('submit-comment');
 
-        const steps = document.querySelectorAll('.step');
-        const progressBar = document.getElementById('order-progress-bar');
-        const prevButton = document.getElementById('previous-step');
-        const nextButton = document.getElementById('next-step');
-        const submitButton = document.getElementById('submit-order');
-        let currentStep = 1;
-        const totalSteps = steps.length;
-        const form = document.getElementById('pastaSiparisForm');
+        submitCommentButton.addEventListener('click', function(){
+            const branch = document.getElementById('comment-branch').value;
+            const name = document.getElementById('comment-name').value;
+            const phone = document.getElementById('comment-phone').value;
+            const text = document.getElementById('comment-text').value;
 
-        function updateFormStep(stepIndex) {
-            steps.forEach(step => step.classList.remove('active'));
-            steps[stepIndex - 1].classList.add('active');
-            currentStep = stepIndex;
+            if(branch && name && phone && text){
+                const commentRef = database.ref('comments/' + branch + '/' + name);
+                commentRef.set({
+                    phone: phone,
+                    text: text
+                });
 
-            const progressPercentage = ((stepIndex - 1) / (totalSteps - 1)) * 100;
-            progressBar.style.width = `${isNaN(progressPercentage) ? 0 : progressPercentage}%`;
+                document.getElementById('comment-branch').value = '';
+                document.getElementById('comment-name').value = '';
+                document.getElementById('comment-phone').value = '';
+                document.getElementById('comment-text').value = '';
 
-            prevButton.disabled = stepIndex === 1;
-            nextButton.style.display = stepIndex === totalSteps ? 'none' : 'inline-block';
-            submitButton.style.display = stepIndex === totalSteps ? 'inline-block' : 'none';
-            nextButton.innerText = currentStep === totalSteps ? 'Siparişi Gözden Geçir' : 'İleri';
-         validateStep(stepIndex);
-            if (stepIndex === 1) {
-                prevButton.style.display = 'none';
+                alert('Yorumunuz başarıyla gönderildi!');
             } else {
-                prevButton.style.display = 'inline-block';
+                alert('Lütfen tüm alanları doldurunuz!');
             }
-        }
-
-        function validateStep(stepIndex) {
-            let isValidStep = true;
-            const currentStepElement = steps[stepIndex - 1];
-            if (!currentStepElement) return true;
-
-            const requiredFields = currentStepElement.querySelectorAll('[required]');
-            for (let i = 0; i < requiredFields.length; i++) {
-                const field = requiredFields[i];
-                if (!field.value.trim()) {
-                    isValidStep = false;
-                    if (nextButton) nextButton.disabled = true;
-                    return false;
-                }
-            }
-
-            if (stepIndex === 2) {
-                const phoneField = document.getElementById('musteri-telefon');
-                if (!/^[0-9]{11}$/.test(phoneField.value.trim())) {
-                    isValidStep = false;
-                    if (nextButton) nextButton.disabled = true;
-                    return false;
-                }
-            }
+        })
 
 
-            if (nextButton) nextButton.disabled = !isValidStep;
-            return isValidStep;
-        }
+        // Yandan Menü Kontrolü
+function toggleMenu() {
+    const menu = document.getElementById('side-menu');
+    menu.classList.toggle('open');
+}
 
+function closeMenu() {
+    const menu = document.getElementById('side-menu');
+    menu.classList.remove('open');
+}
 
-        nextButton.addEventListener('click', () => {
-            if (!validateStep(currentStep)) {
-                 alert("Lütfen tüm zorunlu alanları doldurun!");
-                return;
-            }
-            if (currentStep < totalSteps) {
-                updateFormStep(currentStep + 1);
-            }
-        });
+// Fotoğraf Galerisi
+let currentSlide = 0;
 
-        prevButton.addEventListener('click', () => {
-            if (currentStep > 1) {
-                updateFormStep(currentStep - 1);
-            }
-        });
+function setCurrentSlide(index) {
+    currentSlide = index;
+    updateSlider();
+}
 
-        updateFormStep(1);
+function updateSlider() {
+    const slider = document.getElementById('slider');
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
 
-        form.addEventListener('input', function(e) {
-            validateStep(currentStep);
-        });
+    // Slaytları kaydırma
+    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-        const phoneInput = document.getElementById('musteri-telefon');
-        phoneInput.addEventListener('input', function (e) {
-            this.value = this.value.replace(/[^0-9]/g, '');
-            if (this.value.length > 11) {
-                this.value = this.value.slice(0, 11);
-            }
-        });
+    // Nokta aktifliğini güncelle
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+    });
+}
 
-        const orderForm = document.querySelector('.siparis-form');
-        orderForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            if (!form.checkValidity()) {
-                alert("Lütfen tüm zorunlu alanları doldurun.");
-                return;
-            }
-
-            saveOrderToFirebase();
-            progressBar.style.width = '100%';
-        });
-
-        function saveOrderToFirebase() {
-            const musteriAdi = document.getElementById('musteri-adi').value;
-            const musteriTelefon = document.getElementById('musteri-telefon').value;
-            const subeAdi = document.getElementById('sube-adi').value;
-            const pastaBoyutu = document.getElementById('pasta-boyutu').value;
-            const pastaSekli = document.getElementById('pasta-sekli').value;
-            const ekstraAraKat = document.getElementById('ekstra-ara-kat').value;
-            const kekKremaFarkliligi = document.getElementById('kek-krema-farkliligi').value;
-            const pastaIcerigi = document.getElementById('pasta-icerigi').value;
-            const pastaKremasi = document.getElementById('pasta-kremasi').value;
-            const pastaRengi = document.getElementById('pasta-rengi').value;
-            const pastaAltligi = document.getElementById('pasta-altligi').value;
-            const pastaDetaylari = document.getElementById('pasta-detaylari').value;
-            const ornekPastaResmi = document.getElementById('ornek-pasta-resmi').value;
-            const notlar = document.getElementById('notlar').value;
-
-            const orderRef = database.ref('pasta-siparisleri/' + subeAdi + '/' + musteriAdi.replace(/\s/g, '_') + '_' + Date.now());
-
-            orderRef.set({
-                musteriAdi: musteriAdi,
-                musteriTelefon: musteriTelefon,
-                subeAdi: subeAdi,
-                pastaBoyutu: pastaBoyutu,
-                pastaSekli: pastaSekli,
-                ekstraAraKat: ekstraAraKat,
-                kekKremaFarkliligi: kekKremaFarkliligi,
-                pastaIcerigi: pastaIcerigi,
-                pastaKremasi: pastaKremasi,
-                pastaRengi: pastaRengi,
-                pastaAltligi: pastaAltligi,
-                pastaDetaylari: pastaDetaylari,
-                notlar: notlar,
-                siparisTarihi: new Date().toLocaleString()
-            }).then(() => {
-                alert('Siparişiniz başarıyla gönderildi!');
-                orderForm.reset();
-                progressBar.style.width = '0%';
-                updateFormStep(1);
-            }).catch((error) => {
-                console.error("Firebase'e yazma hatası:", error);
-                alert('Sipariş gönderilirken bir hata oluştu. Lütfen tekrar deneyin.');
-                progressBar.style.width = '0%';
-            });
-        }
-
-        function toggleMenu() {
-            const menu = document.getElementById('side-menu');
-            menu.classList.toggle('open');
-        }
-
-        function closeMenu() {
-            const menu = document.getElementById('side-menu');
-            menu.classList.remove('open');
-        }
-
-        let currentSlide = 0;
-
-        function setCurrentSlide(index) {
-            currentSlide = index;
-            updateSlider();
-        }
-
-        function updateSlider() {
-            const slider = document.getElementById('slider');
-            const slides = document.querySelectorAll('.slide');
-            const dots = document.querySelectorAll('.dot');
-
-            // Slaytları kaydırma
-            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-            // Nokta aktifliğini güncelle
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentSlide);
-            });
-        }
-
-        // Otomatik Kaydırma (İsteğe Bağlı)
-        setInterval(() => {
-            const slides = document.querySelectorAll('.slide');
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateSlider();
-        }, 5000);
+// Otomatik Kaydırma (İsteğe Bağlı)
+setInterval(() => {
+    const slides = document.querySelectorAll('.slide');
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSlider();
+}, 5000);
 
     </script>
     <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
 </body>
-</html>
+                          </html>
