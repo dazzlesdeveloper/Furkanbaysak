@@ -8,7 +8,175 @@
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <style>
-        body {
+        .sube a {
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+        }
+
+        .sube a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .location-icon {
+            margin-right: 8px;
+        }
+
+        /* Pasta Sipariş Alanı Stilleri (Yorum Alanı Tasarımı) */
+        .pasta-siparis-section {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .pasta-siparis-section h2 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .siparis-form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            margin-bottom: 8px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-actions button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .form-actions button:hover{
+            background-color: #4cae4c;
+        }
+
+        /* İlerleme Çubuğu Stilleri (Yorum Alanı Tasarımı - Sade Stil Kalsın) */
+        .progress-bar-container {
+            width: 100%;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            overflow: hidden; /* İçeriğin dışarı taşmasını engeller */
+        }
+
+        .progress-bar {
+            background-color: #5cb85c;
+            height: 10px;
+            width: 0%; /* Başlangıçta 0 */
+            border-radius: 4px;
+            transition: width 0.3s ease-in-out; /* Animasyon */
+        }
+
+        /* Ürün Kutuları Stilleri */
+        .kutular-container {
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: center;
+        }
+
+        .kutu {
+            width: calc(50% - 15px);
+            margin: 7.5px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            transition: transform 0.2s ease-in-out;
+        }
+        .kutu:hover{
+           transform: scale(1.05);
+        }
+
+        .kutu img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 8px;
+            transition: transform 0.3s ease;
+
+        }
+
+
+        .kutu p {
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .kutu a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        /* 768px'den büyük ekranlar için */
+        @media (min-width: 768px) {
+            .kutular-container {
+                justify-content: center;
+            }
+
+            .kutu {
+               width: 200px;
+               margin: 10px;
+           }
+           .sube a {
+               font-size: 18px;
+           }
+        }
+         /* Footer Sosyal Link Stili */
+        .social-container {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+             background-color: #333; /* Arka plan rengi eklendi */
+        }
+
+        .social-link {
+           display: flex;
+           align-items: center;
+           text-decoration: none;
+           color: #fff; /* yazı rengi beyaz */
+        }
+        .social-logo{
+            width: 55px; /* Logo boyutunu büyüt */
+            height: 55px; /* Logo boyutunu büyüt */
+            margin-right: 25px;
+        }
+         .social-link span{
+            font-size: 14px; /* Yazı boyutunu küçültme */
+        }
+          @media (min-width: 768px) {
+              .social-link span {
+               font-size: 16px; /* Masaüstü için orjinal font boyutu */
+            }
+         .social-logo{
+            width: 55px; /* Logo boyutunu büyüt */
+            height: 55px; /* Logo boyutunu büyüt */
+            margin-right: 25px;
+        }
+        }
+         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
@@ -172,7 +340,7 @@
             color: #555;
         }
 
-        /* Şubeler Stilleri (Aynı Profesyonel Stil Kalsın) */
+        /* Şubeler Stilleri */
         .subeler-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -199,68 +367,6 @@
             color: #e44d26; /* Kırmızı ikon */
         }
 
-         /* Pasta Sipariş Alanı Stilleri (Yorum Alanı Stilleri Gibi) */
-        .pasta-siparis-section {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-        }
-
-        .pasta-siparis-section h2 {
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        .siparis-form {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 15px;
-        }
-
-        .form-group input, .form-group textarea, .form-group select {
-            margin-bottom: 8px;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-
-        .form-actions button {
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        .form-actions button:hover{
-            background-color: #4cae4c;
-        }
-
-        /* İlerleme Çubuğu Stilleri (Yorum Alanı Stilleri Gibi - Sade Stil Kalsın) */
-        .progress-bar-container {
-            width: 100%;
-            background-color: #f0f0f0;
-            border-radius: 4px;
-            margin-bottom: 15px;
-            overflow: hidden; /* İçeriğin dışarı taşmasını engeller */
-        }
-
-        .progress-bar {
-            background-color: #5cb85c;
-            height: 10px;
-            width: 0%; /* Başlangıçta 0 */
-            border-radius: 4px;
-            transition: width 0.3s ease-in-out; /* Animasyon */
-        }
-
-        /* Ürün Kutuları Stilleri (Aynı Profesyonel Stil Kalsın) */
         .kutular-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -335,7 +441,7 @@
             font-size: 1em;
         }
 
-        /* Responsive Design (Aynı Profesyonel Stil Kalsın) */
+        /* Responsive Design */
         @media (max-width: 768px) {
             header {
                 padding: 15px 0;
