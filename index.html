@@ -8,208 +8,35 @@
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <style>
-       body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f5f0; /* Açık bej arka plan */
-            color: #333;
-        }
-
-        header {
-            background-color: #c0a378; /* Sıcak kahverengi */
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo {
-            width: 70px;
-            height: 70px;
-            margin-right: 15px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.2em;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .menu-icon {
-            display: none; /* Hamburger menü ikonu başlangıçta gizli */
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .line {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 5px auto;
-            transition: all 0.3s ease-in-out;
-        }
-
-        nav#side-menu {
-            position: fixed;
-            top: 0;
-            left: -250px; /* Menüyü başlangıçta sola taşı */
-            width: 250px;
-            height: 100%;
-            background-color: #c0a378; /* Sıcak kahverengi */
-            padding-top: 70px;
-            transition: left 0.3s ease-in-out;
-            z-index: 1000;
-            overflow-y: auto;
-        }
-
-        nav#side-menu.open {
-            left: 0; /* Menüyü aç */
-        }
-
-        nav#side-menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav#side-menu ul li {
-            padding: 0;
-        }
-
-        nav#side-menu ul li a {
-            display: block;
-            padding: 15px 20px;
-            text-decoration: none;
-            color: white;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-        }
-
-        nav#side-menu ul li a:hover {
-            background-color: #a88e68; /* Daha koyu kahverengi */
-        }
-
-        nav#side-menu .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5em;
-            cursor: pointer;
-        }
-
-        main {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 20px auto;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .slider-container {
-            margin-bottom: 25px;
-            overflow: hidden;
-            border-radius: 8px;
-        }
-
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .slide {
-            min-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .dots {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 5px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.5s ease;
-        }
-
-        .active, .dot:hover {
-            background-color: #717171;
-        }
-
-        .section-content {
-            padding: 20px;
-        }
-
-        .section-content h2 {
-            color: #c0a378; /* Kahverengi başlıklar */
-            border-bottom: 2px solid #c0a378;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-        }
-
-        .section-content p {
-            line-height: 1.7;
-            color: #555;
-        }
-
-        /* Şubeler Stilleri */
-        .subeler-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .sube {
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background-color: #fefefe;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .sube:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-
         .sube a {
-            font-size: 1em;
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+        }
+
+        .sube a:hover {
+            background-color: #f0f0f0;
         }
 
         .location-icon {
-            color: #e44d26; /* Kırmızı ikon */
+            margin-right: 8px;
         }
 
-        /* Pasta Sipariş Alanı Stilleri */
+        /* Pasta Sipariş Alanı Stilleri (Beyaz ve Sade Tasarım) */
         .pasta-siparis-section {
-            background-color: #fefefe;
-            padding: 25px;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9; /* Açık gri arka plan */
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
         .pasta-siparis-section h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
             text-align: center;
-            margin-bottom: 30px;
         }
 
         .siparis-form {
@@ -228,23 +55,21 @@
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #444;
+            margin-bottom: 5px;
+            font-weight: bold;
         }
 
         .form-group input, .form-group textarea, .form-group select {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
+            padding: 10px;
+            border: 1px solid #ddd;
             border-radius: 4px;
             font-size: 16px;
-            font-family: inherit;
             box-sizing: border-box;
         }
 
@@ -252,7 +77,7 @@
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
-            background-image: url('data:image/svg+xml;utf8,<svg fill="grey" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
             background-repeat: no-repeat;
             background-position-x: calc(100% - 10px);
             background-position-y: 50%;
@@ -260,20 +85,19 @@
 
         .form-group textarea {
             resize: vertical;
-            min-height: 100px;
         }
 
         .form-actions {
             display: flex;
             justify-content: space-between;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
         .form-actions button {
-            background-color: #c0a378;
+            background-color: #5cb85c; /* Yeşil butonlar */
             color: white;
             border: none;
-            padding: 12px 25px;
+            padding: 12px 15px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -281,69 +105,63 @@
             margin: 4px 2px;
             cursor: pointer;
             border-radius: 4px;
-            transition: background-color 0.3s ease;
         }
-
-        .form-actions button:hover {
-            background-color: #a88e68;
-        }
-
-        .form-actions button:disabled {
-            background-color: #ddd;
-            color: #777;
-            cursor: not-allowed;
+        .form-actions button:hover{
+            background-color: #4cae4c;
         }
 
         .progress-bar-container {
             width: 100%;
-            background-color: #e0e0e0;
+            background-color: #f0f0f0;
             border-radius: 4px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             overflow: hidden;
         }
 
         .progress-bar {
-            background-color: #c0a378;
+            background-color: #5cb85c;
             height: 10px;
             width: 0%;
             border-radius: 4px;
             transition: width 0.3s ease-in-out;
         }
 
+        /* Ürün Kutuları Stilleri (Beyaz ve Sade Tasarım) */
         .kutular-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            justify-content: center;
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: center;
         }
 
         .kutu {
-            padding: 15px;
+            width: calc(50% - 15px);
+            margin: 7.5px;
+            padding: 10px;
             border: 1px solid #ddd;
             border-radius: 8px;
             text-align: center;
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-sizing: border-box;
+            transition: transform 0.2s ease-in-out;
         }
-
-        .kutu:hover {
-            transform: scale(1.03);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        .kutu:hover{
+           transform: scale(1.05);
         }
 
         .kutu img {
             max-width: 100%;
             height: auto;
-            margin-bottom: 10px;
-            border-radius: 4px;
+            margin-bottom: 8px;
+            transition: transform 0.3s ease;
+
         }
+
 
         .kutu p {
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 14px;
             color: #333;
-            margin: 0;
         }
 
         .kutu a {
@@ -352,144 +170,51 @@
             display: block;
         }
 
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-        }
-
-        .social-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: white;
-            margin: 0 20px;
-        }
-
-        .social-logo {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-        }
-
-        .social-link span {
-            font-size: 1em;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                padding: 15px 0;
-                justify-content: space-between; /* Hamburger menü için boşluk */
-            }
-
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            .logo {
-                width: 50px;
-                height: 50px;
-                margin-right: 10px;
-            }
-
-            .menu-icon {
-                display: block; /* Hamburger menü ikonunu göster */
-            }
-
-            .logo-container {
-                flex-grow: 1; /* Logoyu sağa it */
+        /* 768px'den büyük ekranlar için */
+        @media (min-width: 768px) {
+            .kutular-container {
                 justify-content: center;
             }
 
-            nav#side-menu {
-                padding-top: 60px;
-            }
-
-            nav#side-menu ul li a {
-                font-size: 1em;
-                padding: 12px 20px;
-            }
-
-            main {
-                padding: 15px;
-                margin: 15px auto;
-            }
-
-            .section-content {
-                padding: 15px;
-            }
-
-            .section-content h2 {
-                font-size: 1.6em;
-                margin-bottom: 15px;
-                padding-bottom: 8px;
-            }
-
-            .section-content p {
-                font-size: 0.95em;
-            }
-
-            .kutular-container {
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-                gap: 15px;
-            }
-
             .kutu {
-                padding: 10px;
-            }
+               width: 200px;
+               margin: 10px;
+           }
+           .sube a {
+               font-size: 18px;
+           }
+        }
+         /* Footer Sosyal Link Stili */
+        .social-container {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+             background-color: #333; /* Arka plan rengi eklendi */
+        }
 
-            .kutu p {
-                font-size: 1em;
+        .social-link {
+           display: flex;
+           align-items: center;
+           text-decoration: none;
+           color: #fff; /* yazı rengi beyaz */
+        }
+        .social-logo{
+            width: 55px; /* Logo boyutunu büyüt */
+            height: 55px; /* Logo boyutunu büyüt */
+            margin-right: 25px;
+        }
+         .social-link span{
+            font-size: 14px; /* Yazı boyutunu küçültme */
+        }
+          @media (min-width: 768px) {
+              .social-link span {
+               font-size: 16px; /* Masaüstü için orjinal font boyutu */
             }
-
-            .subeler-container {
-                grid-template-columns: 1fr; /* Alt alta şubeler */
-            }
-
-            .pasta-siparis-section {
-                padding: 15px;
-            }
-
-            .form-group {
-                margin-bottom: 15px;
-            }
-
-            .form-group input, .form-group textarea, .form-group select {
-                padding: 10px;
-                font-size: 15px;
-            }
-
-            .form-actions {
-                flex-direction: column; /* Butonları alt alta */
-                align-items: stretch; /* Butonları genişlet */
-            }
-
-            .form-actions button {
-                margin: 5px 0;
-            }
-
-            .social-link {
-                margin: 0 10px;
-            }
-
-            .social-logo {
-                width: 35px;
-                height: 35px;
-                margin-right: 8px;
-            }
-
-            .social-link span {
-                font-size: 0.9em;
-            }
+         .social-logo{
+            width: 55px; /* Logo boyutunu büyüt */
+            height: 55px; /* Logo boyutunu büyüt */
+            margin-right: 25px;
+        }
         }
     </style>
 </head>
@@ -547,7 +272,7 @@
                     <p>EKŞİ MAYALILAR</p>
                 </a>
             </div>
-             <div class="kutu">
+            <div class="kutu">
                 <a href="pasta.html">
                     <img src="pasta.png" alt="Pastalar">
                     <p>PASTALAR</p>
@@ -680,7 +405,7 @@
 
                 <div class="step" data-step="4">
                     <div class="form-group">
-                        <label for="pasta-boyutu">4. Pasta Boyutu <span style="color: red;">*</span></label>
+                        <label for="pasta-boyutu">4. Pasta Boyutu <span class="location-icon">🎂</span><span style="color: red;">*</span></label>
                         <select id="pasta-boyutu" name="pasta-boyutu" required>
                             <option value="">Seçiniz</option>
                             <option value="1-nolu">1 Nolu (4-6 Kişilik)</option>
@@ -856,7 +581,7 @@
             nextButton.style.display = stepIndex === totalSteps ? 'none' : 'inline-block';
             submitButton.style.display = stepIndex === totalSteps ? 'inline-block' : 'none';
             nextButton.innerText = currentStep === totalSteps ? 'Siparişi Gözden Geçir' : 'İleri';
-            validateStep(stepIndex);
+         validateStep(stepIndex);
             if (stepIndex === 1) {
                 prevButton.style.display = 'none';
             } else {
