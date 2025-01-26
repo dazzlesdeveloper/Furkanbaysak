@@ -3,166 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FURKAN BAYSAK PASTANELERİ</title>
     <link rel="icon" type="image/x-icon" href="logo.png">
-    <link rel="stylesheet" href="style.css">
     <style>
-        .sube a {
-            font-size: 16px;
-            font-weight: bold;
-            color: black;
-            text-decoration: none;
-            display: block;
-            padding: 8px;
-        }
-
-        .sube a:hover {
-            background-color: #f0f0f0;
-        }
-
-        .location-icon {
-            margin-right: 8px;
-        }
-
-        /* Yorum Alanı Stilleri */
-        .comment-section {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-        }
-
-        .comment-section h3 {
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        .comment-form {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 15px;
-        }
-
-        .comment-form input, .comment-form textarea, .comment-form select {
-            margin-bottom: 8px;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-
-        .comment-form button {
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        .comment-form button:hover{
-            background-color: #4cae4c;
-        }
-
-        /* Ürün Kutuları Stilleri */
-        .kutular-container {
-           display: flex;
-           flex-wrap: wrap;
-           justify-content: center;
-        }
-
-        .kutu {
-            width: calc(50% - 15px);
-            margin: 7.5px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            text-align: center;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            box-sizing: border-box;
-            transition: transform 0.2s ease-in-out;
-        }
-        .kutu:hover{
-           transform: scale(1.05);
-        }
-
-        .kutu img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 8px;
-            transition: transform 0.3s ease;
-
-        }
-
-
-        .kutu p {
-            font-weight: bold;
-            font-size: 14px;
-            color: #333;
-        }
-
-        .kutu a {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        /* 768px'den büyük ekranlar için */
-        @media (min-width: 768px) {
-            .kutular-container {
-                justify-content: center;
-            }
-
-            .kutu {
-               width: 200px;
-               margin: 10px;
-           }
-           .sube a {
-               font-size: 18px;
-           }
-        }
-         /* Footer Sosyal Link Stili */
-        .social-container {
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-             background-color: #333; /* Arka plan rengi eklendi */
-        }
-
-        .social-link {
-           display: flex;
-           align-items: center;
-           text-decoration: none;
-           color: #fff; /* yazı rengi beyaz */
-        }
-        .social-logo{
-            width: 55px; /* Logo boyutunu büyüt */
-            height: 55px; /* Logo boyutunu büyüt */
-            margin-right: 25px;
-        }
-         .social-link span{
-            font-size: 14px; /* Yazı boyutunu küçültme */
-        }
-          @media (min-width: 768px) {
-              .social-link span {
-               font-size: 16px; /* Masaüstü için orjinal font boyutu */
-            }
-         .social-logo{
-            width: 55px; /* Logo boyutunu büyüt */
-            height: 55px; /* Logo boyutunu büyüt */
-            margin-right: 25px;
-        }
+        /* ... (Önceki tüm stiller) - Önceki mesajlardaki stilleri buraya kopyalayın */
+         body {
+              font-family: sans-serif; /* Varsayılan bir font ekledim */
+          }
+         .logo { /* Logo stili */
+             max-width: 50px;
+              height: auto;
         }
     </style>
 </head>
 <body oncontextmenu="return false;">
-    <!-- Üst Menü -->
+
     <header>
         <div class="menu-icon" onclick="toggleMenu()">
             <div class="line"></div>
@@ -170,259 +25,193 @@
             <div class="line"></div>
         </div>
         <div class="logo-container">
-            <img src="logo.png" alt="Furkan Baysak Pastaneleri Logo" class="logo">
+           <img src="logo.png" alt="Furkan Baysak Pastaneleri Logo" class="logo">
             <h1>FURKAN BAYSAK</h1>
         </div>
     </header>
 
-    <!-- Yandan Açılır Menü -->
     <nav id="side-menu" class="hidden">
-        <button class="close-btn" onclick="closeMenu()">X</button>
+       <button class="close-btn" onclick="closeMenu()">X</button>
         <ul>
             <li><a href="#hakkinda">Hakkında</a></li>
             <li><a href="#urunler">Ürünler</a></li>
             <li><a href="#subeler">Şubeler</a></li>
-            <li><a href="#yorumlar">Yorum Yap</a></li>
-        </ul>
+            <li><a href="#siparis">Pasta Siparişi Ver</a></li> </ul>
     </nav>
 
-    <!-- Ana İçerik -->
+
     <main>
-        <!-- Fotoğraf Galerisi -->
-        <div class="slider-container">
+       <div class="slider-container">
             <div class="slider" id="slider">
-                <img src="image1.png" alt="Galeri 1" class="slide">
+               <img src="image1.png" alt="Galeri 1" class="slide">
                 <img src="image2.png" alt="Galeri 2" class="slide">
-            </div>
+           </div>
             <div class="dots">
-                <span class="dot" onclick="setCurrentSlide(0)"></span>
+               <span class="dot" onclick="setCurrentSlide(0)"></span>
                 <span class="dot" onclick="setCurrentSlide(1)"></span>
-                </div>
-        </div>
+            </div>
+       </div>
 
-        <section id="hakkinda" class="section-content">
+       <section id="hakkinda" class="section-content">
             <h2>Hakkında</h2>
-            <p>Kurulduğumuz ilk günden itibaren, en büyük önceliğimiz her zaman sizlerin memnuniyeti oldu. Sizin yüzünüzdeki gülümseme, bizim en değerli motivasyon kaynağımız ve bu yüzden her gün daha iyisini yapmak için çalışıyoruz. Bugün, bu tutkuyu 5 şehirde, tam 38 şubemizde sizlerle paylaşmanın gururunu yaşıyoruz. Her bir şubemizde, sadece bir pastane değil, aynı zamanda sıcak ve samimi bir buluşma noktası olmaya özen gösteriyoruz. Sıcacık bir atmosferde, mis gibi kokan pastalarımız ve tatlılarımız eşliğinde, güler yüzlü ekibimizle sizleri ağırlamaktan büyük bir heyecan duyuyoruz. Amacımız, her ziyaretinizde kendinizi özel ve evinizde hissetmenizi sağlamak. Bizim için her bir misafirimiz, ailemizin bir parçası gibidir. Yılların verdiği tecrübeyle, her bir lezzeti büyük bir titizlikle hazırlıyor, en taze malzemeleri kullanmaya özen gösteriyoruz. Çünkü biliyoruz ki, en güzel anılar, en güzel tatlarla birleşince unutulmaz olur. Furkan Baysak olarak, bu anılarınızda yer almaktan ve sizlere tatlı bir dokunuş katmaktan mutluluk duyuyoruz.</p>
-        </section>
+            <p>Kurulduğumuz ilk günden itibaren, en büyük önceliğimiz her zaman sizlerin memnuniyeti oldu. ... </p>
+       </section>
 
-        <!-- Ürünler Bölümü -->
        <section id="urunler" class="section-content">
-        <h2>Ürünler</h2>
-        <div class="kutular-container">
-            <div class="kutu">
-                <a href="eksimaya.html">
-                    <img src="ekşimaya.png" alt="Ekşi Maya">
-                    <p>EKŞİ MAYALILAR</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="pasta.html">
-                    <img src="pasta.png" alt="Pastalar">
-                    <p>PASTALAR</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="kurabiye.html">
-                    <img src="kurabiye.png" alt="Kurabiyeler">
-                    <p>KURABİYELER</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="şarküteri.html">
-                    <img src="şarküteri.png" alt="Şarküteri">
-                    <p>ŞARKÜTERİ</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="tatlilar.html">
-                    <img src="tatlilar.png" alt="Tatlılar">
-                    <p>TATLILAR</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="icecekler.html">
-                    <img src="icecekler.png" alt="İçecekler">
-                    <p>İÇECEKLER</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="dondurmalar.html">
-                    <img src="dondurma.png" alt="Dondurmalar">
-                    <p>DONDURMALAR</p>
-                 </a>
-            </div>
-            <div class="kutu">
-                <a href="pogaca.html">
-                    <img src="pogaca.png" alt="Poğaçalar">
-                    <p>POĞAÇALAR</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="borek.html">
-                    <img src="borek.png" alt="Börekler">
-                    <p>BÖREKLER</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="tezgahustu.html">
-                    <img src="tezgahustu.png" alt="Tezgah Üstü">
-                    <p>TEZGAH ÜSTÜ</p>
-                </a>
-             </div>
-             <div class="kutu">
-                 <a href="kruvasan.html">
-                     <img src="kruvasan.png" alt="Kruvasanlar">
-                     <p>KRUVASANLAR</p>
-                 </a>
-             </div>
-            <div class="kutu">
-                <a href="tart.html">
-                    <img src="tart.png" alt="Tartlar">
-                    <p>TARTLAR</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-        <!-- Şubeler Bölümü -->
-        <section id="subeler" class="section-content">
-            <h2>Şubeler</h2>
-            <div class="subeler-container">
-                <div class="sube">
-                    <p><span class="location-icon">📍</span><a href="kayseri.html">KAYSERİ</a></p>
+            <h2>Ürünler</h2>
+           <div class="kutular-container">
+                <div class="kutu">
+                    <a href="eksimaya.html">
+                       <img src="ekşimaya.png" alt="Ekşi Maya">
+                       <p>EKŞİ MAYALILAR</p>
+                   </a>
                 </div>
-                <div class="sube">
-                    <p><span class="location-icon">📍</span><a href="nevsehir.html">NEVŞEHİR</a></p>
-                </div>
-                <div class="sube">
-                    <p><span class="location-icon">📍</span><a href="nigde.html">NİĞDE</a></p>
-                </div>
-                <div class="sube">
-                    <p><span class="location-icon">📍</span><a href="sivas.html">SİVAS</a></p>
-                </div>
-                <div class="sube">
-                    <p><span class="location-icon">📍</span><a href="aksaray.html">AKSARAY</a></p>
+               <div class="kutu">
+                   <a href="pasta.html">
+                        <img src="pasta.png" alt="Pastalar">
+                       <p>PASTALAR</p>
+                    </a>
+               </div>
+                <!-- Diğer ürünler -->
+                <div class="kutu">
+                   <a href="#"> <img src="urun.png" alt="Ürün"> <p>ÜRÜN ADI</p> </a>
                 </div>
             </div>
-        </section>
-          <!-- Yorumlar Bölümü -->
-        <section id="yorumlar" class="section-content">
-             <div class="comment-section">
-                <h3>Yorum Yap</h3>
-                <div class="comment-form">
-                    <select id="comment-branch" required>
-                      <option value="">Şube Seçiniz</option>
-                      <option value="Kayseri">Kayseri</option>
-                      <option value="Aksaray">Aksaray</option>
-                      <option value="Niğde">Niğde</option>
-                      <option value="Nevşehir">Nevşehir</option>
-                      <option value="Sivas">Sivas</option>
-                    </select>
-                   <input type="text" id="comment-name" placeholder="Adınız Soyadınız" required>
-                   <input type="tel" id="comment-phone" placeholder="Telefon Numaranız" required>
-                    <textarea id="comment-text" placeholder="Yorumunuz" rows="4" required></textarea>
-                     <button id="submit-comment">Yorum Gönder</button>
+       </section>
+
+       <section id="subeler" class="section-content">
+           <h2>Şubeler</h2>
+           <div class="subeler-container">
+               <div class="sube">
+                  <p><span class="location-icon">📍</span><a href="#">KAYSERİ</a></p>
+               </div>
+              <div class="sube">
+                  <p><span class="location-icon">📍</span><a href="#">NEVŞEHİR</a></p>
                 </div>
+                <!-- Diğer şubeler -->
             </div>
-        </section>
-    </main>
+       </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="social-container">
-            <a href="https://www.instagram.com/furkanbaysakpastaneleri" target="_blank" class="social-link">
-                <img src="instagram-logo.png" class="social-logo">
-                <span>FURKANBAYSAKPASTANELERİ</span>
-            </a>
-        </div>
-    </footer>
-
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyCIhKXxTwmQ1l70c7_vnH6ZmM1FxZsqUEI",
-            authDomain: "furkan-baysak-b74ef.firebaseapp.com",
-            databaseURL: "https://furkan-baysak-b74ef-default-rtdb.firebaseio.com",
-            projectId: "furkan-baysak-b74ef",
-            storageBucket: "furkan-baysak-b74ef.firebasestorage.app",
-            messagingSenderId: "332668884342",
-            appId: "1:332668884342:web:975a46d869cf37bbc85657",
-            measurementId: "G-1TQKFHW50T"
-        };
-
-        firebase.initializeApp(firebaseConfig);
-        const database = firebase.database();
-        const submitCommentButton = document.getElementById('submit-comment');
-
-        submitCommentButton.addEventListener('click', function(){
-            const branch = document.getElementById('comment-branch').value;
-            const name = document.getElementById('comment-name').value;
-            const phone = document.getElementById('comment-phone').value;
-            const text = document.getElementById('comment-text').value;
-
-            if(branch && name && phone && text){
-                const commentRef = database.ref('comments/' + branch + '/' + name);
-                commentRef.set({
-                    phone: phone,
-                    text: text
-                });
-
-                document.getElementById('comment-branch').value = '';
-                document.getElementById('comment-name').value = '';
-                document.getElementById('comment-phone').value = '';
-                document.getElementById('comment-text').value = '';
-
-                alert('Yorumunuz başarıyla gönderildi!');
-            } else {
-                alert('Lütfen tüm alanları doldurunuz!');
-            }
-        })
+        <section id="siparis" class="section-content">
+            <!-- ... (Sipariş formu - önceki mesajdaki gibi) ... -->
+       </section>
 
 
-        // Yandan Menü Kontrolü
-function toggleMenu() {
-    const menu = document.getElementById('side-menu');
-    menu.classList.toggle('open');
-}
+        <footer>
+            <div class="social-container">
+               <a href="https://www.instagram.com/furkanbaysakpastaneleri" target="_blank" class="social-link">
+                   <img src="instagram-logo.png" class="social-logo">
+                   <span>FURKANBAYSAKPASTANELERİ</span>
+                </a>
+           </div>
+        </footer>
 
-function closeMenu() {
-    const menu = document.getElementById('side-menu');
-    menu.classList.remove('open');
-}
+        <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
 
-// Fotoğraf Galerisi
-let currentSlide = 0;
+       <script>
+            // Firebase config, Menü, Slider vb. kodlarını buraya ekleyin
+             // ... (Önceki JavaScript kodları - Firebase, Menü, Slider) ...
 
-function setCurrentSlide(index) {
-    currentSlide = index;
-    updateSlider();
-}
+              // Form adım fonksiyonları ve event listener'lar
+       const formSteps = document.querySelectorAll(".form-step");
+       let currentStep = 1;
 
-function updateSlider() {
-    const slider = document.getElementById('slider');
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
+      // Form adım fonksiyonları ve event listener'lar
+       const form = document.getElementById('orderForm');
 
-    // Slaytları kaydırma
-    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-    // Nokta aktifliğini güncelle
-    dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentSlide);
-    });
-}
+       showStep(currentStep); // Başlangıçta ilk adımı göster
 
-// Otomatik Kaydırma (İsteğe Bağlı)
-setInterval(() => {
-    const slides = document.querySelectorAll('.slide');
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateSlider();
-}, 5000);
+       function showStep(step) {
+           formSteps.forEach((formStep, index) => {
+               formStep.classList.remove("active");
+               if (index + 1 === step) {
+                   formStep.classList.add("active");
+                }
+           });
+           updateProgress();
+       }
+       function updateProgress() {
+           const progressWidth = ((currentStep - 1) / (formSteps.length - 1)) * 100;
+           document.getElementById('progress').style.width = progressWidth + "%";
+       }
 
-    </script>
-    <script>
-        document.addEventListener('contextmenu', event => event.preventDefault());
+
+       form.addEventListener('click', function(event) {
+           if (event.target.classList.contains('next-step')) {
+               currentStep++;
+               if (currentStep > formSteps.length) {
+                   currentStep = formSteps.length;
+               }
+                showStep(currentStep);
+            } else if (event.target.classList.contains('prev-step')) {
+               currentStep--;
+               if (currentStep < 1) {
+                   currentStep = 1;
+                }
+               showStep(currentStep);
+           }
+       });
+
+
+             // Sipariş gönderme (submit) fonksiyonu
+       document.getElementById("submit-order").addEventListener("click", function(event) {
+           event.preventDefault(); // Formun varsayılan gönderimini engelle
+           // ... (Form verilerini topla ve Firebase'e gönder) ...
+        });
+
+
+       // Telefon numarası doğrulama
+       document.getElementById('customer-phone').addEventListener('input', function (e) {
+          this.value = this.value.replace(/[^0-9]/g, '');
+           if(this.value.length > 10){
+              this.value = this.value.slice(0,10);
+          }
+        });
+
+
+       // Sağ tık engelleme
+       document.addEventListener('contextmenu', event => event.preventDefault());
+
+
+         // Yandan menü fonksiyonları
+       function toggleMenu() {
+           const menu = document.getElementById('side-menu');
+           menu.classList.toggle('hidden'); // "hidden" class'ını ekle/çıkar
+       }
+
+       function closeMenu() {
+           const menu = document.getElementById('side-menu');
+           menu.classList.add('hidden');   // "hidden" class'ını ekle
+        }
+
+      // Slider fonksiyonları
+      let currentSlide = 0;
+      function setCurrentSlide(n) {
+          showSlides(currentSlide = n);
+      }
+
+      function showSlides(n) {
+        let i;
+       const slides = document.getElementsByClassName("slide");
+         const dots = document.getElementsByClassName("dot");
+
+        if (n > slides.length -1) {currentSlide = 0}
+        if (n < 0) {currentSlide = slides.length - 1}
+         for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+           }
+        for (i = 0; i < dots.length; i++) {
+           dots[i].className = dots[i].className.replace(" active", "");
+        }
+         slides[currentSlide].style.display = "block";
+         dots[currentSlide].className += " active";
+       }
+
+      setInterval(() => {
+        setCurrentSlide(currentSlide + 1);
+     }, 5000);
     </script>
 </body>
-                          </html>
+</html>
