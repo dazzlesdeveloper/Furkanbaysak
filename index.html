@@ -7,8 +7,9 @@
     <title>FURKAN BAYSAK PASTANELERİ</title>
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
+    <!-- CSS (style.css veya <style> etiketi içinde - önceki koddan) -->
     <style>
-        .sube a {
+         .sube a {
             font-size: 16px;
             font-weight: bold;
             color: black;
@@ -55,12 +56,12 @@
         }
 
         .form-group {
-            margin-bottom: 20px; /* Daha fazla boşluk */
+            margin-bottom: 15px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 10px; /* Label altına boşluk */
+            margin-bottom: 5px;
             font-weight: bold;
             text-align: center; /* Soruyu ortala */
         }
@@ -68,16 +69,11 @@
         .form-group input, .form-group textarea, .form-group select {
             width: 100%;
             padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px; /* Daha yuvarlak kenarlar */
+            border: 1px solid #ddd;
+            border-radius: 4px;
             font-size: 16px;
             box-sizing: border-box;
-             margin-bottom: 15px; /* Input altına boşluk */
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
+            margin-bottom: 15px; /* Input altına boşluk */
         }
 
         .form-group select {
@@ -88,6 +84,11 @@
             background-repeat: no-repeat;
             background-position-x: calc(100% - 10px);
             background-position-y: 50%;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
         }
 
         .form-actions { /* Butonları alt alta ortala ve genişlet */
@@ -120,6 +121,7 @@
         }
 
         .progress-bar-container {
+             /* ... (İlerleme Çubuğu Stilleri - önceki koddan) ... */
             width: 100%;
             background-color: #f0f0f0;
             border-radius: 4px;
@@ -128,6 +130,7 @@
         }
 
         .progress-bar {
+             /* ... (İlerleme Çubuğu Stilleri - önceki koddan) ... */
             background-color: #5cb85c;
             height: 10px;
             width: 0%;
@@ -137,12 +140,14 @@
 
         /* Ürün Kutuları Stilleri */
         .kutular-container {
+             /* ... (Ürün Kutuları Stilleri - önceki koddan) ... */
            display: flex;
            flex-wrap: wrap;
            justify-content: center;
         }
 
         .kutu {
+             /* ... (Ürün Kutuları Stilleri - önceki koddan) ... */
             width: calc(50% - 15px);
             margin: 7.5px;
             padding: 10px;
@@ -155,11 +160,13 @@
             transition:  box-shadow 0.2s ease-in-out; /* transform kaldırıldı */
         }
         .kutu:hover{
+             /* ... (Ürün Kutuları Stilleri - önceki koddan) ... */
            /* transform: scale(1.05); kaldırıldı */
            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Hover efekti sadece gölge */
         }
 
         .kutu img {
+             /* ... (Ürün Kutuları Stilleri - önceki koddan) ... */
             max-width: 100%;
             height: auto;
             margin-bottom: 8px;
@@ -169,18 +176,20 @@
 
 
         .kutu p {
+             /* ... (Ürün Kutuları Stilleri - önceki koddan) ... */
             font-weight: bold;
             font-size: 14px;
             color: #333;
         }
 
         .kutu a {
+             /* ... (Ürün Kutuları Stilleri - önceki koddan) ... */
             text-decoration: none;
             color: inherit;
             display: block;
         }
 
-        /* 768px'den büyük ekranlar için (Aynı Kalsın) */
+        /* 768px'den büyük ekranlar için */
         @media (min-width: 768px) {
             .kutular-container {
                 justify-content: center;
@@ -194,8 +203,9 @@
                font-size: 18px;
            }
         }
-         /* Footer Sosyal Link Stili (Aynı Kalsın) */
+         /* Footer Sosyal Link Stili */
         .social-container {
+             /* ... (Footer Sosyal Link Stili - önceki koddan) ... */
             display: flex;
             justify-content: center;
             padding: 10px 0;
@@ -203,17 +213,20 @@
         }
 
         .social-link {
+             /* ... (Footer Sosyal Link Stili - önceki koddan) ... */
            display: flex;
            align-items: center;
            text-decoration: none;
            color: #fff; /* yazı rengi beyaz */
         }
         .social-logo{
+             /* ... (Footer Sosyal Link Stili - önceki koddan) ... */
             width: 55px; /* Logo boyutunu büyüt */
             height: 55px; /* Logo boyutunu büyüt */
             margin-right: 25px;
         }
          .social-link span{
+             /* ... (Footer Sosyal Link Stili - önceki koddan) ... */
             font-size: 14px; /* Yazı boyutunu küçültme */
         }
           @media (min-width: 768px) {
@@ -269,7 +282,7 @@
 
         <section id="hakkinda" class="section-content">
             <h2>Hakkında</h2>
-            <p>Kurulduğumuz ilk günden itibaren, en büyük önceliğimiz her zaman sizlerin memnuniyeti oldu. Sizin yüzünüzdeki gülümseme, bizim en değerli motivasyon kaynağımız ve bu yüzden her gün daha iyisini yapmak için çalışıyoruz. Bugün, bu tutkuyu 5 şehirde, tam 38 şubemizde sizlerle paylaşmanın gururunu yaşıyoruz. Her bir şubemizde, sadece bir pastane değil, aynı zamanda sıcak ve samimi bir buluşma noktası olmaya özen gösteriyoruz. Sıcacık bir atmosferde, mis gibi kokan pastalarımız ve tatlılarımız eşliğinde, güler yüzlü ekibimizle sizleri ağırlamaktan büyük bir heyecan duyuyoruz. Amacımız, her ziyaretinizde kendinizi özel ve evinizde hissetmenizi sağlamak. Bizim için her bir misafirimiz, ailemizin bir parçası gibidir. Yılların verdiği tecrübeyle, her bir lezzeti büyük bir titizlikle hazırlıyor, en taze malzemeleri kullanmaya özen gösteriyoruz. Çünkü biliyoruz ki, en güzel anılar, en güzel tatlarla birleşince unutulmaz olur. Furkan Baysak olarak, bu anılarınızda yer almaktan ve sizlere tatlı bir dokunuş katmaktan mutluluk duyuyoruz.</p>
+            <p>Kurulduğumuz ilk günden itibaren, en büyük önceliğimiz her zaman sizlerin memnuniyeti oldu. ...</p>
         </section>
 
         <!-- Ürünler Bölümü (Aynı Kalsın) -->
@@ -288,7 +301,7 @@
             </div>
         </section>
 
-        <!-- Pasta Sipariş Bölümü (Güncellendi - Alt Alta Form ve Büyük Textarea) -->
+        <!-- Pasta Sipariş Bölümü (Güncellendi) -->
         <section id="pasta-siparis" class="section-content pasta-siparis-section">
             <h2>Pasta Siparişi</h2>
             <div class="progress-bar-container">
@@ -486,7 +499,7 @@
         const prevButton = document.getElementById('previous-step');
         const nextButton = document.getElementById('next-step');
         const submitButton = document.getElementById('submit-order');
-        let currentStep = 1;
+        let currentStep = 2; // **Düzeltme:** Başlangıç adımını 2'den 1'e alıyoruz
         const totalSteps = steps.length;
         const form = document.getElementById('pastaSiparisForm');
 
@@ -502,23 +515,34 @@
             nextButton.style.display = stepIndex === totalSteps ? 'none' : 'inline-block';
             submitButton.style.display = stepIndex === totalSteps ? 'inline-block' : 'none';
             nextButton.innerText = stepIndex === totalSteps ? 'Siparişi Gözden Geçir' : 'İleri';
-             validateStep(stepIndex);
+            validateStep(stepIndex);
         }
 
-        function validateStep(stepIndex) {
+         function validateStep(stepIndex) {
             let isValidStep = true;
             const currentStepElement = steps[stepIndex - 1];
-            if (!currentStepElement) return true; // Step element might not exist, consider valid
-            const requiredFields = currentStepElement.querySelectorAll('[required]');
+            if (!currentStepElement) return true;
 
-            for (let i = 0; i < requiredFields.length; i++) { // Use a for loop for early exit
+            if (stepIndex === 2) { // Telefon numarası validasyonu sadece 2. adımda
+                const phoneField = document.getElementById('musteri-telefon');
+                if (!/^[0-9]{11}$/.test(phoneField.value.trim())) { // Regex ile 11 haneli sayı kontrolü
+                    isValidStep = false;
+                    nextButton.disabled = true;
+                    alert("Lütfen geçerli bir 11 haneli telefon numarası girin!");
+                    return false;
+                }
+            }
+             const requiredFields = currentStepElement.querySelectorAll('[required]');
+             for (let i = 0; i < requiredFields.length; i++) {
                 const field = requiredFields[i];
                 if (!field.value.trim()) {
                     isValidStep = false;
                     if (nextButton) nextButton.disabled = true;
-                    return false; // Return early, no need to check further
+                    return false;
                 }
             }
+
+
             if (nextButton) nextButton.disabled = !isValidStep;
             return isValidStep;
         }
@@ -526,8 +550,7 @@
 
         nextButton.addEventListener('click', () => {
             if (!validateStep(currentStep)) {
-                alert("Lütfen tüm zorunlu alanları doldurun!");
-                return;
+                return; // Validation failed, do not proceed
             }
             if (currentStep < totalSteps) {
                 updateFormStep(currentStep + 1);
@@ -542,9 +565,11 @@
 
         updateFormStep(1);
 
+
         form.addEventListener('input', function(e) {
             validateStep(currentStep);
         });
+
 
         const phoneInput = document.getElementById('musteri-telefon');
         phoneInput.addEventListener('input', function (e) {
@@ -553,6 +578,7 @@
                 this.value = this.value.slice(0, 11);
             }
         });
+
 
         const orderForm = document.querySelector('.siparis-form');
         orderForm.addEventListener('submit', function(event) {
