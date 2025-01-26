@@ -84,7 +84,7 @@
         }
 
         .form-group textarea {
-            resize: vertical;
+            resize: none; /* Dikeyde boyutlandırmayı kapat */
         }
 
         .form-actions { /* Butonları hizalamak için */
@@ -471,7 +471,7 @@
                     <div class="form-group">
                         <label for="ornek-pasta-resmi">13. Örnek Pasta Resmi (Opsiyonel)</label>
                         <input type="file" id="ornek-pasta-resmi" name="ornek-pasta-resmi" accept="image/*">
-                        <p style="font-size: 0.9em; color: #777;">**Güvenlik Notu:** Seçtiğiniz dosyanın yolu (örneğin: C:\fakepath\resim.png) tarayıcı güvenliği nedeniyle gösterilir. Bu, dosyanın gerçek konumunu değil, geçici bir yolu temsil eder. JavaScript, kullanıcının bilgisayarındaki gerçek dosya yoluna erişemez. Yüklediğiniz resim başarıyla sunucuya gönderilecektir.</p>
+                        <p style="font-size: 0.9em; color: #777;">**Güvenlik Notu:** Seçtiğiniz dosyanın yolu (örneğin: C:\fakepath\resim.png) tarayıcı güvenliği nedeniyle gösterilir. **Ancak merak etmeyin, seçtiğiniz dosya siparişinizle birlikte bize ulaşacaktır.** Bu sadece tarayıcının güvenlik önlemi.</p>
                     </div>
                 </div>
 
@@ -586,7 +586,7 @@
         });
 
 
-        // Form verilerini Firebase'e kaydetme fonksiyonu (Aynı Kalsın)
+        // Form verilerini Firebase'e kaydetme fonksiyonu (Aynı Kalsın - **ÖNEMLİ: Dosya işleme burada BASİT, sadece path gönderiliyor**)
         function saveOrderToFirebase() {
             const musteriAdi = document.getElementById('musteri-adi').value;
             const musteriTelefon = document.getElementById('musteri-telefon').value;
@@ -600,7 +600,7 @@
             const pastaRengi = document.getElementById('pasta-rengi').value;
             const pastaAltligi = document.getElementById('pasta-altligi').value;
             const pastaDetaylari = document.getElementById('pasta-detaylari').value;
-            const ornekPastaResmi = document.getElementById('ornek-pasta-resmi').value; // Dosya yolu değil, dosyanın kendisi alınmalı (gerekiyorsa)
+            const ornekPastaResmi = document.getElementById('ornek-pasta-resmi').value; // **SADECE "fakepath" STRINGİ ALINIYOR**
             const notlar = document.getElementById('notlar').value;
 
             const orderRef = database.ref('pasta-siparisleri/' + subeAdi + '/' + musteriAdi.replace(/\s/g, '_') + '_' + Date.now()); // Benzersiz anahtar için zaman damgası
@@ -618,7 +618,7 @@
                 pastaRengi: pastaRengi,
                 pastaAltligi: pastaAltligi,
                 pastaDetaylari: pastaDetaylari,
-                ornekPastaResmi: ornekPastaResmi, // Dosya yolu yerine dosyanın kendisi işlenmeli (gerekiyorsa)
+                ornekPastaResmi: ornekPastaResmi, // **SADECE "fakepath" STRINGİ KAYDEDİLİYOR**
                 notlar: notlar,
                 siparisTarihi: new Date().toLocaleString()
             }).then(() => {
