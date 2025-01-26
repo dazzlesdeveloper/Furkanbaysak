@@ -12,30 +12,21 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fff;
+            background-color: #fff; /* Beyaz arka plan */
             color: #333;
         }
 
         header {
-            background-color: #fff;
-            color: #000;
+            background-color: #fff; /* Beyaz header */
+            color: #000; /* Siyah yazı */
             padding: 20px 0;
             text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
+            border-bottom: 1px solid #ddd; /* Ayırıcı çizgi */
         }
 
         .logo {
             width: 70px;
             height: 70px;
-            margin-right: 15px;
         }
 
         header h1 {
@@ -44,23 +35,23 @@
         }
 
         nav#side-menu {
-            background-color: #fff;
+            background-color: #fff; /* Beyaz yan menü */
         }
 
         nav#side-menu ul li a {
-            color: #000;
+            color: #000; /* Siyah menü linkleri */
         }
 
-        /* Pasta Sipariş Alanı Stilleri (Beyaz ve Sade Tasarım) */
+        /* Pasta Sipariş Alanı Stilleri (Yorum Alanı Stilleri Gibi - BEYAZ ve SADE TASARIM - YENİDEN AYARLANDI) */
         .pasta-siparis-section {
             margin-top: 20px;
             padding: 15px;
-            background-color: #f9f9f9;
+            background-color: #f9f9f9; /* Açık gri arka plan */
             border-radius: 8px;
         }
 
         .pasta-siparis-section h2 {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             font-size: 1.5em;
             text-align: center;
         }
@@ -68,8 +59,7 @@
         .siparis-form {
             display: flex;
             flex-direction: column;
-            max-width: 700px;
-            margin: 0 auto;
+            margin-bottom: 15px;
         }
 
         .step {
@@ -81,23 +71,21 @@
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #444;
+            margin-bottom: 5px;
+            font-weight: bold;
         }
 
         .form-group input, .form-group textarea, .form-group select {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
+            padding: 10px;
+            border: 1px solid #ddd;
             border-radius: 4px;
             font-size: 16px;
-            font-family: inherit;
             box-sizing: border-box;
         }
 
@@ -105,7 +93,7 @@
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
-            background-image: url('data:image/svg+xml;utf8,<svg fill="grey" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
             background-repeat: no-repeat;
             background-position-x: calc(100% - 10px);
             background-position-y: 50%;
@@ -119,14 +107,14 @@
         .form-actions {
             display: flex;
             justify-content: space-between;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
         .form-actions button {
-            background-color: #5cb85c;
+            background-color: #5cb85c; /* Yeşil butonlar */
             color: white;
             border: none;
-            padding: 12px 25px;
+            padding: 12px 15px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -136,27 +124,20 @@
             border-radius: 4px;
             transition: background-color 0.3s ease;
         }
-
-        .form-actions button:hover {
+        .form-actions button:hover{
             background-color: #4cae4c;
-        }
-
-        .form-actions button:disabled {
-            background-color: #ddd;
-            color: #777;
-            cursor: not-allowed;
         }
 
         .progress-bar-container {
             width: 100%;
-            background-color: #e0e0e0;
+            background-color: #f0f0f0;
             border-radius: 4px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             overflow: hidden;
         }
 
         .progress-bar {
-            background-color: #c0a378;
+            background-color: #5cb85c;
             height: 10px;
             width: 0%;
             border-radius: 4px;
@@ -199,7 +180,6 @@
             font-weight: bold;
             font-size: 1.1em;
             color: #333;
-            margin: 0;
         }
 
         .kutu a {
@@ -376,125 +356,7 @@
 
     <!-- Ana İçerik (Aynı Kalsın) -->
     <main>
-        <!-- Fotoğraf Galerisi (Aynı Kalsın) -->
-        <div class="slider-container">
-            <div class="slider" id="slider">
-                <img src="image1.png" alt="Galeri 1" class="slide">
-                <img src="image2.png" alt="Galeri 2" class="slide">
-            </div>
-            <div class="dots">
-                <span class="dot" onclick="setCurrentSlide(0)"></span>
-                <span class="dot" onclick="setCurrentSlide(1)"></span>
-                </div>
-        </div>
-
-        <section id="hakkinda" class="section-content">
-            <h2>Hakkında</h2>
-            <p>Kurulduğumuz ilk günden itibaren, en büyük önceliğimiz her zaman sizlerin memnuniyeti oldu. Sizin yüzünüzdeki gülümseme, bizim en değerli motivasyon kaynağımız ve bu yüzden her gün daha iyisini yapmak için çalışıyoruz. Bugün, bu tutkuyu 5 şehirde, tam 38 şubemizde sizlerle paylaşmanın gururunu yaşıyoruz. Her bir şubemizde, sadece bir pastane değil, aynı zamanda sıcak ve samimi bir buluşma noktası olmaya özen gösteriyoruz. Sıcacık bir atmosferde, mis gibi kokan pastalarımız ve tatlılarımız eşliğinde, güler yüzlü ekibimizle sizleri ağırlamaktan büyük bir heyecan duyuyoruz. Amacımız, her ziyaretinizde kendinizi özel ve evinizde hissetmenizi sağlamak. Bizim için her bir misafirimiz, ailemizin bir parçası gibidir. Yılların verdiği tecrübeyle, her bir lezzeti büyük bir titizlikle hazırlıyor, en taze malzemeleri kullanmaya özen gösteriyoruz. Çünkü biliyoruz ki, en güzel anılar, en güzel tatlarla birleşince unutulmaz olur. Furkan Baysak olarak, bu anılarınızda yer almaktan ve sizlere tatlı bir dokunuş katmaktan mutluluk duyuyoruz.</p>
-        </section>
-
-        <!-- Ürünler Bölümü -->
-       <section id="urunler" class="section-content">
-        <h2>Ürünler</h2>
-        <div class="kutular-container">
-            <div class="kutu">
-                <a href="eksimaya.html">
-                    <img src="ekşimaya.png" alt="Ekşi Maya">
-                    <p>EKŞİ MAYALILAR</p>
-                </a>
-            </div>
-             <div class="kutu">
-                <a href="pasta.html">
-                    <img src="pasta.png" alt="Pastalar">
-                    <p>PASTALAR</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="kurabiye.html">
-                    <img src="kurabiye.png" alt="Kurabiyeler">
-                    <p>KURABIYELER</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="şarküteri.html">
-                    <img src="şarküteri.png" alt="Şarküteri">
-                    <p>ŞARKÜTERİ</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="tatlilar.html">
-                    <img src="tatlilar.png" alt="Tatlılar">
-                    <p>TATLILAR</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="icecekler.html">
-                    <img src="icecekler.png" alt="İçecekler">
-                    <p>İÇECEKLER</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="dondurmalar.html">
-                    <img src="dondurma.png" alt="Dondurmalar">
-                    <p>DONDURMALAR</p>
-                 </a>
-            </div>
-            <div class="kutu">
-                <a href="pogaca.html">
-                    <img src="pogaca.png" alt="Poğaçalar">
-                    <p>POĞAÇALAR</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="borek.html">
-                    <img src="borek.png" alt="Börekler">
-                    <p>BÖREKLER</p>
-                </a>
-            </div>
-            <div class="kutu">
-                <a href="tezgahustu.html">
-                    <img src="tezgahustu.png" alt="Tezgah Üstü">
-                    <p>TEZGAH ÜSTÜ</p>
-                </a>
-             </div>
-             <div class="kutu">
-                 <a href="kruvasan.html">
-                     <img src="kruvasan.png" alt="Kruvasanlar">
-                     <p>KRUVASANLAR</p>
-                 </a>
-             </div>
-            <div class="kutu">
-                <a href="tart.html">
-                    <img src="tart.png" alt="Tartlar">
-                    <p>TARTLAR</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-        <!-- Şubeler Bölümü -->
-        <section id="subeler" class="section-content">
-            <h2>Şubeler</h2>
-            <div class="subeler-container">
-                <div class="sube">
-                    <p><span class="location-icon">📍</span><a href="kayseri.html">KAYSERİ</a></p>
-                </div>
-                <div class="sube">
-                    <p><span class="location-icon">📍</span><a href="nevsehir.html">NEVŞEHİR</a></p>
-                </div>
-                <div class="sube">
-                    <p><span class="location-icon">📍</span><a href="nigde.html">NİĞDE</a></p>
-                </div>
-                <div class="sube">
-                    <p><span class="location-icon">📍</span><a href="sivas.html">SİVAS</a></p>
-                </div>
-                <div class="sube">
-                    <p><span class="location-icon">📍</span><a href="aksaray.html">AKSARAY</a></p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pasta Sipariş Bölümü -->
+        <!-- Pasta Sipariş Bölümü (Yorum Alanı Tasarımı ve Adım Adım Form İLE) -->
         <section id="pasta-siparis" class="section-content pasta-siparis-section">
             <h2>Pasta Siparişi</h2>
             <div class="progress-bar-container">
@@ -655,19 +517,23 @@
                         <button type="submit" class="form-button gonder-button" id="submit-order">Siparişi Gönder</button>
                     </div>
                 </div>
+                 <div class="form-actions">
+                    <button type="button" class="form-button geri-button" id="previous-step" >Geri</button>
+                    <button type="button" class="form-button ileri-button" id="next-step">İleri</button>
+                    <button type="submit" class="form-button gonder-button" id="submit-order" style="display: none;">Siparişi Gönder</button>
+                </div>
             </form>
         </section>
-    </main>
 
-    <!-- Footer (Aynı Kalsın) -->
-    <footer>
-        <div class="social-container">
-            <a href="https://www.instagram.com/furkanbaysakpastaneleri" target="_blank" class="social-link">
-                <img src="instagram-logo.png" class="social-logo">
-                <span>FURKANBAYSAKPASTANELERİ</span>
-            </a>
-        </div>
-    </footer>
+        <!-- Footer (Aynı Kalsın) -->
+        <footer>
+            <div class="social-container">
+                <a href="https://www.instagram.com/furkanbaysakpastaneleri" target="_blank" class="social-link">
+                    <img src="instagram-logo.png" class="social-logo">
+                    <span>FURKANBAYSAKPASTANELERİ</span>
+                </a>
+            </div>
+        </footer>
 
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
