@@ -8,16 +8,16 @@
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <style>
-        body {
+       body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f5f0;
+            background-color: #f8f5f0; /* Açık bej arka plan */
             color: #333;
         }
 
         header {
-            background-color: #c0a378;
+            background-color: #c0a378; /* Sıcak kahverengi */
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -45,7 +45,7 @@
         }
 
         .menu-icon {
-            display: none;
+            display: none; /* Hamburger menü ikonu başlangıçta gizli */
             cursor: pointer;
             padding: 10px;
         }
@@ -61,10 +61,10 @@
         nav#side-menu {
             position: fixed;
             top: 0;
-            left: -250px;
+            left: -250px; /* Menüyü başlangıçta sola taşı */
             width: 250px;
             height: 100%;
-            background-color: #c0a378;
+            background-color: #c0a378; /* Sıcak kahverengi */
             padding-top: 70px;
             transition: left 0.3s ease-in-out;
             z-index: 1000;
@@ -72,13 +72,17 @@
         }
 
         nav#side-menu.open {
-            left: 0;
+            left: 0; /* Menüyü aç */
         }
 
         nav#side-menu ul {
             list-style: none;
             padding: 0;
             margin: 0;
+        }
+
+        nav#side-menu ul li {
+            padding: 0;
         }
 
         nav#side-menu ul li a {
@@ -91,7 +95,7 @@
         }
 
         nav#side-menu ul li a:hover {
-            background-color: #a88e68;
+            background-color: #a88e68; /* Daha koyu kahverengi */
         }
 
         nav#side-menu .close-btn {
@@ -156,7 +160,7 @@
         }
 
         .section-content h2 {
-            color: #c0a378;
+            color: #c0a378; /* Kahverengi başlıklar */
             border-bottom: 2px solid #c0a378;
             padding-bottom: 10px;
             margin-bottom: 20px;
@@ -192,7 +196,7 @@
         }
 
         .location-icon {
-            color: #e44d26;
+            color: #e44d26; /* Kırmızı ikon */
         }
 
         /* Pasta Sipariş Alanı Stilleri */
