@@ -25,51 +25,96 @@
             margin-right: 8px;
         }
 
-        /* Yorum Alanı Stilleri */
-        .comment-section {
+        /* Pasta Sipariş Alanı Stilleri */
+        .pasta-siparis-section {
             margin-top: 20px;
-            padding: 15px;
+            padding: 20px;
             background-color: #f9f9f9;
             border-radius: 8px;
         }
 
-        .comment-section h3 {
-            margin-bottom: 10px;
-            font-size: 1.2em;
+        .pasta-siparis-section h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            text-align: center;
         }
 
-        .comment-form {
+        .siparis-form {
             display: flex;
             flex-direction: column;
+            max-width: 700px;
+            margin: 0 auto; /* Ortalamak için */
+        }
+
+        .form-group {
             margin-bottom: 15px;
         }
 
-        .comment-form input, .comment-form textarea, .comment-form select {
-            margin-bottom: 8px;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
         }
 
-        .comment-form button {
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box; /* Padding'in genişliğe dahil olmasını sağlar */
+        }
+
+        .form-group select {
+            appearance: none; /* Varsayılan ok işaretini kaldırır (isteğe bağlı) */
+            -webkit-appearance: none; /* Safari ve Chrome için */
+            -moz-appearance: none; /* Firefox için */
+            background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+            background-repeat: no-repeat;
+            background-position-x: calc(100% - 10px);
+            background-position-y: 50%;
+        }
+
+        .form-group textarea {
+            resize: vertical; /* Sadece dikeyde boyutlandırma */
+        }
+
+        .form-group button {
             background-color: #5cb85c;
             color: white;
             border: none;
-            padding: 8px 12px;
+            padding: 12px 15px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 14px;
+            font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
             border-radius: 4px;
         }
-        .comment-form button:hover{
+        .form-group button:hover{
             background-color: #4cae4c;
         }
 
-        /* Ürün Kutuları Stilleri */
+        /* İlerleme Çubuğu Stilleri */
+        .progress-bar-container {
+            width: 100%;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            overflow: hidden; /* İçeriğin dışarı taşmasını engeller */
+        }
+
+        .progress-bar {
+            background-color: #5cb85c;
+            height: 10px;
+            width: 0%; /* Başlangıçta 0 */
+            border-radius: 4px;
+            transition: width 0.3s ease-in-out; /* Animasyon */
+        }
+
+
+        /* Ürün Kutuları Stilleri (Aynı Kalsın) */
         .kutular-container {
            display: flex;
            flex-wrap: wrap;
@@ -113,7 +158,7 @@
             display: block;
         }
 
-        /* 768px'den büyük ekranlar için */
+        /* 768px'den büyük ekranlar için (Aynı Kalsın) */
         @media (min-width: 768px) {
             .kutular-container {
                 justify-content: center;
@@ -127,7 +172,7 @@
                font-size: 18px;
            }
         }
-         /* Footer Sosyal Link Stili */
+         /* Footer Sosyal Link Stili (Aynı Kalsın) */
         .social-container {
             display: flex;
             justify-content: center;
@@ -162,7 +207,7 @@
     </style>
 </head>
 <body oncontextmenu="return false;">
-    <!-- Üst Menü -->
+    <!-- Üst Menü (Aynı Kalsın) -->
     <header>
         <div class="menu-icon" onclick="toggleMenu()">
             <div class="line"></div>
@@ -175,20 +220,20 @@
         </div>
     </header>
 
-    <!-- Yandan Açılır Menü -->
+    <!-- Yandan Açılır Menü (Aynı Kalsın) -->
     <nav id="side-menu" class="hidden">
         <button class="close-btn" onclick="closeMenu()">X</button>
         <ul>
             <li><a href="#hakkinda">Hakkında</a></li>
             <li><a href="#urunler">Ürünler</a></li>
             <li><a href="#subeler">Şubeler</a></li>
-            <li><a href="#yorumlar">Yorum Yap</a></li>
+            <li><a href="#pasta-siparis">Pasta Siparişi</a></li> <!-- Yorumlar yerine Pasta Siparişi -->
         </ul>
     </nav>
 
-    <!-- Ana İçerik -->
+    <!-- Ana İçerik (Aynı Kalsın) -->
     <main>
-        <!-- Fotoğraf Galerisi -->
+        <!-- Fotoğraf Galerisi (Aynı Kalsın) -->
         <div class="slider-container">
             <div class="slider" id="slider">
                 <img src="image1.png" alt="Galeri 1" class="slide">
@@ -205,7 +250,7 @@
             <p>Kurulduğumuz ilk günden itibaren, en büyük önceliğimiz her zaman sizlerin memnuniyeti oldu. Sizin yüzünüzdeki gülümseme, bizim en değerli motivasyon kaynağımız ve bu yüzden her gün daha iyisini yapmak için çalışıyoruz. Bugün, bu tutkuyu 5 şehirde, tam 38 şubemizde sizlerle paylaşmanın gururunu yaşıyoruz. Her bir şubemizde, sadece bir pastane değil, aynı zamanda sıcak ve samimi bir buluşma noktası olmaya özen gösteriyoruz. Sıcacık bir atmosferde, mis gibi kokan pastalarımız ve tatlılarımız eşliğinde, güler yüzlü ekibimizle sizleri ağırlamaktan büyük bir heyecan duyuyoruz. Amacımız, her ziyaretinizde kendinizi özel ve evinizde hissetmenizi sağlamak. Bizim için her bir misafirimiz, ailemizin bir parçası gibidir. Yılların verdiği tecrübeyle, her bir lezzeti büyük bir titizlikle hazırlıyor, en taze malzemeleri kullanmaya özen gösteriyoruz. Çünkü biliyoruz ki, en güzel anılar, en güzel tatlarla birleşince unutulmaz olur. Furkan Baysak olarak, bu anılarınızda yer almaktan ve sizlere tatlı bir dokunuş katmaktan mutluluk duyuyoruz.</p>
         </section>
 
-        <!-- Ürünler Bölümü -->
+        <!-- Ürünler Bölümü (Aynı Kalsın) -->
        <section id="urunler" class="section-content">
         <h2>Ürünler</h2>
         <div class="kutular-container">
@@ -284,7 +329,7 @@
         </div>
     </section>
 
-        <!-- Şubeler Bölümü -->
+        <!-- Şubeler Bölümü (Aynı Kalsın) -->
         <section id="subeler" class="section-content">
             <h2>Şubeler</h2>
             <div class="subeler-container">
@@ -305,29 +350,87 @@
                 </div>
             </div>
         </section>
-          <!-- Yorumlar Bölümü -->
-        <section id="yorumlar" class="section-content">
-             <div class="comment-section">
-                <h3>Yorum Yap</h3>
-                <div class="comment-form">
-                    <select id="comment-branch" required>
-                      <option value="">Şube Seçiniz</option>
-                      <option value="Kayseri">Kayseri</option>
-                      <option value="Aksaray">Aksaray</option>
-                      <option value="Niğde">Niğde</option>
-                      <option value="Nevşehir">Nevşehir</option>
-                      <option value="Sivas">Sivas</option>
-                    </select>
-                   <input type="text" id="comment-name" placeholder="Adınız Soyadınız" required>
-                   <input type="tel" id="comment-phone" placeholder="Telefon Numaranız" required>
-                    <textarea id="comment-text" placeholder="Yorumunuz" rows="4" required></textarea>
-                     <button id="submit-comment">Yorum Gönder</button>
-                </div>
+
+        <!-- Pasta Sipariş Bölümü -->
+        <section id="pasta-siparis" class="section-content pasta-siparis-section">
+            <h2>Pasta Siparişi</h2>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="order-progress-bar"></div>
             </div>
+            <form class="siparis-form">
+                <div class="form-group">
+                    <label for="musteri-adi">1. Müşteri Adı Soyadı</label>
+                    <input type="text" id="musteri-adi" name="musteri-adi" required placeholder="Adınız ve Soyadınız">
+                </div>
+                <div class="form-group">
+                    <label for="musteri-telefon">2. Müşteri Telefonu</label>
+                    <input type="tel" id="musteri-telefon" name="musteri-telefon" required placeholder="Telefon Numaranız">
+                </div>
+                <div class="form-group">
+                    <label for="sube-adi">3. Şube Adı</label>
+                    <input type="text" id="sube-adi" name="sube-adi" required placeholder="Sipariş vermek istediğiniz şube">
+                </div>
+                <div class="form-group">
+                    <label for="pasta-boyutu">4. Pasta Boyutu</label>
+                    <select id="pasta-boyutu" name="pasta-boyutu" required>
+                        <option value="">Seçiniz</option>
+                        <option value="1-nolu">1 Nolu (4-6 Kişilik)</option>
+                        <option value="2-nolu">2 Nolu (8-10 Kişilik)</option>
+                        <option value="3-nolu">3 Nolu (10-15 Kişilik)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pasta-sekli">5. Pasta Şekli (Yuvarlak, Kare, Kalp vb.)</label>
+                    <input type="text" id="pasta-sekli" name="pasta-sekli" placeholder="İstediğiniz pasta şeklini belirtin (yuvarlak, kare, diş, araba, kalp vb.)">
+                </div>
+                <div class="form-group">
+                    <label for="ekstra-ara-kat">6. Ekstra Ara Kat</label>
+                    <select id="ekstra-ara-kat" name="ekstra-ara-kat">
+                        <option value="istemiyorum">İstemiyorum</option>
+                        <option value="ekstra-kat-evet">Ekstra Ara Kat İstiyorum</option>
+                        <!-- Gerekirse daha fazla seçenek eklenebilir -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="kek-krema-farkliligi">7. Kek ve Krema Farklılığı</label>
+                    <input type="text" id="kek-krema-farkliligi" name="kek-krema-farkliligi" placeholder="Kek veya krema için özel isteğiniz varsa belirtin">
+                </div>
+                <div class="form-group">
+                    <label for="pasta-icerigi">8. Pasta İçeriği (Kuruyemiş, Çikolata, Meyveli vb.)</label>
+                    <input type="text" id="pasta-icerigi" name="pasta-icerigi" placeholder="Pasta içeriği tercihinizi belirtin (kuruyemiş, çikolata, meyveli, full içerikli vb.)">
+                </div>
+                <div class="form-group">
+                    <label for="pasta-kremasi">9. Pasta Kreması (Şanti, Sos, Şeker Hamuru)</label>
+                    <input type="text" id="pasta-kremasi" name="pasta-kremasi" placeholder="Pasta kreması tercihinizi belirtin (şanti, sos, şeker hamuru)">
+                </div>
+                <div class="form-group">
+                    <label for="pasta-rengi">10. Pasta Rengi</label>
+                    <input type="text" id="pasta-rengi" name="pasta-rengi" placeholder="Pasta rengi tercihinizi belirtin">
+                </div>
+                <div class="form-group">
+                    <label for="pasta-altligi">11. Pasta Altlığı (Mukavva, Şeker Hamuru, Ahşap)</label>
+                    <input type="text" id="pasta-altligi" name="pasta-altligi" placeholder="Pasta altlığı tercihinizi belirtin (mukavva, şeker hamuru, ahşap)">
+                </div>
+                <div class="form-group">
+                    <label for="pasta-detaylari">12. Pasta Detayları (Eklemek istediğiniz özel notlar)</label>
+                    <textarea id="pasta-detaylari" name="pasta-detaylari" rows="3" placeholder="Pasta ile ilgili eklemek istediğiniz detaylar, özel notlar"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="ornek-pasta-resmi">13. Örnek Pasta Resmi (Opsiyonel)</label>
+                    <input type="file" id="ornek-pasta-resmi" name="ornek-pasta-resmi" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="notlar">14. Not (Eklemek istediğiniz notlar)</label>
+                    <textarea id="notlar" name="notlar" rows="3" placeholder="Eklemek istediğiniz notlar"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Sipariş Gönder</button>
+                </div>
+            </form>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer (Aynı Kalsın) -->
     <footer>
         <div class="social-container">
             <a href="https://www.instagram.com/furkanbaysakpastaneleri" target="_blank" class="social-link">
@@ -340,6 +443,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
     <script>
+        // Firebase Konfigürasyonu (Aynı Kalsın veya güncelleyin)
         const firebaseConfig = {
             apiKey: "AIzaSyCIhKXxTwmQ1l70c7_vnH6ZmM1FxZsqUEI",
             authDomain: "furkan-baysak-b74ef.firebaseapp.com",
@@ -353,76 +457,116 @@
 
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
-        const submitCommentButton = document.getElementById('submit-comment');
 
-        submitCommentButton.addEventListener('click', function(){
-            const branch = document.getElementById('comment-branch').value;
-            const name = document.getElementById('comment-name').value;
-            const phone = document.getElementById('comment-phone').value;
-            const text = document.getElementById('comment-text').value;
+        // Form Gönderildiğinde İlerleme Çubuğunu ve Firebase Kaydını Yönetme
+        const orderForm = document.querySelector('.siparis-form');
+        const progressBar = document.getElementById('order-progress-bar');
 
-            if(branch && name && phone && text){
-                const commentRef = database.ref('comments/' + branch + '/' + name);
-                commentRef.set({
-                    phone: phone,
-                    text: text
+        orderForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Sayfanın yenilenmesini engelle
+
+            // İlerleme çubuğunu başlat
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 10;
+                progressBar.style.width = `${progress}%`;
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    // Form verilerini al ve Firebase'e kaydet
+                    saveOrderToFirebase();
+                }
+            }, 100); // Her 100ms'de %10 ilerle
+
+            // Form verilerini Firebase'e kaydetme fonksiyonu
+            function saveOrderToFirebase() {
+                const musteriAdi = document.getElementById('musteri-adi').value;
+                const musteriTelefon = document.getElementById('musteri-telefon').value;
+                const subeAdi = document.getElementById('sube-adi').value;
+                const pastaBoyutu = document.getElementById('pasta-boyutu').value;
+                const pastaSekli = document.getElementById('pasta-sekli').value;
+                const ekstraAraKat = document.getElementById('ekstra-ara-kat').value;
+                const kekKremaFarkliligi = document.getElementById('kek-krema-farkliligi').value;
+                const pastaIcerigi = document.getElementById('pasta-icerigi').value;
+                const pastaKremasi = document.getElementById('pasta-kremasi').value;
+                const pastaRengi = document.getElementById('pasta-rengi').value;
+                const pastaAltligi = document.getElementById('pasta-altligi').value;
+                const pastaDetaylari = document.getElementById('pasta-detaylari').value;
+                const ornekPastaResmi = document.getElementById('ornek-pasta-resmi').value; // Dosya yolu değil, dosyanın kendisi alınmalı (gerekiyorsa)
+                const notlar = document.getElementById('notlar').value;
+
+                const orderRef = database.ref('pasta-siparisleri/' + subeAdi + '/' + musteriAdi.replace(/\s/g, '_') + '_' + Date.now()); // Benzersiz anahtar için zaman damgası
+
+                orderRef.set({
+                    musteriAdi: musteriAdi,
+                    musteriTelefon: musteriTelefon,
+                    subeAdi: subeAdi,
+                    pastaBoyutu: pastaBoyutu,
+                    pastaSekli: pastaSekli,
+                    ekstraAraKat: ekstraAraKat,
+                    kekKremaFarkliligi: kekKremaFarkliligi,
+                    pastaIcerigi: pastaIcerigi,
+                    pastaKremasi: pastaKremasi,
+                    pastaRengi: pastaRengi,
+                    pastaAltligi: pastaAltligi,
+                    pastaDetaylari: pastaDetaylari,
+                    ornekPastaResmi: ornekPastaResmi, // Dosya yolu yerine dosyanın kendisi işlenmeli (gerekiyorsa)
+                    notlar: notlar,
+                    siparisTarihi: new Date().toLocaleString()
+                }).then(() => {
+                    alert('Siparişiniz başarıyla gönderildi!');
+                    orderForm.reset(); // Formu temizle
+                    progressBar.style.width = '0%'; // İlerleme çubuğunu sıfırla
+                }).catch((error) => {
+                    alert('Sipariş gönderilirken bir hata oluştu: ' + error.message);
+                    progressBar.style.width = '0%'; // İlerleme çubuğunu sıfırla
                 });
-
-                document.getElementById('comment-branch').value = '';
-                document.getElementById('comment-name').value = '';
-                document.getElementById('comment-phone').value = '';
-                document.getElementById('comment-text').value = '';
-
-                alert('Yorumunuz başarıyla gönderildi!');
-            } else {
-                alert('Lütfen tüm alanları doldurunuz!');
             }
-        })
+        });
 
 
-        // Yandan Menü Kontrolü
-function toggleMenu() {
-    const menu = document.getElementById('side-menu');
-    menu.classList.toggle('open');
-}
+        // Yandan Menü Kontrolü (Aynı Kalsın)
+        function toggleMenu() {
+            const menu = document.getElementById('side-menu');
+            menu.classList.toggle('open');
+        }
 
-function closeMenu() {
-    const menu = document.getElementById('side-menu');
-    menu.classList.remove('open');
-}
+        function closeMenu() {
+            const menu = document.getElementById('side-menu');
+            menu.classList.remove('open');
+        }
 
-// Fotoğraf Galerisi
-let currentSlide = 0;
+        // Fotoğraf Galerisi (Aynı Kalsın)
+        let currentSlide = 0;
 
-function setCurrentSlide(index) {
-    currentSlide = index;
-    updateSlider();
-}
+        function setCurrentSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
 
-function updateSlider() {
-    const slider = document.getElementById('slider');
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
+        function updateSlider() {
+            const slider = document.getElementById('slider');
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
 
-    // Slaytları kaydırma
-    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            // Slaytları kaydırma
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-    // Nokta aktifliğini güncelle
-    dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentSlide);
-    });
-}
+            // Nokta aktifliğini güncelle
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
 
-// Otomatik Kaydırma (İsteğe Bağlı)
-setInterval(() => {
-    const slides = document.querySelectorAll('.slide');
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateSlider();
-}, 5000);
+        // Otomatik Kaydırma (İsteğe Bağlı) (Aynı Kalsın)
+        setInterval(() => {
+            const slides = document.querySelectorAll('.slide');
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        }, 5000);
 
     </script>
     <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
 </body>
-                          </html>
+</html>
