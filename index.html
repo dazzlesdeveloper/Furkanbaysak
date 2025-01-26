@@ -1,119 +1,111 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FURKAN BAYSAK PASTANELERİ</title>
-    <link rel="icon" type="image/x-icon" href="logo.png">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* .sube a, .location-icon, .comment-section, .comment-form, .kutular-container, .kutu, .social-container, .social-link, .social-logo, .progress-bar, .progress, .order-form-section, .order-form label, .order-form input, .order-form textarea, .order-form select, .order-form button, .form-step */
-       /* ... (Diğer stil kodlarınız burada) ... */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>FURKAN BAYSAK PASTANELERİ</title>
+<link rel="icon" type="image/x-icon" href="logo.png">
+<link rel="stylesheet" href="style.css">
+<style>
+    /* ... (style.css'deki diğer stiller) ... */
+
+    /* Pasta Sipariş Formu Stilleri */
+    .order-form-section {
+        width: 100%;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order-form-section h3 {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+        color: #333;
+        text-align: center;
+    }
 
 
-        /* Pasta Sipariş Formu Stilleri (Örnek Stil) */
-        .order-form-section {
-            width: 100%;
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 15px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;  /* Bütün içeriği ortala */
-            display: flex;
-            flex-direction: column; /* Kolonlara göre sıralama */
-            align-items: center;
-        }
-        
-         .order-form-section label {
-            width: 100%;
-            text-align: left;
-            display: block;
-            margin-bottom: 5px;
-         }
+    .order-form label {
+        font-size: 1em;
+        margin-bottom: 5px;
+        color: #555;
+        text-align: left;
+        width: 100%;
+        display: block;
+    }
 
-         .order-form input,
-         .order-form select,
-         .order-form textarea {
-            width: 100%;
-            max-width: 300px;
-            margin: 0 auto 10px; /* Kaydırmayı engellemek için margin-bottom değeri */
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-         }
+    .order-form input,
+    .order-form select,
+    .order-form textarea {
+        width: 100%;
+        max-width: 300px;
+        margin: 5px auto;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
 
-         .order-form button {
-             background-color: #4CAF50; /* Yeşil buton */
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 10px 0; /* Margin-bottom değeri */
-            cursor: pointer;
-            border-radius: 4px;
-         }
-         
-         .order-form button:hover{
-             background-color: #45a049; /* Daha koyu yeşil */
-         }
+    .order-form .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 10px;
+        width: 100%;
+    }
+    
+     .order-form button{
+        background-color: #ddd;
+        color: #333;
+        border: 1px solid #ccc;
+        padding: 8px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 0;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+     .order-form button:hover{
+        background-color: #e0e0e0;
+    }
 
-          /* İlerleme Çubuğu Stilleri */
-        .progress-bar {
-            width: 100%;
-            background-color: #f0f0f0;
-             height: 8px;
-            border-radius: 5px;
-          margin-bottom: 15px;
-       }
-        .progress {
-            height: 100%;
-           background-color: #e44d26;
-           border-radius: 5px;
-           width: 0; /* ilerlemeye göre genişliği ayarlanacak */
-           transition: width 0.3s ease;
-        }
-        .order-form .form-step {
-            display: none;
-        }
-      .order-form .form-step.active {
-          display: block;
-        }
-        .button-container {
-            display: flex;
-           justify-content: center;
-           width: 100%;
-           margin-top: 10px;
-           gap: 10px;
-        }
-
-         
-        /* ... (Diğer stiller) ... */
-
-    </style>
+    /* ... (style.css'deki diğer stiller) ... */
+</style>
 </head>
 <body>
     <!-- ... (Diğer header, nav, main içeriği) ... -->
-<!-- ... (Diğer section içeriği) ... -->
+
     <main>
+        <!-- ... (Diğer section içeriği) ... -->
          <!-- Pasta Siparişi Bölümü -->
-        <section id="siparis" class="section-content">
-            <div class="order-form-section">
-                 <h3>Pasta Siparişi Ver</h3>
+         <section id="siparis" class="section-content">
+             <div class="order-form-section">
+                <h3>Pasta Siparişi Ver</h3>
                 <div class="progress-bar">
-                   <div class="progress" id="progress"></div>
+                  <div class="progress" id="progress"></div>
                  </div>
-                <form class="order-form" id="order-form">
-                   </form>
-            </div>
+                 <form class="order-form" id="order-form">
+                   <div class="form-step active" data-step="1">
+                        <label for="customer-name">Müşteri Adı Soyadı:</label>
+                        <input type="text" id="customer-name" required>
+                        <div class="button-container">
+                          <button type="button" class="next-step">Sonraki Adım</button>
+                        </div>
+                   </div>
+                   <!-- Formun diğer adımları burada eklenir. -->
+
+                 </form>
+             </div>
         </section>
-    </main>
-   <!-- ... (Diğer footer içeriği) ... -->
-</body>
+   </main>
+    </body>
 </html>
