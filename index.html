@@ -7,7 +7,7 @@
     <title>FURKAN BAYSAK PASTANELERİ</title>
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
-    <style>
+     <style>
         /* Genel Stil Ayarları */
          .back-button {
             position: absolute;
@@ -33,308 +33,305 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            display: flex;
+             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
-
         header {
-            background-color: #fff;
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
+           background-color: #fff;
+           padding: 20px 0;
+           border-bottom: 1px solid #eee;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
             display: flex;
             justify-content: space-between;
             align-items: center;
-             position: relative;
+            position: relative;
         }
-
         h1 {
             font-size: 2em;
             color: #e44d26;
-            margin: 0;
+             margin: 0;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
-
         .logo-container {
             display: flex;
-            align-items: center;
+             align-items: center;
         }
-
-        .logo {
+         .logo {
             max-width: 50px;
-            margin-right: 10px;
+             margin-right: 10px;
         }
           /* Yandan Menü */
          .menu-icon {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            width: 30px;
+             width: 30px;
             height: 25px;
-            cursor: pointer;
+             cursor: pointer;
+           margin-right: 20px;
         }
-        .menu-icon .line {
-            width: 100%;
+         .menu-icon .line {
+           width: 100%;
             height: 3px;
             background-color: #333;
             transition: all 0.3s ease;
-        }
+         }
         nav#side-menu {
-            position: fixed;
+             position: fixed;
             top: 0;
             left: -250px;
-            width: 250px;
+             width: 250px;
             height: 100%;
             background-color: #fff;
             z-index: 1000;
-            padding-top: 60px;
-            transition: left 0.3s ease;
-            overflow-y: auto;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-        }
-         nav#side-menu.open {
-            left: 0;
-        }
-         nav#side-menu ul {
-            list-style: none;
+             padding-top: 60px;
+           transition: left 0.3s ease;
+             overflow-y: auto;
+           box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+         }
+
+        nav#side-menu.open {
+             left: 0;
+         }
+
+        nav#side-menu ul {
+           list-style: none;
             padding: 0;
             margin: 0;
         }
+
         nav#side-menu ul li a {
             display: block;
             padding: 15px 20px;
-            text-decoration: none;
-            color: #333;
+             text-decoration: none;
+             color: #333;
             font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
+             transition: background-color 0.3s ease;
+         }
          nav#side-menu ul li a:hover {
-            background-color: #f0f0f0;
-        }
+           background-color: #f0f0f0;
+         }
         nav#side-menu .close-btn {
             position: absolute;
-            top: 10px;
+             top: 10px;
             right: 10px;
             font-size: 24px;
              cursor: pointer;
             background: none;
-            border: none;
+             border: none;
            outline: none;
-         }
-         /* Slider Stilleri */
-        .slider-container {
-            width: 100%;
+        }
+          /* Slider Stilleri */
+         .slider-container {
+             width: 100%;
             overflow: hidden;
             position: relative;
-        }
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .slide {
-            width: 100%;
-            flex-shrink: 0;
-        }
-          .slide img {
-            width: 100%;
-           height: auto;
          }
-
-        .dots {
+         .slider {
+            display: flex;
+             transition: transform 0.5s ease;
+        }
+         .slide {
+           width: 100%;
+             flex-shrink: 0;
+         }
+          .slide img {
+             width: 100%;
+            height: auto;
+         }
+         .dots {
            position: absolute;
             bottom: 10px;
              left: 50%;
             transform: translateX(-50%);
             display: flex;
-        }
-          .dot {
+         }
+         .dot {
             width: 10px;
              height: 10px;
-           border-radius: 50%;
-            background-color: #bbb;
-            margin: 0 5px;
-            cursor: pointer;
+             border-radius: 50%;
+             background-color: #bbb;
+             margin: 0 5px;
+             cursor: pointer;
            transition: background-color 0.3s ease;
         }
-         .dot.active {
-             background-color: #e44d26;
+          .dot.active {
+            background-color: #e44d26;
         }
           /* Section Stilleri */
          main {
-            padding: 20px;
+           padding: 20px;
              flex: 1;
         }
-          .section-content {
+         .section-content {
              padding: 15px;
             background-color: #fff;
-            border-radius: 8px;
-           margin-bottom: 20px;
+           border-radius: 8px;
+            margin-bottom: 20px;
            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-         .section-content h2 {
+         }
+          .section-content h2 {
             margin-bottom: 15px;
-             font-size: 1.8em;
+           font-size: 1.8em;
              color: #e44d26;
         }
          .section-content p {
-            line-height: 1.6;
-        }
+             line-height: 1.6;
+         }
         /* Ürünler Stilleri */
          .kutular-container {
-           display: flex;
-           flex-wrap: wrap;
-           justify-content: center;
-        }
+            display: flex;
+             flex-wrap: wrap;
+            justify-content: center;
+         }
 
         .kutu {
-            width: calc(50% - 15px);
+             width: calc(50% - 15px);
             margin: 7.5px;
-            padding: 10px;
-            border: 1px solid #ddd;
+             padding: 10px;
+           border: 1px solid #ddd;
             border-radius: 8px;
-            text-align: center;
-            background-color: #fff;
+           text-align: center;
+           background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            box-sizing: border-box;
+           box-sizing: border-box;
             transition: transform 0.2s ease-in-out;
         }
         .kutu:hover{
-           transform: scale(1.05);
-        }
+          transform: scale(1.05);
+         }
 
         .kutu img {
             max-width: 100%;
-            height: auto;
-            margin-bottom: 8px;
+             height: auto;
+             margin-bottom: 8px;
             transition: transform 0.3s ease;
 
         }
 
-
         .kutu p {
-            font-weight: bold;
+             font-weight: bold;
             font-size: 14px;
             color: #333;
-        }
+         }
 
         .kutu a {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
+             text-decoration: none;
+             color: inherit;
+             display: block;
+         }
 
-       /* Şubeler Stilleri */
-       .subeler-container {
-            display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-           gap: 15px;
-       }
-       .sube {
+        /* Şubeler Stilleri */
+        .subeler-container {
+           display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+          .sube {
             padding: 10px;
-           text-align: center;
+             text-align: center;
             border-radius: 8px;
-           background-color: #f9f9f9;
+            background-color: #f9f9f9;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-       .sube a {
-            font-size: 16px;
-            font-weight: bold;
-             color: black;
-           text-decoration: none;
-           display: block;
-             padding: 8px;
+         .sube a {
+             font-size: 16px;
+           font-weight: bold;
+           color: black;
+             text-decoration: none;
+             display: block;
+            padding: 8px;
         }
+         .sube a:hover {
+            background-color: #f0f0f0;
+         }
 
-       .sube a:hover {
-           background-color: #f0f0f0;
-       }
-
-        .location-icon {
-            margin-right: 8px;
-        }
+         .location-icon {
+           margin-right: 8px;
+         }
         /* Pasta Sipariş Stilleri */
         .order-form-section {
-            margin-top: 20px;
-            padding: 15px;
+           margin-top: 20px;
+           padding: 15px;
             background-color: #f9f9f9;
-            border-radius: 8px;
-             width: 100%;
-             max-width: 600px;
+             border-radius: 8px;
+           width: 100%;
+           max-width: 600px;
              margin: 20px auto;
-         }
-          .order-form-section h3 {
-            margin-bottom: 10px;
-             font-size: 1.2em;
-         }
+        }
+         .order-form-section h3 {
+           margin-bottom: 10px;
+           font-size: 1.2em;
+        }
           .order-form {
             display: flex;
-            flex-direction: column;
-            margin-bottom: 15px;
+             flex-direction: column;
+             margin-bottom: 15px;
         }
-        .order-form label {
+         .order-form label {
             margin-bottom: 5px;
-            font-weight: bold;
-             color: #555;
+             font-weight: bold;
+            color: #555;
         }
-          .order-form input, .order-form textarea, .order-form select {
-             margin-bottom: 8px;
-           padding: 8px;
+         .order-form input, .order-form textarea, .order-form select {
+            margin-bottom: 8px;
+             padding: 8px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+             border-radius: 4px;
             font-size: 14px;
-             box-sizing: border-box;
-        }
+            box-sizing: border-box;
+          }
          .order-form button {
-           background-color: #5cb85c;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            text-align: center;
+            background-color: #5cb85c;
+             color: white;
+             border: none;
+           padding: 8px 12px;
+             text-align: center;
            text-decoration: none;
-           display: inline-block;
-             font-size: 14px;
+            display: inline-block;
+            font-size: 14px;
             margin: 4px 2px;
-            cursor: pointer;
+             cursor: pointer;
             border-radius: 4px;
         }
           .order-form button:hover{
-              background-color: #4cae4c;
-          }
-         .order-form textarea {
-           height: 100px;
+             background-color: #4cae4c;
          }
+          .order-form textarea {
+            height: 100px;
+          }
           /* Footer Sosyal Link Stili */
-          .social-container {
+        .social-container {
             display: flex;
-            justify-content: center;
+           justify-content: center;
              padding: 10px 0;
-            background-color: #333;
+             background-color: #333;
         }
 
          .social-link {
            display: flex;
-           align-items: center;
+            align-items: center;
             text-decoration: none;
-            color: #fff;
-         }
+             color: #fff;
+          }
         .social-logo{
-            width: 55px;
+             width: 55px;
             height: 55px;
-             margin-right: 25px;
+           margin-right: 25px;
         }
-         .social-link span{
-             font-size: 14px;
-         }
-        /* 768px ve üzeri ekranlar */
-          @media (min-width: 768px) {
-              .social-link span {
+          .social-link span{
+            font-size: 14px;
+        }
+         /* 768px ve üzeri ekranlar */
+           @media (min-width: 768px) {
+               .social-link span {
                 font-size: 16px;
-            }
-          .social-logo{
+             }
+         .social-logo{
             width: 55px;
             height: 55px;
-             margin-right: 25px;
+            margin-right: 25px;
         }
            header {
                  padding: 20px 20px;
@@ -342,47 +339,47 @@
             }
               h1 {
                 font-size: 2.5em;
-             }
-             .menu-icon {
-               margin-right: 0;
-           }
-            main {
-               padding: 20px 30px;
             }
+             .menu-icon {
+                 margin-right: 0;
+            }
+            main {
+                padding: 20px 30px;
+           }
              .section-content h2 {
                 font-size: 2em;
-             }
-              .kutu {
-                width: 200px;
-                margin: 10px;
             }
-              .sube a {
-                 font-size: 18px;
-             }
+               .kutu {
+                width: 200px;
+                 margin: 10px;
+            }
+            .sube a {
+                font-size: 18px;
+            }
             .subeler-container {
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            }
+             }
         }
-          /* İlerleme Çubuğu Stilleri */
-        .progress-bar {
-             width: 100%;
-            background-color: #f0f0f0;
-            height: 8px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
+            /* İlerleme Çubuğu Stilleri */
+         .progress-bar {
+            width: 100%;
+           background-color: #f0f0f0;
+             height: 8px;
+           border-radius: 5px;
+           margin-bottom: 15px;
+       }
         .progress {
-            height: 100%;
-             background-color: #5cb85c;
+             height: 100%;
+            background-color: #5cb85c;
             border-radius: 5px;
-            width: 0;
+           width: 0;
             transition: width 0.3s ease;
          }
-        .order-form .form-step {
+          .order-form .form-step {
              display: none;
-        }
-        .order-form .form-step.active {
-            display: block;
+         }
+         .order-form .form-step.active {
+           display: block;
         }
     </style>
 </head>
@@ -407,7 +404,7 @@
             <li><a href="#hakkinda">Hakkında</a></li>
             <li><a href="#urunler">Ürünler</a></li>
             <li><a href="#subeler">Şubeler</a></li>
-             <li><a href="#siparis">Pasta Siparişi Ver</a></li>
+            <li><a href="#siparis">Pasta Siparişi Ver</a></li>
         </ul>
     </nav>
 
@@ -422,7 +419,7 @@
             <div class="dots">
                 <span class="dot" onclick="setCurrentSlide(0)"></span>
                 <span class="dot" onclick="setCurrentSlide(1)"></span>
-            </div>
+                </div>
         </div>
 
         <section id="hakkinda" class="section-content">
@@ -487,25 +484,25 @@
                         <img src="borek.png" alt="Börekler">
                         <p>BÖREKLER</p>
                     </a>
-                </div>
-                <div class="kutu">
+                 </div>
+                   <div class="kutu">
                     <a href="tezgahustu.html">
                         <img src="tezgahustu.png" alt="Tezgah Üstü">
                         <p>TEZGAH ÜSTÜ</p>
                     </a>
-                 </div>
-                 <div class="kutu">
-                     <a href="kruvasan.html">
-                         <img src="kruvasan.png" alt="Kruvasanlar">
-                         <p>KRUVASANLAR</p>
-                     </a>
-                  </div>
-                <div class="kutu">
-                    <a href="tart.html">
-                        <img src="tart.png" alt="Tartlar">
-                        <p>TARTLAR</p>
-                    </a>
-                </div>
+                   </div>
+                    <div class="kutu">
+                        <a href="kruvasan.html">
+                            <img src="kruvasan.png" alt="Kruvasanlar">
+                            <p>KRUVASANLAR</p>
+                        </a>
+                     </div>
+                    <div class="kutu">
+                       <a href="tart.html">
+                           <img src="tart.png" alt="Tartlar">
+                            <p>TARTLAR</p>
+                        </a>
+                   </div>
            </div>
         </section>
 
@@ -530,12 +527,12 @@
                 </div>
             </div>
         </section>
-       <!-- Pasta Siparişi Bölümü -->
-        <section id="siparis" class="section-content">
+        <!-- Pasta Siparişi Bölümü -->
+         <section id="siparis" class="section-content">
             <div class="order-form-section">
                 <h3>Pasta Siparişi Ver</h3>
-                 <div class="progress-bar">
-                     <div class="progress" id="progress"></div>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
                 </div>
                   <form class="order-form" id="order-form">
                       <!-- Adım 1: Müşteri Bilgileri -->
@@ -659,108 +656,111 @@
         const formSteps = document.querySelectorAll(".form-step");
         const progressBar = document.getElementById("progress");
         let currentStep = 1;
-         const form = document.getElementById('order-form');
+        const form = document.getElementById('order-form');
 
-          function updateProgress(){
+
+         function updateProgress(){
                 const progressWidth = ((currentStep -1) / (formSteps.length -1 )) * 100;
                 progressBar.style.width = `${progressWidth}%`;
          }
-       form.addEventListener('click', (event)=>{
+
+        form.addEventListener('click', (event)=>{
             if(event.target.classList.contains('next-step')){
                 let isStepValid = true;
-                 const activeStep = formSteps[currentStep-1];
-                 const requiredInputs = activeStep.querySelectorAll('[required]');
-                 requiredInputs.forEach((input) => {
-                      if(!input.value){
-                          isStepValid = false;
-                         input.style.border = "2px solid red";
+                const activeStep = formSteps[currentStep-1];
+                const requiredInputs = activeStep.querySelectorAll('[required]');
+                requiredInputs.forEach((input) => {
+                    if(!input.value){
+                        isStepValid = false;
+                        input.style.border = "2px solid red";
                          input.placeholder = "Bu alan zorunludur!";
-                      }else {
+                    } else{
                          input.style.border = "1px solid #ddd";
-                      }
-                 });
+                     }
+                });
                 if(isStepValid){
                   currentStep++;
-                       if(currentStep > formSteps.length){
+                      if(currentStep > formSteps.length){
                            currentStep = formSteps.length;
-                        }
-                         formSteps.forEach((step) => step.classList.remove('active'));
-                        formSteps[currentStep-1].classList.add('active');
-                          updateProgress();
-                 }
+                       }
+                        formSteps.forEach((step) => step.classList.remove('active'));
+                      formSteps[currentStep-1].classList.add('active');
+                        updateProgress();
+                  }
+
             }
-              if(event.target.classList.contains('prev-step')){
+            if(event.target.classList.contains('prev-step')){
                 currentStep--;
-                 if(currentStep < 1){
-                      currentStep = 1;
-                }
-                 formSteps.forEach((step) => step.classList.remove('active'));
-                  formSteps[currentStep-1].classList.add('active');
+                if(currentStep < 1){
+                    currentStep = 1;
+               }
+                formSteps.forEach((step) => step.classList.remove('active'));
+                 formSteps[currentStep-1].classList.add('active');
                    updateProgress();
-              }
-       });
+             }
+        });
 
         submitOrderButton.addEventListener('click', function() {
-            const musteriAdSoyad = document.getElementById('customer-name').value;
+             const musteriAdSoyad = document.getElementById('customer-name').value;
             const subeAdi = document.getElementById('branch-name').value;
             const telefonNumarası = document.getElementById('customer-phone').value;
             const pastaBoyutu = document.getElementById('cake-size').value;
             const pastaSekli = document.getElementById('cake-shape').value;
             const ekstraAraKat = document.getElementById('extra-layer').value;
            const kekKremaFarklılıgı = document.getElementById('cake-flavor').value;
-            const pastaİcerigi = document.getElementById('cake-content').value;
+             const pastaİcerigi = document.getElementById('cake-content').value;
             const kremaVeRengi = document.getElementById('cream-and-color').value;
            const pastaAltlıgı = document.getElementById('cake-base').value;
-            const pastaDetaylari = document.getElementById('cake-details').value;
+           const pastaDetaylari = document.getElementById('cake-details').value;
              const pastaFoto = document.getElementById('cake-photo').value;
-             const notlar = document.getElementById('order-notes').value;
+            const notlar = document.getElementById('order-notes').value;
 
-
-             if(musteriAdSoyad && subeAdi && telefonNumarası && pastaBoyutu && pastaSekli && kremaVeRengi && pastaAltlıgı ){
-                 const orderRef = database.ref('pastaSiparisleri/' + subeAdi + '/' + musteriAdSoyad);
-                orderRef.set({
-                   "Müşteri Ad Soyad": musteriAdSoyad,
-                   "Şube Adı": subeAdi,
-                    "Telefon Numarası": telefonNumarası,
-                    "Pasta Boyutu": pastaBoyutu,
-                     "Pasta Şekli": pastaSekli,
-                     "Ekstra Ara Kat": ekstraAraKat,
-                    "Kek Krema Farklılığı": kekKremaFarklılıgı,
-                   "Pasta İçeriği": pastaİcerigi,
-                    "Krema ve Rengi": kremaVeRengi,
-                    "Pasta Altlığı": pastaAltlıgı,
-                    "Pasta Detayları": pastaDetaylari,
-                     "Pasta Fotoğrafı": pastaFoto,
-                   "Notlar": notlar,
-                   "Sipariş Durumu": "Hazırlanıyor"
-                });
+            if(musteriAdSoyad && subeAdi && telefonNumarası && pastaBoyutu && pastaSekli && kremaVeRengi && pastaAltlıgı ){
+                  const orderRef = database.ref('pastaSiparisleri/' + subeAdi + '/' + musteriAdSoyad);
+                  orderRef.set({
+                     "Müşteri Ad Soyad": musteriAdSoyad,
+                      "Şube Adı": subeAdi,
+                     "Telefon Numarası": telefonNumarası,
+                     "Pasta Boyutu": pastaBoyutu,
+                      "Pasta Şekli": pastaSekli,
+                      "Ekstra Ara Kat": ekstraAraKat,
+                     "Kek Krema Farklılığı": kekKremaFarklılıgı,
+                    "Pasta İçeriği": pastaİcerigi,
+                   "Krema ve Rengi": kremaVeRengi,
+                     "Pasta Altlığı": pastaAltlıgı,
+                      "Pasta Detayları": pastaDetaylari,
+                      "Pasta Fotoğrafı": pastaFoto,
+                    "Notlar": notlar,
+                    "Sipariş Durumu": "Hazırlanıyor"
+                  });
 
                 document.getElementById('customer-name').value = '';
-                document.getElementById('branch-name').value = '';
-                 document.getElementById('customer-phone').value = '';
-                document.getElementById('cake-size').value = '';
-                 document.getElementById('cake-shape').value = '';
-                  document.getElementById('extra-layer').value = '';
-                document.getElementById('cake-flavor').value = '';
-                document.getElementById('cake-content').value = '';
-                 document.getElementById('cream-and-color').value = '';
-                 document.getElementById('cake-base').value = '';
-                 document.getElementById('cake-details').value = '';
-                   document.getElementById('cake-photo').value = '';
-                 document.getElementById('order-notes').value = '';
+                 document.getElementById('branch-name').value = '';
+                  document.getElementById('customer-phone').value = '';
+                 document.getElementById('cake-size').value = '';
+                  document.getElementById('cake-shape').value = '';
+                   document.getElementById('extra-layer').value = '';
+                  document.getElementById('cake-flavor').value = '';
+                   document.getElementById('cake-content').value = '';
+                  document.getElementById('cream-and-color').value = '';
+                  document.getElementById('cake-base').value = '';
+                   document.getElementById('cake-details').value = '';
+                     document.getElementById('cake-photo').value = '';
+                    document.getElementById('order-notes').value = '';
 
-                 alert('Siparişiniz başarıyla gönderildi!');
-            } else{
+
+                      alert('Siparişiniz başarıyla gönderildi!');
+           } else {
                 alert('Lütfen tüm zorunlu alanları doldurunuz!');
+            }
+        });
+         document.getElementById('customer-phone').addEventListener('input', function (e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+             if(this.value.length > 10){
+                this.value = this.value.slice(0,10);
              }
         });
-          document.getElementById('customer-phone').addEventListener('input', function (e) {
-            this.value = this.value.replace(/[^0-9]/g, '');
-            if(this.value.length > 10){
-                 this.value = this.value.slice(0,10);
-            }
-           });
-        // Yandan Menü Kontrolü
+                // Yandan Menü Kontrolü
         function toggleMenu() {
             const menu = document.getElementById('side-menu');
             menu.classList.toggle('open');
@@ -771,7 +771,7 @@
             menu.classList.remove('open');
         }
 
-             // Fotoğraf Galerisi
+        // Fotoğraf Galerisi
         let currentSlide = 0;
 
         function setCurrentSlide(index) {
