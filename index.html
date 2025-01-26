@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* style.css içeriği buraya gelecek (profesyonel tasarım stilleri) */
         /* Genel Stiller (Profesyonel Tasarım - Aynı Kalsın) - style.css dosyasına taşıyın veya buraya ekleyin */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,44 +18,182 @@
             color: #333;
         }
 
-        header { /* ... (Profesyonel Header Stilleri - style.css veya buraya ekleyin) ... */ }
-        .logo-container { /* ... (Profesyonel Logo Container Stilleri - style.css veya buraya ekleyin) ... */ }
-        .logo { /* ... (Profesyonel Logo Stilleri - style.css veya buraya ekleyin) ... */ }
-        header h1 { /* ... (Profesyonel Header H1 Stilleri - style.css veya buraya ekleyin) ... */ }
-        .menu-icon { /* ... (Profesyonel Menu Icon Stilleri - style.css veya buraya ekleyin) ... */ }
-        .line { /* ... (Profesyonel Line Stilleri - style.css veya buraya ekleyin) ... */ }
-        nav#side-menu { /* ... (Profesyonel Side Menu Stilleri - style.css veya buraya ekleyin) ... */ }
-        nav#side-menu.open { /* ... (Profesyonel Side Menu Open Stilleri - style.css veya buraya ekleyin) ... */ }
-        nav#side-menu ul { /* ... (Profesyonel Side Menu Ul Stilleri - style.css veya buraya ekleyin) ... */ }
-        nav#side-menu ul li a { /* ... (Profesyonel Side Menu Link Stilleri - style.css veya buraya ekleyin) ... */ }
-        nav#side-menu ul li a:hover { /* ... (Profesyonel Side Menu Link Hover Stilleri - style.css veya buraya ekleyin) ... */ }
-        nav#side-menu .close-btn { /* ... (Profesyonel Side Menu Close Button Stilleri - style.css veya buraya ekleyin) ... */ }
-        main { /* ... (Profesyonel Main Stilleri - style.css veya buraya ekleyin) ... */ }
-        .slider-container { /* ... (Profesyonel Slider Container Stilleri - style.css veya buraya ekleyin) ... */ }
-        .slider { /* ... (Profesyonel Slider Stilleri - style.css veya buraya ekleyin) ... */ }
-        .slide { /* ... (Profesyonel Slide Stilleri - style.css veya buraya ekleyin) ... */ }
-        .dots { /* ... (Profesyonel Dots Stilleri - style.css veya buraya ekleyin) ... */ }
-        .dot { /* ... (Profesyonel Dot Stilleri - style.css veya buraya ekleyin) ... */ }
-        .active, .dot:hover { /* ... (Profesyonel Active Dot Stilleri - style.css veya buraya ekleyin) ... */ }
-        .section-content { /* ... (Profesyonel Section Content Stilleri - style.css veya buraya ekleyin) ... */ }
-        .section-content h2 { /* ... (Profesyonel Section Content H2 Stilleri - style.css veya buraya ekleyin) ... */ }
-        .section-content p { /* ... (Profesyonel Section Content P Stilleri - style.css veya buraya ekleyin) ... */ }
-        .subeler-container { /* ... (Profesyonel Subeler Container Stilleri - style.css veya buraya ekleyin) ... */ }
-        .sube { /* ... (Profesyonel Sube Stilleri - style.css veya buraya ekleyin) ... */ }
-        .sube:hover { /* ... (Profesyonel Sube Hover Stilleri - style.css veya buraya ekleyin) ... */ }
-        .sube a { /* ... (Profesyonel Sube Link Stilleri - style.css veya buraya ekleyin) ... */ }
-        .location-icon { /* ... (Profesyonel Location Icon Stilleri - style.css veya buraya ekleyin) ... */ }
-        .kutular-container { /* ... (Profesyonel Kutular Container Stilleri - style.css veya buraya ekleyin) ... */ }
-        .kutu { /* ... (Profesyonel Kutu Stilleri - style.css veya buraya ekleyin) ... */ }
-        .kutu:hover { /* ... (Profesyonel Kutu Hover Stilleri - style.css veya buraya ekleyin) ... */ }
-        .kutu img { /* ... (Profesyonel Kutu Img Stilleri - style.css veya buraya ekleyin) ... */ }
-        .kutu p { /* ... (Profesyonel Kutu P Stilleri - style.css veya buraya ekleyin) ... */ }
-        .kutu a { /* ... (Profesyonel Kutu Link Stilleri - style.css veya buraya ekleyin) ... */ }
-        footer { /* ... (Profesyonel Footer Stilleri - style.css veya buraya ekleyin) ... */ }
-        .social-container { /* ... (Profesyonel Social Container Stilleri - style.css veya buraya ekleyin) ... */ }
-        .social-link { /* ... (Profesyonel Social Link Stilleri - style.css veya buraya ekleyin) ... */ }
-        .social-logo { /* ... (Profesyonel Social Logo Stilleri - style.css veya buraya ekleyin) ... */ }
-        .social-link span { /* ... (Profesyonel Social Link Span Stilleri - style.css veya buraya ekleyin) ... */ }
+        header { /* ... (Profesyonel Header Stilleri - style.css veya buraya ekleyin) ... */
+         background-color: #c0a378; /* Sıcak kahverengi */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+        .logo-container { /* ... (Profesyonel Logo Container Stilleri - style.css veya buraya ekleyin) ... */
+         display: flex;
+            align-items: center; }
+        .logo { /* ... (Profesyonel Logo Stilleri - style.css veya buraya ekleyin) ... */
+         width: 70px;
+            height: 70px;
+            margin-right: 15px; }
+        header h1 { /* ... (Profesyonel Header H1 Stilleri - style.css veya buraya ekleyin) ... */
+         margin: 0;
+            font-size: 2.2em;
+            font-weight: bold;
+            letter-spacing: 1px; }
+        .menu-icon { /* ... (Profesyonel Menu Icon Stilleri - style.css veya buraya ekleyin) ... */
+         display: none; /* Hamburger menü ikonu başlangıçta gizli */
+            cursor: pointer;
+            padding: 10px; }
+        .line { /* ... (Profesyonel Line Stilleri - style.css veya buraya ekleyin) ... */
+         width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out; }
+        nav#side-menu { /* ... (Profesyonel Side Menu Stilleri - style.css veya buraya ekleyin) ... */
+         position: fixed;
+            top: 0;
+            left: -250px; /* Menüyü başlangıçta sola taşı */
+            width: 250px;
+            height: 100%;
+            background-color: #c0a378; /* Sıcak kahverengi */
+            padding-top: 70px;
+            transition: left 0.3s ease-in-out;
+            z-index: 1000;
+            overflow-y: auto; }
+        nav#side-menu.open { /* ... (Profesyonel Side Menu Open Stilleri - style.css veya buraya ekleyin) ... */
+         left: 0; /* Menüyü aç */ }
+        nav#side-menu ul { /* ... (Profesyonel Side Menu Ul Stilleri - style.css veya buraya ekleyin) ... */
+         list-style: none;
+            padding: 0;
+            margin: 0; }
+        nav#side-menu ul li a { /* ... (Profesyonel Side Menu Link Stilleri - style.css veya buraya ekleyin) ... */
+         display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease; }
+        nav#side-menu ul li a:hover { /* ... (Profesyonel Side Menu Link Hover Stilleri - style.css veya buraya ekleyin) ... */
+         background-color: #a88e68; /* Daha koyu kahverengi */ }
+        nav#side-menu .close-btn { /* ... (Profesyonel Side Menu Close Button Stilleri - style.css veya buraya ekleyin) ... */
+         position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer; }
+        main { /* ... (Profesyonel Main Stilleri - style.css veya buraya ekleyin) ... */
+         padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+        .slider-container { /* ... (Profesyonel Slider Container Stilleri - style.css veya buraya ekleyin) ... */
+         margin-bottom: 25px;
+            overflow: hidden;
+            border-radius: 8px; }
+        .slider { /* ... (Profesyonel Slider Stilleri - style.css veya buraya ekleyin) ... */
+         display: flex;
+            transition: transform 0.5s ease-in-out; }
+        .slide { /* ... (Profesyonel Slide Stilleri - style.css veya buraya ekleyin) ... */
+         min-width: 100%;
+            height: auto;
+            display: block; }
+        .dots { /* ... (Profesyonel Dots Stilleri - style.css veya buraya ekleyin) ... */
+         text-align: center;
+            margin-top: 10px; }
+        .dot { /* ... (Profesyonel Dot Stilleri - style.css veya buraya ekleyin) ... */
+         cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.5s ease; }
+        .active, .dot:hover { /* ... (Profesyonel Active Dot Stilleri - style.css veya buraya ekleyin) ... */
+         background-color: #717171; }
+        .section-content { /* ... (Profesyonel Section Content Stilleri - style.css veya buraya ekleyin) ... */
+         padding: 20px; }
+        .section-content h2 { /* ... (Profesyonel Section Content H2 Stilleri - style.css veya buraya ekleyin) ... */
+         color: #c0a378; /* Kahverengi başlıklar */
+            border-bottom: 2px solid #c0a378;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em; }
+        .section-content p { /* ... (Profesyonel Section Content P Stilleri - style.css veya buraya ekleyin) ... */
+         line-height: 1.7;
+            color: #555; }
+        .subeler-container { /* ... (Profesyonel Subeler Container Stilleri - style.css veya buraya ekleyin) ... */
+         display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px; }
+        .sube { /* ... (Profesyonel Sube Stilleri - style.css veya buraya ekleyin) ... */
+         padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fefefe;
+            transition: box-shadow 0.3s ease; }
+        .sube:hover { /* ... (Profesyonel Sube Hover Stilleri - style.css veya buraya ekleyin) ... */
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); }
+        .sube a { /* ... (Profesyonel Sube Link Stilleri - style.css veya buraya ekleyin) ... */
+         font-size: 1em; }
+        .location-icon { /* ... (Profesyonel Location Icon Stilleri - style.css veya buraya ekleyin) ... */
+         color: #e44d26; /* Kırmızı ikon */ }
+        .kutular-container { /* ... (Profesyonel Kutular Container Stilleri - style.css veya buraya ekleyin) ... */
+         display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            justify-content: center; }
+        .kutu { /* ... (Profesyonel Kutu Stilleri - style.css veya buraya ekleyin) ... */
+         padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
+        .kutu:hover { /* ... (Profesyonel Kutu Hover Stilleri - style.css veya buraya ekleyin) ... */
+         transform: scale(1.03);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); }
+        .kutu img { /* ... (Profesyonel Kutu Img Stilleri - style.css veya buraya ekleyin) ... */
+         max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 4px; }
+        .kutu p { /* ... (Profesyonel Kutu P Stilleri - style.css veya buraya ekleyin) ... */
+         font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+            margin: 0; }
+        .kutu a { /* ... (Profesyonel Kutu Link Stilleri - style.css veya buraya ekleyin) ... */
+         text-decoration: none;
+            color: inherit;
+            display: block; }
+        footer { /* ... (Profesyonel Footer Stilleri - style.css veya buraya ekleyin) ... */
+         background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px; }
+        .social-container { /* ... (Profesyonel Social Container Stilleri - style.css veya buraya ekleyin) ... */
+         display: flex;
+            justify-content: center;
+            align-items: center; }
+        .social-link { /* ... (Profesyonel Social Link Stilleri - style.css veya buraya ekleyin) ... */
+         display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            margin: 0 20px; }
+        .social-logo { /* ... (Profesyonel Social Logo Stilleri - style.css veya buraya ekleyin) ... */
+         width: 40px;
+            height: 40px;
+            margin-right: 10px; }
+        .social-link span { /* ... (Profesyonel Social Link Span Stilleri - style.css veya buraya ekleyin) ... */
+         font-size: 1em; }
         @media (max-width: 768px) { /* ... (Profesyonel Responsive Stilleri - style.css veya buraya ekleyin) ... */}
 
 
@@ -147,6 +286,22 @@
             transition: width 0.3s ease-in-out;
         }
 
+        .sube a {
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+        }
+
+        .sube a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .location-icon {
+            margin-right: 8px;
+        }
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -272,7 +427,7 @@
         </div>
     </section>
 
-        <!-- Şubeler Bölümü (Aynı Kalsın) -->
+        <!-- Şubeler Bölümü -->
         <section id="subeler" class="section-content">
             <h2>Şubeler</h2>
             <div class="subeler-container">
@@ -294,7 +449,7 @@
             </div>
         </section>
 
-        <!-- Pasta Sipariş Bölümü (Güncellendi - Yorum Alanı Tasarımı) -->
+        <!-- Pasta Sipariş Bölümü -->
         <section id="pasta-siparis" class="section-content pasta-siparis-section">
             <h2>Pasta Siparişi</h2>
             <div class="progress-bar-container">
@@ -305,7 +460,7 @@
                 <div class="step active" data-step="1">
                     <div class="form-group">
                         <label for="musteri-adi">1. Müşteri Adı Soyadı <span style="color: red;">*</span></label>
-                        <input type="text" id="musteri-adi" name="musteri-adi" required placeholder="Adınız Soyadınız">
+                        <input type="text" id="musteri-adi" name="musteri-adi" required placeholder="Adınız ve Soyadınız">
                     </div>
                 </div>
 
@@ -427,7 +582,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
     <script>
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCIhKXxTwmQ1l70c7_vnH6ZmM1FxZsqUEI",
   authDomain: "furkan-baysak-b74ef.firebaseapp.com",
