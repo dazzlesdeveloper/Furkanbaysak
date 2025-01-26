@@ -7,79 +7,120 @@
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <style>
-        /* ... (Önceki stiller - önceki yanıtta verilen CSS kodları buraya gelecek) */
+        /* Sıfırlama Stilleri */
+        /* ... (Önceki yanıtlardaki tüm CSS stilleri buraya kopyalanacak) */
+
+         .order-form .form-step {
+             display: none; /* Başlangıçta adımları gizle */
+        }
+
+        .order-form .form-step.active {
+            display: block; /* Aktif adımı göster */
+         }
     </style>
 </head>
 <body>
-    <!-- ... (Önceki HTML - önceki yanıtta verilen header, nav, main ve footer kodları buraya gelecek) ... -->
+    <header>
+        <!-- ... (Header içeriği) ... -->
+    </header>
+
+    <nav id="side-menu" class="hidden">
+        <!-- ... (Navigasyon menüsü içeriği) ... -->
+    </nav>
+
+    <main>
+        <!-- ... (Slider ve diğer içerikler) ... -->
+
+        <section id="siparis" class="section-content">
+            <div class="order-form-section">
+                <h3>Pasta Siparişi Ver</h3>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <form class="order-form" id="order-form">
+                    <!-- 1. Adım -->
+                    <div class="form-step active">
+                        <!-- ... (1. adımın form elemanları) ... -->
+                        <button type="button" class="next-step">İleri</button>
+                    </div>
+
+                    <!-- 2. Adım -->
+                    <div class="form-step">
+                       <!-- ... (2. adımın form elemanları) ... -->
+                        <button type="button" class="prev-step">Geri</button>
+                        <button type="button" class="next-step">İleri</button>
+                    </div>
+
+                    <!-- 3. Adım -->
+                    <div class="form-step">
+                        <!-- ... (3. adımın form elemanları) ... -->
+                        <button type="button" class="prev-step">Geri</button>
+                        <button type="button" class="next-step">İleri</button>
+                    </div>
+
+                    <!-- 4. Adım -->
+                    <div class="form-step">
+                       <!-- ... (4. adımın form elemanları) ... -->
+                        <button type="button" class="prev-step">Geri</button>
+                        <button type="submit" id="submit-order">Siparişi Tamamla</button>
+                   </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+       <!-- ... (Footer içeriği) ... -->
+    </footer>
+
 
 <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
 <script>
+    // ... (Firebase config ve diğer JavaScript kodları - önceki yanıtlardaki kodlar buraya kopyalanacak) ...
 
-    // Firebase config'inizi buraya ekleyin
-    const firebaseConfig = {
-        apiKey: "YOUR_API_KEY",
-        authDomain: "YOUR_AUTH_DOMAIN",
-        databaseURL: "YOUR_DATABASE_URL",
-        projectId: "YOUR_PROJECT_ID",
-        storageBucket: "YOUR_STORAGE_BUCKET",
-        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-        appId: "YOUR_APP_ID"
-    };
+    // Form adım fonksiyonları
+    const formSteps = document.querySelectorAll(".form-step");
+    let currentStep = 1;
+    showStep(currentStep);
 
-    // Firebase uygulamasını başlat
-    firebase.initializeApp(firebaseConfig);
-    const database = firebase.database();
+    function showStep(step) {
+        formSteps.forEach((formStep, index) => {
+            formStep.classList.remove("active");
+            if (index + 1 === step) {
+                formStep.classList.add("active");
+            }
+        });
+        updateProgress(); // Adım değiştiğinde ilerlemeyi güncelle
+    }
 
-    // ... (Önceki JavaScript kodları -  ürünler, şubeler, menü, slider vb.) ...
 
-    const submitOrderButton = document.getElementById('submit-order');
+    function updateProgress() {
+         const progressWidth = ((currentStep - 1) / (formSteps.length - 1)) * 100;
+        document.getElementById('progress').style.width = progressWidth + "%";
+    }
+
+
+   // Form eventi
     const form = document.getElementById('order-form');
-
-    submitOrderButton.addEventListener('click', function(event){
-        event.preventDefault();
-
-        // 1. Verileri topla
-        const data = {
-            musteriAdSoyad: document.getElementById('customer-name').value,
-            subeAdi: document.getElementById('branch-name').value,
-            telefonNumarası: document.getElementById('customer-phone').value,
-            pastaBoyutu: document.getElementById('cake-size').value,
-            pastaSekli: document.getElementById('cake-shape').value,
-            ekstraAraKat: document.getElementById('extra-layer').value,
-            kekKremaFarklılıgı: document.getElementById('cake-flavor').value,
-            pastaİcerigi: document.getElementById('cake-content').value,
-            kremaVeRengi: document.getElementById('cream-and-color').value,
-            pastaAltlıgı: document.getElementById('cake-base').value,
-            pastaDetaylari: document.getElementById('cake-details').value,
-            // pastaFoto: document.getElementById('cake-photo').files[0], // Dosya yükleme için ayrı işlem gerekir
-            notlar: document.getElementById('order-notes').value
-        };
-
-
-        // 2. Firebase'e veri gönder - Realtime Database örneği
-        const ordersRef = database.ref('siparisler'); // "siparisler" referansına veri ekle
-        ordersRef.push(data) // Veriyi yeni bir anahtar altında ekle
-            .then(() => {
-                // 3. Başarılı olursa kullanıcıya bildir ve formu sıfırla
-                alert("Siparişiniz başarıyla alındı!");
-                form.reset();
-                currentStep = 1;
-                showStep(currentStep);
-                updateProgress();
-            })
-            .catch(error => {
-                // Hata durumunda kullanıcıya bildir
-                console.error("Sipariş gönderilirken hata oluştu:", error);
-                alert("Siparişiniz gönderilirken bir hata oluştu. Lütfen tekrar deneyin.");
-            });
-
-
+    form.addEventListener('click', function(event) {
+        if (event.target.classList.contains('next-step')) {
+            currentStep++;
+           if (currentStep > formSteps.length) {
+                currentStep = formSteps.length;
+            }
+           showStep(currentStep);
+       } else if (event.target.classList.contains('prev-step')) {
+           currentStep--;
+           if (currentStep < 1) {
+               currentStep = 1;
+            }
+            showStep(currentStep);
+        }
     });
 
 
-    // ... (Diğer JavaScript kodları) ...
+   // ... (Firebase verileri gönderme ve diğer fonksiyonlar)
 </script>
 </body>
 </html>
