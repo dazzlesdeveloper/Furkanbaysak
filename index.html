@@ -172,7 +172,7 @@
             color: #555;
         }
 
-        /* Şubeler Stilleri */
+        /* Şubeler Stilleri (Aynı Profesyonel Stil Kalsın) */
         .subeler-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -199,17 +199,18 @@
             color: #e44d26; /* Kırmızı ikon */
         }
 
-        /* Pasta Sipariş Alanı Stilleri */
+        /* Pasta Sipariş Alanı Stilleri (ESKİ TASARIM - Sade Stil) */
         .pasta-siparis-section {
-            background-color: #fefefe;
-            padding: 25px;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
         .pasta-siparis-section h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
             text-align: center;
-            margin-bottom: 30px;
         }
 
         .siparis-form {
@@ -219,7 +220,7 @@
             margin: 0 auto;
         }
 
-        .step {
+        .step { /* Adımları gizlemek/göstermek için */
             display: none;
         }
 
@@ -228,52 +229,49 @@
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #444;
+            margin-bottom: 5px;
+            font-weight: bold;
         }
 
         .form-group input, .form-group textarea, .form-group select {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
+            padding: 10px;
+            border: 1px solid #ddd;
             border-radius: 4px;
             font-size: 16px;
-            font-family: inherit;
-            box-sizing: border-box;
+            box-sizing: border-box; /* Padding'in genişliğe dahil olmasını sağlar */
         }
 
         .form-group select {
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background-image: url('data:image/svg+xml;utf8,<svg fill="grey" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+            appearance: none; /* Varsayılan ok işaretini kaldırır (isteğe bağlı) */
+            -webkit-appearance: none; /* Safari ve Chrome için */
+            -moz-appearance: none; /* Firefox için */
+            background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
             background-repeat: no-repeat;
             background-position-x: calc(100% - 10px);
             background-position-y: 50%;
         }
 
         .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
+            resize: vertical; /* Sadece dikeyde boyutlandırma */
         }
 
-        .form-actions {
+        .form-actions { /* Butonları hizalamak için */
             display: flex;
             justify-content: space-between;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
         .form-actions button {
-            background-color: #c0a378; /* Kahverengi butonlar */
+            background-color: #5cb85c;
             color: white;
             border: none;
-            padding: 12px 25px;
+            padding: 12px 15px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -281,35 +279,30 @@
             margin: 4px 2px;
             cursor: pointer;
             border-radius: 4px;
-            transition: background-color 0.3s ease;
+        }
+        .form-actions button:hover{
+            background-color: #4cae4c;
         }
 
-        .form-actions button:hover {
-            background-color: #a88e68;
-        }
-
-        .form-actions button:disabled {
-            background-color: #ddd;
-            color: #777;
-            cursor: not-allowed;
-        }
-
+        /* İlerleme Çubuğu Stilleri (ESKİ TASARIM - Sade Stil) */
         .progress-bar-container {
             width: 100%;
-            background-color: #e0e0e0;
+            background-color: #f0f0f0;
             border-radius: 4px;
-            margin-bottom: 20px;
-            overflow: hidden;
+            margin-bottom: 15px;
+            overflow: hidden; /* İçeriğin dışarı taşmasını engeller */
         }
 
         .progress-bar {
-            background-color: #c0a378; /* Kahverengi ilerleme çubuğu */
+            background-color: #5cb85c;
             height: 10px;
-            width: 0%;
+            width: 0%; /* Başlangıçta 0 */
             border-radius: 4px;
-            transition: width 0.3s ease-in-out;
+            transition: width 0.3s ease-in-out; /* Animasyon */
         }
 
+
+        /* Ürün Kutuları Stilleri (Aynı Profesyonel Stil Kalsın) */
         .kutular-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -384,7 +377,7 @@
             font-size: 1em;
         }
 
-        /* Responsive Design */
+        /* Responsive Design (Aynı Profesyonel Stil Kalsın) */
         @media (max-width: 768px) {
             header {
                 padding: 15px 0;
@@ -779,22 +772,22 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
     <script>
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyCIhKXxTwmQ1l70c7_vnH6ZmM1FxZsqUEI",
-  authDomain: "furkan-baysak-b74ef.firebaseapp.com",
-  databaseURL: "https://furkan-baysak-b74ef-default-rtdb.firebaseio.com",
-  projectId: "furkan-baysak-b74ef",
-  storageBucket: "furkan-baysak-b74ef.firebasestorage.app",
-  messagingSenderId: "332668884342",
-  appId: "1:332668884342:web:975a46d869cf37bbc85657",
-  measurementId: "G-1TQKFHW50T"
-};
+        // Firebase Konfigürasyonu - **BURAYI KENDİ BİLGİLERİNİZLE GÜNCELLEYİN!**
+        const firebaseConfig = {
+          apiKey: "AIzaSyCIhKXxTwmQ1l70c7_vnH6ZmM1FxZsqUEI",
+          authDomain: "furkan-baysak-b74ef.firebaseapp.com",
+          databaseURL: "https://furkan-baysak-b74ef-default-rtdb.firebaseio.com",
+          projectId: "furkan-baysak-b74ef",
+          storageBucket: "furkan-baysak-b74ef.firebasestorage.app",
+          messagingSenderId: "332668884342",
+          appId: "1:332668884342:web:975a46d869cf37bbc85657",
+          measurementId: "G-1TQKFHW50T"
+        };
 
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
 
-        // Form Adımları ve İlerleme Çubuğu Kontrolü
+        // Form Adımları ve İlerleme Çubuğu Kontrolü (Aynı JS Kalsın)
         const steps = document.querySelectorAll('.step');
         const progressBar = document.getElementById('order-progress-bar');
         const prevButton = document.getElementById('previous-step');
@@ -861,7 +854,7 @@ const firebaseConfig = {
         });
 
 
-        // Telefon Numarası Input Kontrolü (Sadece Numara ve Limit)
+        // Telefon Numarası Input Kontrolü (Sadece Numara ve Limit) (Aynı JS Kalsın)
         const phoneInput = document.getElementById('musteri-telefon');
         phoneInput.addEventListener('input', function (e) {
             this.value = this.value.replace(/[^0-9]/g, '');
@@ -871,7 +864,7 @@ const firebaseConfig = {
         });
 
 
-        // Form Gönderildiğinde İlerleme Çubuğunu ve Firebase Kaydını Yönetme
+        // Form Gönderildiğinde İlerleme Çubuğunu ve Firebase Kaydını Yönetme (Aynı JS Kalsın)
         const orderForm = document.querySelector('.siparis-form');
 
         orderForm.addEventListener('submit', function(event) {
@@ -888,7 +881,7 @@ const firebaseConfig = {
         });
 
 
-        // Form verilerini Firebase'e kaydetme fonksiyonu
+        // Form verilerini Firebase'e kaydetme fonksiyonu (Aynı JS Kalsın)
         function saveOrderToFirebase() {
             const musteriAdi = document.getElementById('musteri-adi').value;
             const musteriTelefon = document.getElementById('musteri-telefon').value;
@@ -936,7 +929,7 @@ const firebaseConfig = {
         }
 
 
-        // Yandan Menü Kontrolü
+        // Yandan Menü Kontrolü (Aynı JS Kalsın)
         function toggleMenu() {
             const menu = document.getElementById('side-menu');
             menu.classList.toggle('open');
@@ -947,7 +940,7 @@ const firebaseConfig = {
             menu.classList.remove('open');
         }
 
-        // Fotoğraf Galerisi
+        // Fotoğraf Galerisi (Aynı JS Kalsın)
         let currentSlide = 0;
 
         function setCurrentSlide(index) {
