@@ -8,9 +8,11 @@
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* ... (Diğer stil kodlarınız burada) ... */
+        /* .sube a, .location-icon, .comment-section, .comment-form, .kutular-container, .kutu, .social-container, .social-link, .social-logo, .progress-bar, .progress, .order-form-section, .order-form label, .order-form input, .order-form textarea, .order-form select, .order-form button, .form-step */
+       /* ... (Diğer stil kodlarınız burada) ... */
 
-        /* Pasta Sipariş Formu Stilleri */
+
+        /* Pasta Sipariş Formu Stilleri (Örnek Stil) */
         .order-form-section {
             width: 100%;
             max-width: 600px;
@@ -19,126 +21,99 @@
             background-color: #f9f9f9;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;  /* Bütün içeriği ortala */
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Kolonlara göre sıralama */
             align-items: center;
         }
-
-        .order-form-section h3 {
-            font-size: 1.4em;
-            margin-bottom: 10px;
-            color: #333;
-            text-align: center;
-        }
-
-
-        .order-form label {
-            font-size: 1em;
-            margin-bottom: 5px;
-            color: #555;
+        
+         .order-form-section label {
+            width: 100%;
             text-align: left;
-            width: 100%;
-            display: block; /* label'i block yap */
-        }
+            display: block;
+            margin-bottom: 5px;
+         }
 
-        .order-form input, .order-form textarea, .order-form select {
+         .order-form input,
+         .order-form select,
+         .order-form textarea {
             width: 100%;
-            max-width: 350px;
-            margin-bottom: 10px;
+            max-width: 300px;
+            margin: 0 auto 10px; /* Kaydırmayı engellemek için margin-bottom değeri */
             padding: 8px;
-            border: 1px solid #ddd;
+            border: 1px solid #ccc;
             border-radius: 4px;
-            font-size: 14px;
             box-sizing: border-box;
-            margin: 5px auto;
-        }
-        .button-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-            gap: 10px; /* Butonlar arası boşluk */
-        }
-          .order-form button{
-            background-color: #ddd;
-           color: #333;
-           border: 1px solid #ccc;
-            padding: 8px 12px;
+         }
+
+         .order-form button {
+             background-color: #4CAF50; /* Yeşil buton */
+            color: white;
+            border: none;
+            padding: 8px 15px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 14px;
-             margin: 4px 2px;
+            font-size: 16px;
+            margin: 10px 0; /* Margin-bottom değeri */
             cursor: pointer;
-           border-radius: 4px;
-          }
+            border-radius: 4px;
+         }
+         
+         .order-form button:hover{
+             background-color: #45a049; /* Daha koyu yeşil */
+         }
 
-        .order-form button:hover{
-            background-color: #e0e0e0;
-        }
-
-         .progress-bar {
+          /* İlerleme Çubuğu Stilleri */
+        .progress-bar {
             width: 100%;
             background-color: #f0f0f0;
              height: 8px;
-             border-radius: 5px;
-             margin-bottom: 15px;
-        }
+            border-radius: 5px;
+          margin-bottom: 15px;
+       }
         .progress {
             height: 100%;
            background-color: #e44d26;
            border-radius: 5px;
-            width: 0;
-            transition: width 0.3s ease;
+           width: 0; /* ilerlemeye göre genişliği ayarlanacak */
+           transition: width 0.3s ease;
         }
-
-
         .order-form .form-step {
             display: none;
         }
-        .order-form .form-step.active {
-            display: block;
+      .order-form .form-step.active {
+          display: block;
+        }
+        .button-container {
+            display: flex;
+           justify-content: center;
+           width: 100%;
+           margin-top: 10px;
+           gap: 10px;
         }
 
+         
+        /* ... (Diğer stiller) ... */
 
-        /* ... (Diğer stil kodlarınız burada) ... */
     </style>
 </head>
 <body>
-    <!-- Üst Menü -->
-    <header>
-        <!-- ... (Diğer header içeriği) ... -->
-    </header>
-
-
+    <!-- ... (Diğer header, nav, main içeriği) ... -->
+<!-- ... (Diğer section içeriği) ... -->
     <main>
-         <!-- ... (Diğer içerik) ... -->
          <!-- Pasta Siparişi Bölümü -->
         <section id="siparis" class="section-content">
-             <div class="order-form-section">
-                <h3>Pasta Siparişi Ver</h3>
+            <div class="order-form-section">
+                 <h3>Pasta Siparişi Ver</h3>
                 <div class="progress-bar">
-                    <div class="progress" id="progress"></div>
-                </div>
+                   <div class="progress" id="progress"></div>
+                 </div>
                 <form class="order-form" id="order-form">
-                  <!-- Form adımları alt alta olacaktır -->
-                </form>
+                   </form>
             </div>
         </section>
-
-        <!-- ... (Diğer içerik) ... -->
     </main>
-  <!-- Footer -->
-    <footer>
-        <div class="social-container">
-            <!-- ... (Diğer footer içeriği) ... -->
-        </div>
-    </footer>
-
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
-    <script>
-        // ... (Diğer JavaScript kodlarınız burada) ...
-    </script>
+   <!-- ... (Diğer footer içeriği) ... -->
 </body>
 </html>
