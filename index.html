@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FURKAN BAYSAK PASTANELERİ</title>
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
@@ -25,108 +25,79 @@
             margin-right: 8px;
         }
 
-        /* Pasta Sipariş Alanı Stilleri (Güncellendi) */
+        /* Pasta Sipariş Alanı Stilleri (Yorum Alanı Stilleri Gibi) */
         .pasta-siparis-section {
             margin-top: 20px;
-            padding: 20px;
+            padding: 15px;
             background-color: #f9f9f9;
             border-radius: 8px;
         }
 
-        .pasta-siparis-section h2 {
-            margin-bottom: 20px;
-            font-size: 1.5em;
-            text-align: center;
+        .pasta-siparis-section h3 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+             text-align: center; /* Ortalanmış başlık */
         }
 
         .siparis-form {
             display: flex;
             flex-direction: column;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .step { /* Adımları gizlemek/göstermek için */
-            display: none;
-        }
-
-        .step.active {
-            display: block;
-        }
-
-        .form-group {
             margin-bottom: 15px;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+        .step {
+            display: none; /* Tüm adımları gizle */
+        }
+
+        .step.active {
+            display: block; /* Sadece aktif adımı göster */
         }
 
         .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 10px;
+            margin-bottom: 8px;
+            padding: 8px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            font-size: 16px;
-            box-sizing: border-box;
+            font-size: 14px;
         }
 
-        .form-group select {
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
-            background-repeat: no-repeat;
-            background-position-x: calc(100% - 10px);
-            background-position-y: 50%;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-        }
-
-        .form-actions { /* Butonları hizalamak için */
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .form-actions button {
+        .form-actions {
             background-color: #5cb85c;
             color: white;
             border: none;
-            padding: 12px 15px;
+            padding: 8px 12px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
+            font-size: 14px;
             margin: 4px 2px;
             cursor: pointer;
             border-radius: 4px;
+            display: flex; /* Butonları yan yana hizala */
+            justify-content: space-around; /* Butonları ayır */
         }
         .form-actions button:hover{
             background-color: #4cae4c;
         }
 
+        /* İlerleme Çubuğu Stilleri (Yorum Alanı Stilleri Gibi - Sade Stil Kalsın) */
         .progress-bar-container {
             width: 100%;
             background-color: #f0f0f0;
             border-radius: 4px;
             margin-bottom: 15px;
-            overflow: hidden;
+            overflow: hidden; /* İçeriğin dışarı taşmasını engeller */
         }
 
         .progress-bar {
             background-color: #5cb85c;
             height: 10px;
-            width: 0%;
+            width: 0%; /* Başlangıçta 0 */
             border-radius: 4px;
-            transition: width 0.3s ease-in-out;
+            transition: width 0.3s ease-in-out; /* Animasyon */
         }
 
-        /* Ürün Kutuları Stilleri (Aynı Kalsın) */
+        /* Ürün Kutuları Stilleri */
         .kutular-container {
            display: flex;
            flex-wrap: wrap;
@@ -170,7 +141,7 @@
             display: block;
         }
 
-        /* 768px'den büyük ekranlar için (Aynı Kalsın) */
+        /* 768px'den büyük ekranlar için */
         @media (min-width: 768px) {
             .kutular-container {
                 justify-content: center;
@@ -184,7 +155,7 @@
                font-size: 18px;
            }
         }
-         /* Footer Sosyal Link Stili (Aynı Kalsın) */
+         /* Footer Sosyal Link Stili */
         .social-container {
             display: flex;
             justify-content: center;
@@ -219,7 +190,7 @@
     </style>
 </head>
 <body oncontextmenu="return false;">
-    <!-- Üst Menü (Aynı Kalsın) -->
+    <!-- Üst Menü -->
     <header>
         <div class="menu-icon" onclick="toggleMenu()">
             <div class="line"></div>
@@ -232,7 +203,7 @@
         </div>
     </header>
 
-    <!-- Yandan Açılır Menü (Aynı Kalsın) -->
+    <!-- Yandan Açılır Menü -->
     <nav id="side-menu" class="hidden">
         <button class="close-btn" onclick="closeMenu()">X</button>
         <ul>
@@ -243,9 +214,9 @@
         </ul>
     </nav>
 
-    <!-- Ana İçerik (Aynı Kalsın) -->
+    <!-- Ana İçerik -->
     <main>
-        <!-- Fotoğraf Galerisi (Aynı Kalsın) -->
+        <!-- Fotoğraf Galerisi -->
         <div class="slider-container">
             <div class="slider" id="slider">
                 <img src="image1.png" alt="Galeri 1" class="slide">
@@ -262,7 +233,7 @@
             <p>Kurulduğumuz ilk günden itibaren, en büyük önceliğimiz her zaman sizlerin memnuniyeti oldu. Sizin yüzünüzdeki gülümseme, bizim en değerli motivasyon kaynağımız ve bu yüzden her gün daha iyisini yapmak için çalışıyoruz. Bugün, bu tutkuyu 5 şehirde, tam 38 şubemizde sizlerle paylaşmanın gururunu yaşıyoruz. Her bir şubemizde, sadece bir pastane değil, aynı zamanda sıcak ve samimi bir buluşma noktası olmaya özen gösteriyoruz. Sıcacık bir atmosferde, mis gibi kokan pastalarımız ve tatlılarımız eşliğinde, güler yüzlü ekibimizle sizleri ağırlamaktan büyük bir heyecan duyuyoruz. Amacımız, her ziyaretinizde kendinizi özel ve evinizde hissetmenizi sağlamak. Bizim için her bir misafirimiz, ailemizin bir parçası gibidir. Yılların verdiği tecrübeyle, her bir lezzeti büyük bir titizlikle hazırlıyor, en taze malzemeleri kullanmaya özen gösteriyoruz. Çünkü biliyoruz ki, en güzel anılar, en güzel tatlarla birleşince unutulmaz olur. Furkan Baysak olarak, bu anılarınızda yer almaktan ve sizlere tatlı bir dokunuş katmaktan mutluluk duyuyoruz.</p>
         </section>
 
-        <!-- Ürünler Bölümü (Aynı Kalsın) -->
+        <!-- Ürünler Bölümü -->
        <section id="urunler" class="section-content">
         <h2>Ürünler</h2>
         <div class="kutular-container">
@@ -341,7 +312,7 @@
         </div>
     </section>
 
-        <!-- Şubeler Bölümü (Aynı Kalsın) -->
+        <!-- Şubeler Bölümü -->
         <section id="subeler" class="section-content">
             <h2>Şubeler</h2>
             <div class="subeler-container">
@@ -363,38 +334,49 @@
             </div>
         </section>
 
-        <!-- Pasta Sipariş Bölümü (Güncellendi) -->
+        <!-- Pasta Sipariş Bölümü -->
         <section id="pasta-siparis" class="section-content pasta-siparis-section">
-            <h2>Pasta Siparişi</h2>
+            <h3>Pasta Siparişi</h3>
             <div class="progress-bar-container">
                 <div class="progress-bar" id="order-progress-bar"></div>
             </div>
-            <form class="siparis-form">
+            <form class="siparis-form" id="pastaSiparisForm">
 
-                <div class="step active" data-step="1"> <!-- Adım 1 -->
+                <div class="step active" data-step="1">
                     <div class="form-group">
-                        <label for="musteri-adi">1. Müşteri Adı Soyadı</label>
+                        <label for="musteri-adi">1. Müşteri Adı Soyadı <span style="color: red;">*</span></label>
                         <input type="text" id="musteri-adi" name="musteri-adi" required placeholder="Adınız ve Soyadınız">
                     </div>
+                     <div class="form-actions">
+                        <button type="button" id="next-step">İleri</button>
+                    </div>
                 </div>
 
-                <div class="step" data-step="2"> <!-- Adım 2 -->
+                <div class="step" data-step="2">
                     <div class="form-group">
-                        <label for="musteri-telefon">2. Müşteri Telefonu</label>
+                        <label for="musteri-telefon">2. Müşteri Telefonu <span style="color: red;">*</span></label>
                         <input type="tel" id="musteri-telefon" name="musteri-telefon" required placeholder="Telefon Numaranız" maxlength="11">
                     </div>
-                </div>
-
-                <div class="step" data-step="3"> <!-- Adım 3 -->
-                    <div class="form-group">
-                        <label for="sube-adi">3. Şube Adı</label>
-                        <input type="text" id="sube-adi" name="sube-adi" required placeholder="Sipariş vermek istediğiniz şube">
+                     <div class="form-actions">
+                        <button type="button" id="previous-step" onclick="updateFormStep(1)">Geri</button>
+                        <button type="button" id="next-step">İleri</button>
                     </div>
                 </div>
 
-                <div class="step" data-step="4"> <!-- Adım 4 -->
+                <div class="step" data-step="3">
                     <div class="form-group">
-                        <label for="pasta-boyutu">4. Pasta Boyutu</label>
+                        <label for="sube-adi">3. Şube Adı <span style="color: red;">*</span></label>
+                        <input type="text" id="sube-adi" name="sube-adi" required placeholder="Sipariş vermek istediğiniz şube">
+                    </div>
+                     <div class="form-actions">
+                        <button type="button" id="previous-step" onclick="updateFormStep(2)">Geri</button>
+                        <button type="button" id="next-step">İleri</button>
+                    </div>
+                </div>
+
+                <div class="step" data-step="4">
+                    <div class="form-group">
+                        <label for="pasta-boyutu">4. Pasta Boyutu <span style="color: red;">*</span></label>
                         <select id="pasta-boyutu" name="pasta-boyutu" required>
                             <option value="">Seçiniz</option>
                             <option value="1-nolu">1 Nolu (4-6 Kişilik)</option>
@@ -402,16 +384,24 @@
                             <option value="3-nolu">3 Nolu (10-15 Kişilik)</option>
                         </select>
                     </div>
-                </div>
-
-                <div class="step" data-step="5"> <!-- Adım 5 -->
-                    <div class="form-group">
-                        <label for="pasta-sekli">5. Pasta Şekli (Yuvarlak, Kare, Kalp vb.)</label>
-                        <input type="text" id="pasta-sekli" name="pasta-sekli" placeholder="İstediğiniz pasta şeklini belirtin (yuvarlak, kare, diş, araba, kalp vb.)">
+                     <div class="form-actions">
+                        <button type="button" id="previous-step" onclick="updateFormStep(3)">Geri</button>
+                        <button type="button" id="next-step">İleri</button>
                     </div>
                 </div>
 
-                <div class="step" data-step="6"> <!-- Adım 6 -->
+                <div class="step" data-step="5">
+                    <div class="form-group">
+                        <label for="pasta-sekli">5. Pasta Şekli (Yuvarlak, Kare, Kalp vb.)</label>
+                        <input type="text" id="pasta-sekli" name="pasta-sekli" placeholder="İstediğiniz pasta şeklini belirtin (yuvarlak, kare, kalp vb.)">
+                    </div>
+                     <div class="form-actions">
+                        <button type="button" id="previous-step" onclick="updateFormStep(4)">Geri</button>
+                        <button type="button" id="next-step">İleri</button>
+                    </div>
+                </div>
+
+                <div class="step" data-step="6">
                     <div class="form-group">
                         <label for="ekstra-ara-kat">6. Ekstra Ara Kat</label>
                         <select id="ekstra-ara-kat" name="ekstra-ara-kat">
@@ -423,69 +413,76 @@
                             <option value="5">5</option>
                         </select>
                     </div>
+                     <div class="form-actions">
+                        <button type="button" id="previous-step" onclick="updateFormStep(5)">Geri</button>
+                        <button type="button" id="next-step">İleri</button>
+                    </div>
                 </div>
 
-                <div class="step" data-step="7"> <!-- Adım 7 -->
+                <div class="step" data-step="7">
                     <div class="form-group">
                         <label for="kek-krema-farkliligi">7. Kek ve Krema Farklılığı</label>
-                        <input type="text" id="kek-krema-farkliligi" name="kek-krema-farkliligi" placeholder="Kek veya krema için özel isteğiniz varsa belirtin">
+                        <input type="text" id="kek-krema-farkliligi" name="kek-krema-farkliligi" placeholder="Kek ve krema için özel isteğiniz varsa belirtin">
+                    </div>
+                     <div class="form-actions">
+                        <button type="button" id="previous-step" onclick="updateFormStep(6)">Geri</button>
+                        <button type="button" id="next-step">İleri</button>
                     </div>
                 </div>
 
-                <div class="step" data-step="8"> <!-- Adım 8 -->
+                <div class="step" data-step="8">
                     <div class="form-group">
                         <label for="pasta-icerigi">8. Pasta İçeriği (Kuruyemiş, Çikolata, Meyveli vb.)</label>
-                        <input type="text" id="pasta-icerigi" name="pasta-icerigi" placeholder="Pasta içeriği tercihinizi belirtin (kuruyemiş, çikolata, meyveli, full içerikli vb.)">
+                        <input type="text" id="pasta-icerigi" name="pasta-icerigi" placeholder="Pasta içeriği tercihinizi belirtin (Kuruyemiş, Çikolata, Meyveli vb.)">
+                    </div>
+                     <div class="form-actions">
+                        <button type="button" id="previous-step" onclick="updateFormStep(7)">Geri</button>
+                        <button type="button" id="next-step">İleri</button>
                     </div>
                 </div>
 
-                <div class="step" data-step="9"> <!-- Adım 9 -->
+                <div class="step" data-step="9">
                     <div class="form-group">
                         <label for="pasta-kremasi">9. Pasta Kreması (Şanti, Sos, Şeker Hamuru)</label>
-                        <input type="text" id="pasta-kremasi" name="pasta-kremasi" placeholder="Pasta kreması tercihinizi belirtin (şanti, sos, şeker hamuru)">
+                        <input type="text" id="pasta-kremasi" name="pasta-kremasi" placeholder="Pasta kreması tercihinizi belirtin (Şanti, Sos, Şeker Hamuru)">
+                    </div>
+                     <div class="form-actions">
+                        <button type="button" id="previous-step" onclick="updateFormStep(8)">Geri</button>
+                        <button type="button" id="next-step">İleri</button>
                     </div>
                 </div>
 
-                <div class="step" data-step="10"> <!-- Adım 10 -->
+                <div class="step" data-step="10">
                     <div class="form-group">
                         <label for="pasta-rengi">10. Pasta Rengi</label>
                         <input type="text" id="pasta-rengi" name="pasta-rengi" placeholder="Pasta rengi tercihinizi belirtin">
                     </div>
+                     <div class="form-actions">
+                        <button type="button" id="previous-step" onclick="updateFormStep(9)">Geri</button>
+                        <button type="button" id="next-step">İleri</button>
+                    </div>
                 </div>
 
-                <div class="step" data-step="11"> <!-- Adım 11 -->
+                <div class="step" data-step="11">
                     <div class="form-group">
                         <label for="pasta-altligi">11. Pasta Altlığı (Mukavva, Şeker Hamuru, Ahşap)</label>
-                        <input type="text" id="pasta-altligi" name="pasta-altligi" placeholder="Pasta altlığı tercihinizi belirtin (mukavva, şeker hamuru, ahşap)">
+                        <input type="text" id="pasta-altligi" name="pasta-altligi" placeholder="Pasta altlığı tercihinizi belirtin (Mukavva, Şeker Hamuru, Ahşap)">
+                    </div>
+                     <div class="form-actions">
+                        <button type="button" id="previous-step" onclick="updateFormStep(10)">Geri</button>
+                        <button type="button" id="next-step">İleri</button>
                     </div>
                 </div>
 
-                <div class="step" data-step="12"> <!-- Adım 12 -->
+                <div class="step" data-step="12">
                     <div class="form-group">
                         <label for="pasta-detaylari">12. Pasta Detayları (Eklemek istediğiniz özel notlar)</label>
-                        <textarea id="pasta-detaylari" name="pasta-detaylari" rows="3" placeholder="Pasta ile ilgili eklemek istediğiniz detaylar, özel notlar" maxlength="800"></textarea>
+                        <textarea id="pasta-detaylari" name="pasta-detaylari" rows="4" placeholder="Pasta ile ilgili eklemek istediğiniz detaylar, özel notlar" maxlength="800"></textarea>
                     </div>
-                </div>
-
-                <div class="step" data-step="13"> <!-- Adım 13 -->
-                    <div class="form-group">
-                        <label for="ornek-pasta-resmi">13. Örnek Pasta Resmi (Opsiyonel)</label>
-                        <input type="file" id="ornek-pasta-resmi" name="ornek-pasta-resmi" accept="image/*">
-                        <p style="font-size: 0.9em; color: #777;">**Güvenlik Notu:** Seçtiğiniz dosyanın yolu (örneğin: C:\fakepath\resim.png) tarayıcı güvenliği nedeniyle gösterilir. Bu, dosyanın gerçek konumunu değil, geçici bir yolu temsil eder. JavaScript, kullanıcının bilgisayarındaki gerçek dosya yoluna erişemez. Yüklediğiniz resim başarıyla sunucuya gönderilecektir.</p>
+                     <div class="form-actions">
+                        <button type="button" id="previous-step" onclick="updateFormStep(11)">Geri</button>
+                        <button type="button" id="submit-order">Siparişi Gönder</button>
                     </div>
-                </div>
-
-                <div class="step" data-step="14"> <!-- Adım 14 -->
-                    <div class="form-group">
-                        <label for="notlar">14. Not (Eklemek istediğiniz notlar)</label>
-                        <textarea id="notlar" name="notlar" rows="3" placeholder="Eklemek istediğiniz notlar" maxlength="800"></textarea>
-                    </div>
-                </div>
-
-                <div class="form-actions">
-                    <button type="button" id="previous-step" disabled>Geri</button>
-                    <button type="button" id="next-step">İleri</button>
-                    <button type="submit" id="submit-order" style="display: none;">Sipariş Gönder</button>
                 </div>
             </form>
         </section>
@@ -504,89 +501,111 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
     <script>
-        // Firebase Konfigürasyonu - **BURAYI KENDİ BİLGİLERİNİZLE GÜNCELLEYİN!**
         const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-            databaseURL: "YOUR_DATABASE_URL.firebaseio.com",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_PROJECT_ID.firebasestorage.app",
-            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-            appId: "YOUR_APP_ID",
-            measurementId: "YOUR_MEASUREMENT_ID"
+            apiKey: "AIzaSyCIhKXxTwmQ1l70c7_vnH6ZmM1FxZsqUEI",
+            authDomain: "furkan-baysak-b74ef.firebaseapp.com",
+            databaseURL: "https://furkan-baysak-b74ef-default-rtdb.firebaseio.com",
+            projectId: "furkan-baysak-b74ef",
+            storageBucket: "furkan-baysak-b74ef.firebasestorage.app",
+            messagingSenderId: "332668884342",
+            appId: "1:332668884342:web:975a46d869cf37bbc85657",
+            measurementId: "G-1TQKFHW50T"
         };
 
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
 
-        // Form Adımları ve İlerleme Çubuğu Kontrolü
+        // Form Adımları ve İlerleme Çubuğu Kontrolü (JS güncellendi)
         const steps = document.querySelectorAll('.step');
         const progressBar = document.getElementById('order-progress-bar');
-        const prevButton = document.getElementById('previous-step');
-        const nextButton = document.getElementById('next-step');
+        const prevButtons = document.querySelectorAll('#previous-step'); // NodeList
+        const nextButtons = document.querySelectorAll('#next-step');     // NodeList
         const submitButton = document.getElementById('submit-order');
         let currentStep = 1;
         const totalSteps = steps.length;
+        const form = document.getElementById('pastaSiparisForm');
 
         function updateFormStep(stepIndex) {
             steps.forEach(step => step.classList.remove('active'));
             steps[stepIndex - 1].classList.add('active');
             currentStep = stepIndex;
 
-            // İlerleme çubuğunu güncelle
-            const progressPercentage = ((stepIndex - 1) / (totalSteps - 1)) * 100; // İlk adım 0%, son adım 100%
-            progressBar.style.width = `${isNaN(progressPercentage) ? 0 : progressPercentage}%`; // İlk adımda NaN hatasını önle
+            const progressPercentage = ((stepIndex - 1) / (totalSteps - 1)) * 100;
+            progressBar.style.width = `${isNaN(progressPercentage) ? 0 : progressPercentage}%`;
 
-            // Butonları güncelle
-            prevButton.disabled = stepIndex === 1;
-            nextButton.style.display = stepIndex === totalSteps ? 'none' : 'inline-block';
+            // Buton görünürlüğünü adım sayısına göre ayarla (döngü ile NodeList üzerinde işlem yap)
+            prevButtons.forEach(btn => btn.disabled = stepIndex === 1);
+            nextButtons.forEach(btn => btn.style.display = stepIndex === totalSteps ? 'none' : 'inline-block');
             submitButton.style.display = stepIndex === totalSteps ? 'inline-block' : 'none';
-            nextButton.innerText = stepIndex === totalSteps ? 'Siparişi Gözden Geçir' : 'İleri'; // Son adımda buton metni değişsin
+            nextButtons.forEach(btn => btn.innerText = stepIndex === totalSteps ? 'Siparişi Gözden Geçir' : 'İleri';
+
+
+            validateStep(stepIndex);
         }
 
-        nextButton.addEventListener('click', () => {
-            if (currentStep < totalSteps) {
-                updateFormStep(currentStep + 1);
+        function validateStep(stepIndex) {
+            let isValidStep = true;
+            const currentStepElement = steps[stepIndex - 1];
+            if (!currentStepElement) return;
+            const requiredFields = currentStepElement.querySelectorAll('[required]');
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValidStep = false;
+                }
+            });
+            nextButtons.forEach(btn => btn.disabled = !isValidStep); // Tüm "İleri" butonlarını güncelle
+            if (stepIndex === totalSteps) {
+                submitButton.disabled = !isValidStep;
             }
+        }
+
+
+        nextButtons.forEach(btn => { // Tüm "İleri" butonlarına event listener ekle
+            btn.addEventListener('click', () => {
+                if (currentStep < totalSteps) {
+                    updateFormStep(currentStep + 1);
+                }
+            });
         });
 
-        prevButton.addEventListener('click', () => {
-            if (currentStep > 1) {
-                updateFormStep(currentStep - 1);
-            }
+
+        // prevButtons.forEach(btn => { // Geri butonları zaten inline onclick ile kontrol ediliyor
+        //     btn.addEventListener('click', () => {
+        //         if (currentStep > 1) {
+        //             updateFormStep(currentStep - 1);
+        //         }
+        //     });
+        // });
+
+
+        updateFormStep(1); // İlk adımı başlat
+
+        form.addEventListener('input', function(e) {
+            validateStep(currentStep);
         });
 
-        // İlk adımı göster
-        updateFormStep(1);
-
-
-        // Telefon Numarası Input Kontrolü (Sadece Numara ve Limit)
         const phoneInput = document.getElementById('musteri-telefon');
         phoneInput.addEventListener('input', function (e) {
-            // Sadece sayı girişine izin ver
             this.value = this.value.replace(/[^0-9]/g, '');
-            // Maksimum 11 haneye sınırla (maxLength HTML özniteliği ile de yapıldı)
             if (this.value.length > 11) {
                 this.value = this.value.slice(0, 11);
             }
         });
 
-
-        // Form Gönderildiğinde İlerleme Çubuğunu ve Firebase Kaydını Yönetme (Güncellendi - İlerleme Çubuğu Animasyonu Kaldırıldı)
         const orderForm = document.querySelector('.siparis-form');
-
         orderForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Sayfanın yenilenmesini engelle
+            event.preventDefault();
 
-            // Form verilerini al ve Firebase'e kaydet
+            if (!form.checkValidity()) {
+                alert("Lütfen tüm zorunlu alanları doldurun.");
+                return;
+            }
+
             saveOrderToFirebase();
-
-            // İlerleme çubuğunu anında %100'e ayarla (animasyon kaldırıldı, isteğe bağlı geri eklenebilir)
             progressBar.style.width = '100%';
         });
 
-
-        // Form verilerini Firebase'e kaydetme fonksiyonu (Aynı Kalsın)
         function saveOrderToFirebase() {
             const musteriAdi = document.getElementById('musteri-adi').value;
             const musteriTelefon = document.getElementById('musteri-telefon').value;
@@ -600,10 +619,9 @@
             const pastaRengi = document.getElementById('pasta-rengi').value;
             const pastaAltligi = document.getElementById('pasta-altligi').value;
             const pastaDetaylari = document.getElementById('pasta-detaylari').value;
-            const ornekPastaResmi = document.getElementById('ornek-pasta-resmi').value; // Dosya yolu değil, dosyanın kendisi alınmalı (gerekiyorsa)
             const notlar = document.getElementById('notlar').value;
 
-            const orderRef = database.ref('pasta-siparisleri/' + subeAdi + '/' + musteriAdi.replace(/\s/g, '_') + '_' + Date.now()); // Benzersiz anahtar için zaman damgası
+            const orderRef = database.ref('pasta-siparisleri/' + subeAdi + '/' + musteriAdi.replace(/\s/g, '_') + '_' + Date.now());
 
             orderRef.set({
                 musteriAdi: musteriAdi,
@@ -618,22 +636,20 @@
                 pastaRengi: pastaRengi,
                 pastaAltligi: pastaAltligi,
                 pastaDetaylari: pastaDetaylari,
-                ornekPastaResmi: ornekPastaResmi, // Dosya yolu yerine dosyanın kendisi işlenmeli (gerekiyorsa)
                 notlar: notlar,
                 siparisTarihi: new Date().toLocaleString()
             }).then(() => {
                 alert('Siparişiniz başarıyla gönderildi!');
-                orderForm.reset(); // Formu temizle
-                progressBar.style.width = '0%'; // İlerleme çubuğunu sıfırla
-                updateFormStep(1); // İlk adıma geri dön
+                orderForm.reset();
+                progressBar.style.width = '0%';
+                updateFormStep(1);
             }).catch((error) => {
-                alert('Sipariş gönderilirken bir hata oluştu: ' + error.message);
-                progressBar.style.width = '0%'; // İlerleme çubuğunu sıfırla
+                console.error("Firebase'e yazma hatası:", error);
+                alert('Sipariş gönderilirken bir hata oluştu. Lütfen tekrar deneyin.');
+                progressBar.style.width = '0%';
             });
         }
 
-
-        // Yandan Menü Kontrolü (Aynı Kalsın)
         function toggleMenu() {
             const menu = document.getElementById('side-menu');
             menu.classList.toggle('open');
@@ -644,9 +660,7 @@
             menu.classList.remove('open');
         }
 
-        // Fotoğraf Galerisi (Aynı Kalsın)
         let currentSlide = 0;
-
         function setCurrentSlide(index) {
             currentSlide = index;
             updateSlider();
@@ -657,16 +671,13 @@
             const slides = document.querySelectorAll('.slide');
             const dots = document.querySelectorAll('.dot');
 
-            // Slaytları kaydırma
             slider.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-            // Nokta aktifliğini güncelle
             dots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === currentSlide);
             });
         }
 
-        // Otomatik Kaydırma (İsteğe Bağlı) (Aynı Kalsın)
         setInterval(() => {
             const slides = document.querySelectorAll('.slide');
             currentSlide = (currentSlide + 1) % slides.length;
